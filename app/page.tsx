@@ -5,6 +5,7 @@ import DashboardPreview from "@/components/DashboardPreview"
 import IntegrationPartners from "@/components/IntegrationPartners"
 import FinalCTA from "@/components/FinalCTA"
 import Footer from "@/components/Footer"
+import FAQSection from "@/components/FAQs"
 
 export default function LandingPage() {
   return (
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <AboutSection />
       <DashboardPreview />
       <IntegrationPartners />
+      <FAQSection />
       <FinalCTA />
       <Footer />
     </main>

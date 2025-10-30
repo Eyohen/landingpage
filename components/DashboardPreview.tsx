@@ -1,4 +1,5 @@
 import React from "react"
+import { IoStorefrontOutline } from "react-icons/io5"
 
 export default function DashboardPreview() {
   return (
@@ -9,8 +10,9 @@ export default function DashboardPreview() {
       <div className="">
         <div className="max-w-6xl mx-auto px-6 relative md:-mt-72">
           <div className="text-center pt-32">
-            <div className="inline-block px-4 py-1 bg-gray-900 text-gray-100 rounded-full text-sm font-semibold mb-4">
-              For Merchants
+            <div className="inline-flex items-center gap-1 px-4 py-1 bg-gray-900 text-gray-100 rounded-full text-sm font-semibold mb-4">
+              <IoStorefrontOutline />
+              <p>For Merchants</p>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold md:text-gray-900 mb-4 ">
               Simple, Yet Powerful

@@ -1,12 +1,12 @@
 import React from "react"
+import { IoStarOutline } from "react-icons/io5"
 
 export default function IntegrationPartners() {
   return (
     <section className="py-16 font-grotesque">
-      <div className="flex items-center justify-center ">
-        <p className="px-4 py-1 bg-gray-900 text-gray-100 rounded-full text-sm font-semibold mb-4 text-center">
-          Even more
-        </p>
+      <div className="flex w-fit items-center gap-2 px-4 py-2 bg-dark-color rounded-full mb-6 mx-auto">
+        <IoStarOutline className="text-white w-4 h-4" />
+        <span className="text-gray-300 text-sm">Even more</span>
       </div>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">

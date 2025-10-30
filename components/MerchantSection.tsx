@@ -1,12 +1,14 @@
 import React from "react"
+import { HiBolt } from "react-icons/hi2"
 
 export default function MerchantSection() {
   return (
     <section className="bg-white py-16 font-grotesque">
       <div className="max-w-6xl mx-auto md:px-6">
         <div className="text-center mb-12">
-          <div className="inline-block px-4 py-1 bg-gray-800 text-gray-100 rounded-full text-sm font-semibold mb-4">
-            FEATURES
+          <div className="inline-flex items-center gap-1 px-4 py-1 bg-gray-800 text-gray-100 rounded-full text-sm font-semibold mb-4">
+            <HiBolt />
+            <p>FEATURES</p>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
             Built for <span className="text-text-purple">Merchants.</span>
