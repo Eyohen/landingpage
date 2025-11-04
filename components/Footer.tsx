@@ -5,6 +5,8 @@ import {
   FaInstagram,
   FaFacebookF,
   FaLinkedinIn,
+  FaYoutube,
+  FaTiktok,
 } from "react-icons/fa6"
 
 export default function Footer() {
@@ -41,16 +43,36 @@ export default function Footer() {
               <FaXTwitter className="w-5 h-5" />
             </Link>
             <Link
-              href="#"
+              href="https://www.instagram.com/coinley.io/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaInstagram className="w-5 h-5" />
             </Link>
             <Link
-              href="#"
+              href="https://www.facebook.com/profile.php?id=61575107223768"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaFacebookF className="w-5 h-5" />
+            </Link>
+            <Link
+              href="https://www.youtube.com/@Coinleyio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
+            >
+              <FaYoutube className="w-5 h-5" />
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@coinley.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
+            >
+              <FaTiktok className="w-5 h-5" />
             </Link>
             <Link
               href="https://www.linkedin.com/company/coinley/"
@@ -64,35 +86,11 @@ export default function Footer() {
         </div>
 
         {/* Links grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-16">
           {/* Company */}
           <div>
             <h4 className="text-gray-500 text-sm font-medium mb-6">Company</h4>
             <ul className="space-y-4">
-              <li>
-                <Link
-                  href="#"
-                  className="text-white hover:text-purple-400 transition"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-white hover:text-purple-400 transition"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-white hover:text-purple-400 transition"
-                >
-                  Press
-                </Link>
-              </li>
               <li>
                 <Link
                   href="#"
@@ -188,14 +186,6 @@ export default function Footer() {
                   href="#"
                   className="text-white hover:text-purple-400 transition"
                 >
-                  Community Forum
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-white hover:text-purple-400 transition"
-                >
                   FAQs
                 </Link>
               </li>
@@ -210,32 +200,12 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="https://merchant.coinley.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-purple-400 transition"
-                >
-                  Pricing Plans
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="https://littlestore.coinley.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Demo
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://merchant.coinley.io/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-purple-400 transition"
-                >
-                  Contact Sales
                 </Link>
               </li>
             </ul>
