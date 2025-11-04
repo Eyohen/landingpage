@@ -33,7 +33,9 @@ export default function Footer() {
           {/* Social icons */}
           <div className="flex gap-4">
             <Link
-              href="#"
+              href="https://x.com/Coinleyio"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaXTwitter className="w-5 h-5" />
@@ -51,7 +53,9 @@ export default function Footer() {
               <FaFacebookF className="w-5 h-5" />
             </Link>
             <Link
-              href="#"
+              href="https://www.linkedin.com/company/coinley/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaLinkedinIn className="w-5 h-5" />
@@ -132,7 +136,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://docs.coinley.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Easy Integration
@@ -140,7 +146,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://merchant.coinley.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Analytics Dashboard
@@ -157,7 +165,9 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="#"
+                  href="https://docs.coinley.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Documentation
@@ -165,7 +175,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://docs.coinley.io/#api-reference"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   API Reference
@@ -198,7 +210,9 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="#"
+                  href="https://merchant.coinley.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Pricing Plans
@@ -206,7 +220,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://littlestore.coinley.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Demo
@@ -214,7 +230,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://merchant.coinley.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Contact Sales

@@ -51,12 +51,22 @@ export default function Header() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <button className="text-white hover:text-purple-400 transition">
+            <Link
+              href="https://merchant.coinley.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-purple-400 transition"
+            >
               Login
-            </button>
-            <button className="px-7 py-3 bg-black text-gray-200 rounded-full hover:bg-gray-900 transition">
+            </Link>
+            <Link
+              href="https://merchant.coinley.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-7 py-3 bg-black text-gray-200 rounded-full hover:bg-gray-900 transition inline-block"
+            >
               Get Started
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -119,18 +129,24 @@ export default function Header() {
 
           {/* Mobile CTA Buttons */}
           <div className="flex flex-col items-center gap-4 mt-8">
-            <button
+            <Link
+              href="https://merchant.coinley.io/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white text-xl hover:text-purple-400 transition"
               onClick={toggleMenu}
             >
               Login
-            </button>
-            <button
-              className="px-8 py-3 bg-black text-gray-200 rounded-full hover:bg-gray-900 transition text-lg"
+            </Link>
+            <Link
+              href="https://merchant.coinley.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-black text-gray-200 rounded-full hover:bg-gray-900 transition text-lg inline-block"
               onClick={toggleMenu}
             >
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </div>
