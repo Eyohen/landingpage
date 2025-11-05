@@ -36,9 +36,13 @@ export default function IntegrationPartners() {
               Install in minutes with our free plugin and start accepting
               stablecoins at checkout.
             </p>
-            <button className="w-full px-6 py-3 bg-text-purple text-white rounded-full font-semibold hover:bg-purple-700 transition">
+            <a
+              href="/coinley-woocommerce-plugin-v1.1.5.zip"
+              download="coinley-woocommerce-plugin-v1.1.5.zip"
+              className="block w-full px-6 py-3 bg-text-purple text-white rounded-full font-semibold hover:bg-purple-700 transition text-center"
+            >
               Install Plugin
-            </button>
+            </a>
           </div>
 
           <div className="border border-white/10 rounded-2xl p-3 hover:bg-gray-750 transition">
@@ -53,9 +57,14 @@ export default function IntegrationPartners() {
               Developers love us. Use our APIs and SDKs to add stablecoin
               payments to digital products.
             </p>
-            <button className="w-full px-6 py-3 bg-text-purple text-white rounded-full font-semibold hover:bg-purple-700 transition">
+            <a
+              href="https://docs.coinley.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full px-6 py-3 bg-text-purple text-white rounded-full font-semibold hover:bg-purple-700 transition text-center"
+            >
               Explore API Doc
-            </button>
+            </a>
           </div>
 
           <div className="border border-white/10 rounded-2xl p-3 hover:bg-gray-750 transition">
