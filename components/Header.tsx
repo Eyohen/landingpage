@@ -12,6 +12,24 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault()
+    const element = document.getElementById(sectionId)
+    if (element) {
+      const headerOffset = 80 // Account for fixed header height
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+    if (isMenuOpen) {
+      setIsMenuOpen(false)
+    }
+  }
+
   return (
     <header className="absolute top-0 left-0 right-0 z-50 font-grotesque">
       <div className="max-w-7xl mx-auto px-6 py-6">
@@ -23,30 +41,34 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8 bg-purple-200/20 py-3 px-7 rounded-full border border-text-purple/60">
-            <Link
+            <a
               href="#why-us"
-              className="text-white hover:text-purple-400 transition"
+              onClick={(e) => scrollToSection(e, 'why-us')}
+              className="text-white hover:text-purple-400 transition cursor-pointer"
             >
               Home
-            </Link>
-            <Link
+            </a>
+            <a
               href="#features"
-              className="text-white hover:text-purple-400 transition"
+              onClick={(e) => scrollToSection(e, 'features')}
+              className="text-white hover:text-purple-400 transition cursor-pointer"
             >
               Features
-            </Link>
-            <Link
+            </a>
+            <a
               href="#pricing"
-              className="text-white hover:text-purple-400 transition"
+              onClick={(e) => scrollToSection(e, 'pricing')}
+              className="text-white hover:text-purple-400 transition cursor-pointer"
             >
               Company
-            </Link>
-            <Link
+            </a>
+            <a
               href="#faq"
-              className="text-white hover:text-purple-400 transition"
+              onClick={(e) => scrollToSection(e, 'faq')}
+              className="text-white hover:text-purple-400 transition cursor-pointer"
             >
               FAQ
-            </Link>
+            </a>
           </nav>
 
           {/* Desktop CTA Buttons */}
@@ -98,34 +120,34 @@ export default function Header() {
           }`}
         >
           {/* Mobile Navigation Links */}
-          <Link
+          <a
             href="#why-us"
-            className="text-white text-2xl hover:text-purple-400 transition"
-            onClick={toggleMenu}
+            onClick={(e) => scrollToSection(e, 'why-us')}
+            className="text-white text-2xl hover:text-purple-400 transition cursor-pointer"
           >
             Home
-          </Link>
-          <Link
+          </a>
+          <a
             href="#features"
-            className="text-white text-2xl hover:text-purple-400 transition"
-            onClick={toggleMenu}
+            onClick={(e) => scrollToSection(e, 'features')}
+            className="text-white text-2xl hover:text-purple-400 transition cursor-pointer"
           >
             Features
-          </Link>
-          <Link
+          </a>
+          <a
             href="#pricing"
-            className="text-white text-2xl hover:text-purple-400 transition"
-            onClick={toggleMenu}
+            onClick={(e) => scrollToSection(e, 'pricing')}
+            className="text-white text-2xl hover:text-purple-400 transition cursor-pointer"
           >
             Company
-          </Link>
-          <Link
+          </a>
+          <a
             href="#faq"
-            className="text-white text-2xl hover:text-purple-400 transition"
-            onClick={toggleMenu}
+            onClick={(e) => scrollToSection(e, 'faq')}
+            className="text-white text-2xl hover:text-purple-400 transition cursor-pointer"
           >
             FAQ
-          </Link>
+          </a>
 
           {/* Mobile CTA Buttons */}
           <div className="flex flex-col items-center gap-4 mt-8">

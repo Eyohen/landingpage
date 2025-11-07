@@ -12,10 +12,18 @@ export default function LandingPage() {
     <main className="min-h-screen bg-[#070707] overflow-x-hidden font-grotesque">
       <Header />
       <Hero />
-      <AboutSection />
-      <DashboardPreview />
-      <IntegrationPartners />
-      <FAQSection />
+      <div id="why-us">
+        <AboutSection />
+      </div>
+      <div id="features">
+        <DashboardPreview />
+      </div>
+      <div id="pricing">
+        <IntegrationPartners />
+      </div>
+      <div id="faq">
+        <FAQSection />
+      </div>
       <FinalCTA />
       <Footer />
     </main>
