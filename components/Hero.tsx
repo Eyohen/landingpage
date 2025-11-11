@@ -21,7 +21,7 @@ export default function Hero() {
             </h1>
             <div className="md:text-lg lg:text-xl text-gray-300 mb-8">
               <p className="">
-                Expand your buisness reach with easy crypto checkout solution
+                Expand your business reach with easy crypto checkout solution
                 <span className="md:block">Fast. Secure. Global</span>
               </p>
             </div>
