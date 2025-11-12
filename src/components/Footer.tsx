@@ -1,5 +1,5 @@
 import React from "react"
-import Link from "next/link"
+
 import {
   FaXTwitter,
   FaInstagram,
@@ -22,9 +22,9 @@ export default function Footer() {
           <div className="max-w-xl">
             <div className="flex items-center gap-3 mb-6">
               {/* Logo icon */}
-              <Link href="/" className="flex items-center gap-2">
+              <a href="/" className="flex items-center gap-2">
                 <img src={"/logo3.png"} />
-              </Link>
+              </a>
             </div>
             <p className="text-gray-400 text-base leading-relaxed">
               An entirely new payment infrastructure, built with blockchain
@@ -34,54 +34,54 @@ export default function Footer() {
 
           {/* Social icons */}
           <div className="flex gap-4">
-            <Link
+            <a
               href="https://x.com/Coinleyio"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaXTwitter className="w-5 h-5" />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.instagram.com/coinley.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaInstagram className="w-5 h-5" />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.facebook.com/profile.php?id=61575107223768"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaFacebookF className="w-5 h-5" />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.youtube.com/@Coinleyio"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaYoutube className="w-5 h-5" />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.tiktok.com/@coinley.io"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaTiktok className="w-5 h-5" />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.linkedin.com/company/coinley/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center hover:text-purple-400 transition"
             >
               <FaLinkedinIn className="w-5 h-5" />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -92,20 +92,20 @@ export default function Footer() {
             <h4 className="text-gray-500 text-sm font-medium mb-6">Company</h4>
             <ul className="space-y-4">
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Blog
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Contact Us
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -117,40 +117,40 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Multi-Chain Access
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Instant Settlements
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="https://docs.coinley.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Easy Integration
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="https://merchant.coinley.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Analytics Dashboard
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -162,32 +162,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link
+                <a
                   href="https://docs.coinley.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Documentation
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="https://docs.coinley.io/#api-reference"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   API Reference
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="#"
                   className="text-white hover:text-purple-400 transition"
                 >
                   FAQs
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -199,14 +199,14 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <Link
+                <a
                   href="https://littlestore.coinley.io/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-purple-400 transition"
                 >
                   Demo
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -234,15 +234,15 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>© 2025 All Rights Reserved</p>
           <div className="flex gap-8">
-            <Link href="#" className="hover:text-white transition">
+            <a href="#" className="hover:text-white transition">
               Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-white transition">
+            </a>
+            <a href="#" className="hover:text-white transition">
               Terms & Condition
-            </Link>
-            <Link href="#" className="hover:text-white transition">
+            </a>
+            <a href="#" className="hover:text-white transition">
               Security Policy
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,4 @@
 import React from "react"
-import Image from "next/image"
-import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -27,22 +25,22 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex gap-4">
-            <Link
+            <a
               href="https://docs.coinley.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition inline-block"
             >
               Explore docs
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://merchant.coinley.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-text-purple text-white rounded-full font-semibold hover:bg-purple-700 transition inline-block"
             >
               Get Started
-            </Link>
+            </a>
           </div>
         </div>
       </div>
