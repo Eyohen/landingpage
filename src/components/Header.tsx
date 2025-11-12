@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import Link from "next/link"
+
 import { HiMenuAlt3 } from "react-icons/hi"
 import { IoClose } from "react-icons/io5"
 
@@ -35,9 +35,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 relative z-50">
+          <a href="/" className="flex items-center gap-2 relative z-50">
             <img src={"/logo3.png"} alt="Coinley Logo" />
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8 bg-purple-200/20 py-3 px-7 rounded-full border border-text-purple/60">
@@ -73,22 +73,22 @@ export default function Header() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center gap-4">
-            <Link
+            <a
               href="https://merchant.coinley.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-purple-400 transition"
             >
               Login
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://merchant.coinley.io/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-7 py-3 bg-black text-gray-200 rounded-full hover:bg-gray-900 transition inline-block"
             >
               Get Started
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
@@ -151,7 +151,7 @@ export default function Header() {
 
           {/* Mobile CTA Buttons */}
           <div className="flex flex-col items-center gap-4 mt-8">
-            <Link
+            <a
               href="https://merchant.coinley.io/"
               target="_blank"
               rel="noopener noreferrer"
@@ -159,8 +159,8 @@ export default function Header() {
               onClick={toggleMenu}
             >
               Login
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://merchant.coinley.io/"
               target="_blank"
               rel="noopener noreferrer"
@@ -168,7 +168,7 @@ export default function Header() {
               onClick={toggleMenu}
             >
               Get Started
-            </Link>
+            </a>
           </div>
         </div>
       </div>

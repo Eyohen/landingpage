@@ -1,5 +1,5 @@
 import React from "react"
-import Link from "next/link"
+
 
 export default function FinalCTA() {
   return (
@@ -21,14 +21,14 @@ export default function FinalCTA() {
           Our platform combines cutting-edge blockchain technology with
           intuitive design to deliver a seemless payment experience.
         </p>
-        <Link
+        <a
           href="https://merchant.coinley.io/"
           target="_blank"
           rel="noopener noreferrer"
           className="px-8 py-3 bg-text-purple text-white rounded-full font-semibold text-lg hover:bg-purple-700 transition shadow-xl inline-block"
         >
           Get Started now
-        </Link>
+        </a>
       </div>
     </section>
   )
