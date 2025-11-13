@@ -18,7 +18,7 @@ echo -e "${BLUE}=====================================${NC}"
 # Configuration
 RESOURCE_GROUP="websitedeployment"
 APP_NAME="coinleylandingpage"
-BUILD_DIR="dist"
+BUILD_DIR="out"
 
 # Step 1: Clean previous build
 echo -e "\n${GREEN}[1/4] Cleaning previous build...${NC}"

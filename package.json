@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "bash deploy-azure.sh",
-    "deploy:azure": "npm run build && az staticwebapp upload --name coinleylandingpage --resource-group websitedeployment --source dist --no-wait"
+    "deploy:azure": "npm run build && az staticwebapp upload --name coinleylandingpage --resource-group websitedeployment --source out --no-wait"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
