@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'dist', // Explicit output directory for Azure deployment
+    outDir: 'out', // Output directory matching Azure workflow configuration
   },
 })
