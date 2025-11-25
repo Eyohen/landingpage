@@ -37,8 +37,8 @@ export default function IntegrationPartners() {
               stablecoins at checkout.
             </p>
             <a
-              href="/coinley-woocommerce-plugin-v1.1.5.zip"
-              download="coinley-woocommerce-plugin-v1.1.5.zip"
+              href="/coinley-payment-gateway-v1.1.5.zip"
+              download="coinley-payment-gateway-v1.1.5.zip"
               className="block w-full px-6 py-3 bg-text-purple text-white rounded-full font-semibold hover:bg-purple-700 transition text-center"
             >
               Install Plugin
