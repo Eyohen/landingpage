@@ -45,6 +45,7 @@ export default function AboutSection() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
                 loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
               />
               {/* Play/Pause overlay button */}
               <button
