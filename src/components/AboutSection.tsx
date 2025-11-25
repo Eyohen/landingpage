@@ -40,10 +40,11 @@ export default function AboutSection() {
               <iframe
                 ref={videoRef}
                 className="w-full aspect-video rounded-xl md:rounded-2xl shadow-gray-500 shadow-2xl"
-                src="https://www.youtube.com/embed/ZNqQdUzNTQI?enablejsapi=1"
+                src="https://www.youtube-nocookie.com/embed/ZNqQdUzNTQI?enablejsapi=1&rel=0&modestbranding=1"
                 title="Coinley Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                loading="lazy"
               />
               {/* Play/Pause overlay button */}
               <button
