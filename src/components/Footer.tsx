@@ -232,7 +232,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-          <p>© 2025 All Rights Reserved</p>
+          <p>© 2026 All Rights Reserved</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-white transition">
               Privacy Policy
