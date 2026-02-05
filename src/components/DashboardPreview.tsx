@@ -23,10 +23,7 @@ export default function DashboardPreview() {
               Our platform gives seemless transactions regardless of location.
             </p>
           </div>
-          {/* Dashboard mockup */}
-          <div className="mt-16">
-            <img src={"/dashboard.png"} className="rounded-xl" />
-          </div>
+        
         </div>
       </div>
     </section>
