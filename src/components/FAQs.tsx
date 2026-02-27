@@ -23,7 +23,7 @@ const faqData: FAQItem[] = [
   {
     question: "What fees do you charge?",
     answer:
-      "Coinley charges a competitive 0.5% transaction fee with no monthly fees or hidden costs. You only pay when you receive payments, making it affordable for businesses of all sizes.",
+      "Coinley charges a competitive 1% transaction fee with no monthly fees or hidden costs. You only pay when you receive payments, making it affordable for businesses of all sizes.",
   },
   {
     question: "How do I integrate with my existing platform?",
