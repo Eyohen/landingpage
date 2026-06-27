@@ -1,35 +1,34 @@
-import { SmoothScroll } from "./components/SmoothScroll"
-import Header from "./components/Header"
-import Hero from "./components/Hero"
-import AboutSection from "./components/AboutSection"
-import DashboardPreview from "./components/DashboardPreview"
-import IntegrationPartners from "./components/IntegrationPartners"
-import FinalCTA from "./components/FinalCTA"
-import Footer from "./components/Footer"
-import FAQSection from "./components/FAQs"
+import { useSmoothScroll } from '@/components/motion/useSmoothScroll'
+import { Navbar } from '@/components/Navbar'
+import { Hero } from '@/sections/Hero'
+import { WhatStablezactDoes } from '@/sections/WhatStablezactDoes'
+import { HowItWorks } from '@/sections/HowItWorks'
+import { Solutions } from '@/sections/Solutions'
+import { WhyStablezact } from '@/sections/WhyStablezact'
+import { Ecosystem } from '@/sections/Ecosystem'
+import { Integration } from '@/sections/Integration'
+import { CustomerStory } from '@/sections/CustomerStory'
+import { SeeItInAction } from '@/sections/SeeItInAction'
+import { ClosingCTA } from '@/sections/ClosingCTA'
 
 function App() {
+  useSmoothScroll()
   return (
-    <SmoothScroll>
-      <main className="min-h-screen bg-[#070707] overflow-x-hidden font-grotesque">
-        <Header />
+    <div className="min-h-screen w-full overflow-x-hidden">
+      <Navbar />
+      <main>
         <Hero />
-        <div id="why-us">
-          <AboutSection />
-        </div>
-        <div id="features">
-          <DashboardPreview />
-        </div>
-        <div id="pricing">
-          <IntegrationPartners />
-        </div>
-        <div id="faq">
-          <FAQSection />
-        </div>
-        <FinalCTA />
-        <Footer />
+        <WhatStablezactDoes />
+        <HowItWorks />
+        <Solutions />
+        <WhyStablezact />
+        <Ecosystem />
+        <Integration />
+        <CustomerStory />
+        <SeeItInAction />
+        <ClosingCTA />
       </main>
-    </SmoothScroll>
+    </div>
   )
 }
 
