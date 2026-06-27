@@ -10,10 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-out
 *.local
-.next
-next-env.d.ts
 
 # Editor directories and files
 .vscode/*
@@ -25,3 +22,9 @@ next-env.d.ts
 *.njsproj
 *.sln
 *.sw?
+
+# Local Netlify folder
+.netlify
+
+# Playwright MCP scratch
+.playwright-mcp

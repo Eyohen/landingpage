@@ -1,0 +1,21 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 3460.12 3867.57" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="BG cloud" style="mix-blend-mode:screen" opacity="0.6">
+<circle id="Ellipse 641" opacity="0.85" cx="1713.99" cy="1207.57" r="1175.44" fill="url(#paint0_radial_0_4)"/>
+<circle id="Ellipse 642" opacity="0.85" cx="1730.06" cy="1570.68" r="1370.17" fill="url(#paint1_radial_0_4)"/>
+<circle id="Ellipse 643" opacity="0.85" cx="1730.06" cy="2137.51" r="1730.06" fill="url(#paint2_radial_0_4)"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1713.99 2772.45) rotate(-90) scale(2791.37 2004.51)">
+<stop offset="0.961716" stop-color="#100301"/>
+<stop offset="1" stop-color="#FFF0E9"/>
+</radialGradient>
+<radialGradient id="paint1_radial_0_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1730.06 3394.8) rotate(-90) scale(3253.8 2420.55)">
+<stop offset="0.961716" stop-color="#100301"/>
+<stop offset="1" stop-color="#FFF0E9"/>
+</radialGradient>
+<radialGradient id="paint2_radial_0_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1730.06 4440.76) rotate(-90) scale(4108.46 2527.86)">
+<stop offset="0.961716" stop-color="#100301"/>
+<stop offset="1" stop-color="#FFF0E9"/>
+</radialGradient>
+</defs>
+</svg>
