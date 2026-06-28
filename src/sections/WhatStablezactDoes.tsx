@@ -9,7 +9,7 @@ import { ScrollRevealText } from '@/components/motion/ScrollRevealText'
  */
 export function WhatStablezactDoes() {
   return (
-    <section className="relative isolate overflow-hidden bg-white py-[160px] max-md:py-[110px]">
+    <section className="relative isolate overflow-hidden bg-white py-[180px] max-md:py-[110px]">
       {/* purple blur glows */}
       <div className="pointer-events-none absolute left-[12%] top-[120px] h-[159px] w-[171px] rounded-full bg-[var(--color-purple)] opacity-60 blur-[200px]" />
       <div className="pointer-events-none absolute right-[3%] top-[100px] h-[159px] w-[171px] rounded-full bg-[var(--color-purple)] opacity-60 blur-[200px]" />
