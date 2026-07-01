@@ -166,10 +166,10 @@ export function ClosingCTA() {
             </p>
             <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
               This website helps users process crypto transactions using
-              Coinley&rsquo;s middleware. Coinley does not endorse or recommend
+              Stablezact&rsquo;s middleware. Stablezact does not endorse or recommend
               any cryptocurrency trading activity. Users should not regard this
               website or its contents as a recommendation, invitation, or
-              inducement to engage in cryptoasset trading. Coinley is a
+              inducement to engage in cryptoasset trading. Stablezact is a
               non-custodial solution; hence, users retain full control of their
               wallets and cryptos at all times.
             </p>
