@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { motion } from 'motion/react'
 import logoUrl from '@/assets/figma/stablezact-logo-color.svg'
 
@@ -16,55 +16,15 @@ const NAV_LINKS = [
   { label: 'Documentation', href: '#documentation' },
 ] as const
 
-function ArrowIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-      fill="none"
-      aria-hidden="true"
-      className="shrink-0"
-    >
-      <path
-        d="M3.75 9H14.25"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M9 3.75L14.25 9L9 14.25"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
 export function Navbar() {
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   return (
     <motion.header
       initial={{ y: -88, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 w-full transition-colors duration-300 ${
-        scrolled
-          ? 'border-b border-[var(--color-border)] bg-white/85 text-black backdrop-blur-md'
-          : 'border-b border-transparent bg-transparent text-white'
-      }`}
+      className="fixed inset-x-0 top-0 z-50 w-full border-b border-transparent bg-[linear-gradient(90deg,rgba(255,255,255,0.78)_0%,rgba(248,244,255,0.58)_46%,rgba(255,241,247,0.58)_100%)] font-[family-name:var(--font-geist)] text-black backdrop-blur-[8px]"
     >
       <div className="container-1200 flex h-[88px] items-center justify-between">
         {/* Logo */}
@@ -76,26 +36,17 @@ export function Navbar() {
         </a>
 
         {/* Desktop nav links */}
-        <nav className="hidden items-center gap-6 text-[20px] md:flex">
+        <nav className="ml-auto hidden items-center gap-8 text-[19px] font-normal md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="whitespace-nowrap transition-opacity hover:opacity-60"
+              className="whitespace-nowrap text-[#17131a] transition-opacity hover:opacity-60"
             >
               {link.label}
             </a>
           ))}
         </nav>
-
-        {/* Desktop CTA */}
-        <a
-          href="#book-a-demo"
-          className="hidden items-center justify-center gap-2 border-[0.6px] border-solid border-[#7042d2] p-4 text-[18px] font-medium tracking-[-0.03em] whitespace-nowrap text-[#7042d2] transition-colors hover:bg-[#7042d2] hover:text-white md:flex"
-        >
-          Book a Demo
-          <ArrowIcon />
-        </a>
 
         {/* Mobile hamburger */}
         <button
@@ -141,14 +92,6 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#book-a-demo"
-              onClick={() => setOpen(false)}
-              className="mt-3 flex items-center justify-center gap-2 border-[0.6px] border-solid border-[#7042d2] p-4 text-[18px] font-medium tracking-[-0.03em] text-[#7042d2]"
-            >
-              Book a Demo
-              <ArrowIcon />
-            </a>
           </nav>
         </div>
       )}

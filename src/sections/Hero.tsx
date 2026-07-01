@@ -1,8 +1,8 @@
 import { motion, type Variants } from 'motion/react'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
-import isometric from '@/assets/figma/hero-isometric.png'
-import shopify from '@/assets/figma/shopify.png'
-import woocommerce from '@/assets/figma/woocommerce.png'
+import coin1 from '@/assets/figma/coin1.png'
+import coin2 from '@/assets/figma/coin2.png'
+import mapImage from '@/assets/figma/Map.png'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -32,64 +32,102 @@ function PlayIcon() {
   )
 }
 
-/**
- * Dark landing hero — matches the Framer prototype.
- * Floating isometric crypto-buildings art, crimson eyebrow,
- * two-tone headline, Book a Demo / Watch Product Demo CTAs, trusted-by row.
- * Content (Figma node 352:21509).
- */
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[860px] flex-col overflow-hidden bg-[var(--color-bg-dark)] pt-[120px] pb-12 text-white">
-      {/* subtle background grid + purple glow */}
+    <section className="relative isolate flex min-h-[900px] flex-col overflow-hidden bg-white pt-[140px] pb-14 font-[family-name:var(--font-geist)] text-black max-md:min-h-[820px] max-md:pt-[116px]">
+      {/* soft background grid + blush glow */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        className="pointer-events-none absolute inset-0 opacity-[0.055]"
         style={{
           backgroundImage:
-            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-          backgroundSize: '64px 64px',
+            'linear-gradient(#d8d8dd 1px, transparent 1px), linear-gradient(90deg, #d8d8dd 1px, transparent 1px)',
+          backgroundSize: '96px 96px',
         }}
       />
-      <div className="pointer-events-none absolute left-1/2 top-[38%] h-[420px] w-[680px] -translate-x-1/2 rounded-full bg-[var(--color-purple)] opacity-25 blur-[200px]" />
+      <div className="pointer-events-none absolute left-1/2 top-[-90px] h-[360px] w-[640px] -translate-x-1/2 rounded-full bg-[#f2d2df] opacity-55 blur-[150px]" />
+      <div className="pointer-events-none absolute left-[37%] top-[110px] h-[310px] w-[380px] rounded-full bg-[#ded5ff] opacity-45 blur-[170px]" />
 
-      {/* floating isometric illustration */}
       <motion.img
-        src={isometric}
+        src={mapImage}
         alt=""
         aria-hidden
-        initial={{ opacity: 0, scale: 1.04 }}
-        animate={{ opacity: 0.95, scale: 1, y: [0, -14, 0] }}
+        initial={{ opacity: 0, y: 28 }}
+        animate={{ opacity: 0.82, y: 0 }}
+        transition={{ duration: 1, ease: EASE, delay: 0.35 }}
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[360px] w-full select-none object-cover object-center opacity-80 max-md:h-[280px]"
+      />
+
+      <motion.img
+        src={coin1}
+        alt=""
+        aria-hidden
+        initial={{ opacity: 0, scale: 0.9, rotate: -12 }}
+        animate={{ opacity: 1, scale: 1, rotate: -12, y: [0, -14, 0] }}
         transition={{
           opacity: { duration: 1.2, ease: EASE },
           scale: { duration: 1.2, ease: EASE },
+          y: { duration: 6.5, ease: 'easeInOut', repeat: Infinity },
+        }}
+        className="pointer-events-none absolute left-[18%] top-[275px] z-10 w-[118px] select-none max-lg:left-[8%] max-md:left-[-8px] max-md:top-[360px] max-md:w-[82px]"
+      />
+      <motion.img
+        src={coin2}
+        alt=""
+        aria-hidden
+        initial={{ opacity: 0, scale: 0.9, rotate: 18 }}
+        animate={{ opacity: 1, scale: 1, rotate: 18, y: [0, 16, 0] }}
+        transition={{
+          opacity: { duration: 1.2, ease: EASE, delay: 0.1 },
+          scale: { duration: 1.2, ease: EASE, delay: 0.1 },
           y: { duration: 7, ease: 'easeInOut', repeat: Infinity },
         }}
-        className="pointer-events-none absolute left-1/2 top-[110px] w-[min(1180px,96vw)] max-w-none -translate-x-1/2 select-none"
+        className="pointer-events-none absolute right-[18%] top-[360px] z-10 w-[132px] select-none max-lg:right-[8%] max-md:right-[-10px] max-md:top-[420px] max-md:w-[88px]"
       />
 
-      {/* centered headline block */}
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="container-1200 relative z-10 flex flex-1 flex-col items-center justify-center text-center max-lg:items-start max-lg:text-left"
+        className="container-1200 relative z-20 flex flex-1 flex-col items-center text-center"
       >
         <motion.div variants={item}>
-          <SectionEyebrow className="justify-center max-lg:justify-start">Add crypto as a checkout option</SectionEyebrow>
+          <SectionEyebrow className="justify-center">Add crypto as a checkout option</SectionEyebrow>
         </motion.div>
 
         <motion.h1
           variants={item}
-          className="mt-6 max-w-[900px] text-[clamp(40px,6vw,72px)] font-medium leading-[1.05] tracking-[-0.03em]"
+          className="mt-7 max-w-[720px] text-[clamp(36px,4.6vw,54px)] font-semibold leading-[1.16] tracking-[-0.04em] max-md:mt-5"
         >
-          <span className="text-white">The complete crypto payment </span>
-          <span className="text-[#8a8a93]">experience, simplified.</span>
+          <span className="text-[#070711]">The complete crypto payment </span>
+          <span className="text-[#8b8891]">experience, simplified.</span>
         </motion.h1>
 
-        <motion.div variants={item} className="mt-9 flex flex-wrap items-center justify-center gap-4 max-lg:w-full max-lg:flex-col max-lg:items-stretch">
+        <motion.div
+          variants={item}
+          className="relative mt-12 h-[390px] w-[min(470px,78vw)] overflow-hidden rounded-[28px] border border-white/70 bg-[#f3f4f8]/85 shadow-[0_30px_90px_rgba(110,70,195,0.12)] backdrop-blur-sm max-md:mt-10 max-md:h-[270px] max-md:rounded-[22px]"
+        >
+          <video
+            className="h-full w-full object-cover"
+            controls
+            muted
+            playsInline
+            preload="metadata"
+            aria-label="Stablezact product demo placeholder"
+          />
+        </motion.div>
+
+        <motion.p
+          variants={item}
+          className="relative z-20 mt-10 max-w-[590px] text-[18px] leading-[1.5] tracking-[-0.02em] text-[#1a1720] max-md:mt-8 max-md:text-[16px]"
+        >
+          Accept crypto payments anywhere your business sells. Customers pay with
+          crypto, and you receive instant settlement
+        </motion.p>
+
+        <motion.div variants={item} className="relative z-20 mt-8 flex flex-wrap items-center justify-center gap-4 max-md:w-full max-md:flex-col max-md:items-stretch">
           <a
             href="#book-a-demo"
-            className="group inline-flex items-center justify-center gap-2 bg-[var(--color-purple)] px-6 py-3.5 text-[18px] font-medium tracking-[-0.02em] text-white transition-colors hover:bg-[var(--color-purple-bright)] max-lg:w-full"
+            className="group inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5] max-md:w-full"
           >
             Book a Demo
             <span className="transition-transform duration-300 group-hover:translate-x-0.5">
@@ -98,36 +136,12 @@ export function Hero() {
           </a>
           <a
             href="#watch-demo"
-            className="inline-flex items-center justify-center gap-2 border-[0.6px] border-[var(--color-purple)] px-6 py-3.5 text-[18px] font-medium tracking-[-0.02em] text-[var(--color-purple-bright)] transition-colors hover:bg-[var(--color-purple)]/15 max-lg:w-full"
+            className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#eee4ff] px-6 py-2.5 text-[18px] font-medium tracking-[-0.03em] text-[#7042d2] transition-colors hover:bg-[#e2d2ff] max-md:w-full"
           >
             Watch Product Demo
             <PlayIcon />
           </a>
         </motion.div>
-      </motion.div>
-
-      {/* bottom row: subtext + trusted by */}
-      <motion.div
-        variants={item}
-        initial="hidden"
-        animate="show"
-        transition={{ delay: 0.6, duration: 0.8, ease: EASE }}
-        className="container-1200 relative z-10 mt-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end"
-      >
-        <p className="max-w-[460px] text-[16px] leading-[1.55] text-[var(--color-muted-dark)]">
-          Accept crypto payments anywhere your business sells. Customers pay with
-          crypto, and you receive instant settlement in stablecoins or supported
-          fiat.
-        </p>
-
-        <div className="flex flex-col items-start gap-4 md:items-end">
-          <span className="text-[15px] text-[var(--color-muted-dark)]">Trusted by:</span>
-          <div className="flex items-center gap-8">
-            <img src={shopify} alt="Shopify" className="h-7 w-auto object-contain" />
-            <img src={woocommerce} alt="WooCommerce" className="h-6 w-auto object-contain" />
-            <span className="text-[22px] font-semibold tracking-tight text-white">Cal.com</span>
-          </div>
-        </div>
       </motion.div>
     </section>
   )
