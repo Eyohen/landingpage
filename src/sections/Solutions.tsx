@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
@@ -57,9 +57,18 @@ const bottomCards = [
 ]
 
 const SPRING = { type: 'spring', stiffness: 280, damping: 26 } as const
+const AUTO_ROTATE_MS = 3200
 
 export function Solutions() {
   const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActive((current) => (current + 1) % PANELS.length)
+    }, AUTO_ROTATE_MS)
+
+    return () => window.clearInterval(timer)
+  }, [])
 
   return (
     <section className="relative isolate overflow-hidden bg-[#080808] py-[120px] text-white">
