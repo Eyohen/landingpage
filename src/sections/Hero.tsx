@@ -5,6 +5,8 @@ import coin2 from '@/assets/figma/coin2.png'
 import mapImage from '@/assets/figma/Map.png'
 
 const EASE = [0.22, 1, 0.36, 1] as const
+const HERO_VIDEO_ID = 'aNJ1qwhAluc'
+const HERO_VIDEO_URL = `https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${HERO_VIDEO_ID}&playsinline=1&controls=0&rel=0&modestbranding=1`
 
 const container: Variants = {
   hidden: {},
@@ -106,13 +108,12 @@ export function Hero() {
           variants={item}
           className="relative mt-12 h-[390px] w-[min(470px,78vw)] overflow-hidden rounded-[28px] border border-white/70 bg-[#f3f4f8]/85 shadow-[0_30px_90px_rgba(110,70,195,0.12)] backdrop-blur-sm max-md:mt-10 max-md:h-[270px] max-md:rounded-[22px]"
         >
-          <video
-            className="h-full w-full object-cover"
-            controls
-            muted
-            playsInline
-            preload="metadata"
-            aria-label="Stablezact product demo placeholder"
+          <iframe
+            className="h-full w-full"
+            src={HERO_VIDEO_URL}
+            title="Stablezact product demo"
+            allow="autoplay; encrypted-media; picture-in-picture; web-share"
+            allowFullScreen
           />
         </motion.div>
 
