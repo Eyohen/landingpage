@@ -113,6 +113,7 @@ export function Hero() {
             src={HERO_VIDEO_URL}
             title="Stablezact product demo"
             allow="autoplay; encrypted-media; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
         </motion.div>
