@@ -116,7 +116,7 @@ export function Hero() {
           variants={item}
           className="relative z-20 mt-10 max-w-[590px] text-[18px] leading-[1.5] tracking-[-0.02em] text-[#1a1720] max-md:mt-8 max-md:text-[16px]"
         >
-          Accept crypto payments anywhere your business sells. Customers pay with
+          Accept stablecoin payments anywhere your business sells. Customers pay with
           crypto, and you receive instant settlement
         </motion.p>
 
