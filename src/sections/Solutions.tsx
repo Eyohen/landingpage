@@ -91,22 +91,6 @@ export function Solutions() {
                   className="group inline-flex w-fit items-center justify-center gap-2 bg-[var(--color-purple)] px-4 py-4 text-[18px] font-medium leading-[19.2px] tracking-[-0.64px] text-white transition-colors hover:bg-[var(--color-purple-bright)]"
                 >
                   Book a Demo
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    aria-hidden="true"
-                    className="transition-transform group-hover:translate-x-0.5"
-                  >
-                    <path
-                      d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
                 </a>
               </Reveal>
             </div>
@@ -120,14 +104,16 @@ export function Solutions() {
           {/* Panels: hover-accordion on desktop, stacked cards on mobile */}
           <Reveal delay={0.1} className="w-full min-w-0 lg:flex lg:flex-1">
             {/* Desktop: horizontal hover accordion */}
-            <div className="hidden h-[700px] min-w-0 flex-1 gap-1 lg:flex">
+            <div
+              className="hidden h-[700px] min-w-0 flex-1 gap-1 lg:flex"
+              onMouseLeave={() => setActive(0)}
+            >
               {PANELS.map((panel, i) => {
                 const isActive = i === active
                 return (
                   <motion.div
                     key={panel.num}
-                    onHoverStart={() => setActive(i)}
-                    onHoverEnd={() => setActive(0)}
+                    onMouseEnter={() => setActive(i)}
                     onFocus={() => setActive(i)}
                     onBlur={() => setActive(0)}
                     onClick={() => setActive(i)}
