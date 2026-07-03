@@ -93,7 +93,7 @@ export function ClosingCTA() {
               The future of payments won&rsquo;t replace{' '}
             </span>
             <span className="text-white">
-              cards. It will add crypto as another option
+              cards. It will add stablecoin as another option
             </span>
           </Reveal>
 
@@ -162,16 +162,18 @@ export function ClosingCTA() {
           {/* Disclaimer */}
           <div className="mt-3 border-t border-[var(--color-border-dark)] pt-6">
             <p className="text-[16px] font-medium tracking-[-0.32px] text-[var(--color-muted)]">
-              DISCLAIMER FOR UK RESIDENTS
+              DISCLAIMER
             </p>
             <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
-              This website helps users process crypto transactions using
-              Stablezact&rsquo;s middleware. Stablezact does not endorse or recommend
-              any cryptocurrency trading activity. Users should not regard this
-              website or its contents as a recommendation, invitation, or
-              inducement to engage in cryptoasset trading. Stablezact is a
-              non-custodial solution; hence, users retain full control of their
-              wallets and cryptos at all times.
+              Stablezact provides non-custodial software infrastructure for
+              crypto wallet payments at checkout. Stablezact does not custody
+              funds, control private keys, operate as a crypto exchange, or
+              provide financial, investment, legal or tax advice. Clients are
+              responsible for ensuring that their use of Stablezact complies
+              with applicable laws, including licensing, AML/CTF, sanctions,
+              tax, consumer protection and reporting obligations. Stablezact
+              services must not be used in sanctioned jurisdictions or for
+              unlawful activity.
             </p>
           </div>
         </footer>
