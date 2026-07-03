@@ -107,9 +107,6 @@ export function ClosingCTA() {
               className="group flex items-center justify-center gap-2 bg-[var(--color-purple)] p-4 text-[18px] font-medium tracking-[-0.64px] text-white transition-all duration-300 hover:bg-[var(--color-purple-bright)] hover:-translate-y-0.5 max-sm:w-full"
             >
               Book a Demo
-              <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                <ArrowIcon />
-              </span>
             </a>
             <a
               href="#"

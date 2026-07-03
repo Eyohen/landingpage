@@ -16,15 +16,6 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
 }
 
-function ArrowIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden className="shrink-0">
-      <path d="M3.75 9H14.25" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M9 3.75L14.25 9L9 14.25" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
 export function Hero() {
   return (
     <section className="relative isolate flex min-h-[900px] flex-col overflow-hidden bg-white pt-[140px] pb-14 font-[family-name:var(--font-geist)] text-black max-md:min-h-[820px] max-md:pt-[116px]">
@@ -126,9 +117,6 @@ export function Hero() {
             className="group inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5] max-md:w-full"
           >
             Book a Demo
-            <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-              <ArrowIcon />
-            </span>
           </a>
          
         </motion.div>
