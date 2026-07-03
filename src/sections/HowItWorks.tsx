@@ -17,6 +17,8 @@ import step4 from '@/assets/figma/hiw-step-4.png'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 const STEP_MS = 2600
+const MOCKUP_GRADIENT =
+  'radial-gradient(circle at 6% 82%, rgba(112, 66, 210, 0.42) 0%, rgba(112, 66, 210, 0.16) 27%, transparent 52%), radial-gradient(circle at 56% 5%, rgba(199, 49, 84, 0.26) 0%, rgba(199, 49, 84, 0.12) 26%, transparent 52%), linear-gradient(135deg, #020202 0%, #080507 48%, #000000 100%)'
 
 const STEPS = [
   {
@@ -67,7 +69,7 @@ export function HowItWorks() {
         <Reveal className="flex max-w-[658px] flex-col gap-6">
           <SectionEyebrow>How it works</SectionEyebrow>
           <h2 className="text-[32px] font-medium leading-[1.1] tracking-[-2px] text-white max-sm:text-[24px] max-sm:tracking-[-1.2px] sm:text-[40px]">
-            The complete crypto payment experience, simplified.
+            The complete stablecoin payment experience, simplified.
           </h2>
         </Reveal>
 
@@ -107,7 +109,11 @@ export function HowItWorks() {
           {/* content: mockup + copy */}
           <div className="flex flex-col items-stretch lg:flex-row">
             {/* left: step mockup (swaps per step) */}
-            <div className="relative flex min-h-[460px] flex-1 items-center justify-center overflow-hidden rounded-bl-[18px] bg-black px-6 py-12 max-sm:min-h-[320px] max-sm:py-8 sm:px-[70px] sm:py-[78px]">
+            <div
+              className="relative flex min-h-[460px] flex-1 items-center justify-center overflow-hidden rounded-bl-[18px] bg-black px-6 py-12 max-sm:min-h-[320px] max-sm:py-8 sm:px-[70px] sm:py-[78px]"
+              style={{ backgroundImage: MOCKUP_GRADIENT }}
+            >
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_35%_72%,rgba(255,255,255,0.08),transparent_30%)] opacity-60" />
               <AnimatePresence mode="wait">
                 <motion.img
                   key={active}
@@ -117,7 +123,7 @@ export function HowItWorks() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.35, ease: EASE }}
-                  className="block max-h-[400px] w-auto max-w-full object-contain max-sm:max-h-[260px]"
+                  className="relative z-10 block max-h-[400px] w-auto max-w-full object-contain max-sm:max-h-[260px]"
                 />
               </AnimatePresence>
             </div>
@@ -172,11 +178,15 @@ export function HowItWorks() {
               delay={i * 0.05}
               className="flex flex-col overflow-hidden rounded-[18px] border border-[#1a1a1a] bg-black"
             >
-              <div className="flex min-h-[260px] items-center justify-center px-6 py-9">
+              <div
+                className="relative flex min-h-[260px] items-center justify-center overflow-hidden px-6 py-9"
+                style={{ backgroundImage: MOCKUP_GRADIENT }}
+              >
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_35%_72%,rgba(255,255,255,0.08),transparent_30%)] opacity-60" />
                 <img
                   src={s.image}
                   alt={s.heading}
-                  className="block max-h-[230px] w-auto max-w-full object-contain"
+                  className="relative z-10 block max-h-[230px] w-auto max-w-full object-contain"
                 />
               </div>
               <div className="flex flex-col gap-3 border-t border-[#1a1a1a] p-6">

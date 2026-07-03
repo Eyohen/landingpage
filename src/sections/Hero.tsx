@@ -3,10 +3,9 @@ import { SectionEyebrow } from '@/components/SectionEyebrow'
 import coin1 from '@/assets/figma/coin1.png'
 import coin2 from '@/assets/figma/coin2.png'
 import mapImage from '@/assets/figma/Map.png'
+import heroVideo from '@/assets/Stablezact demo video compressed.mp4'
 
 const EASE = [0.22, 1, 0.36, 1] as const
-const HERO_VIDEO_ID = 'aNJ1qwhAluc'
-const HERO_VIDEO_URL = `https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${HERO_VIDEO_ID}&playsinline=1&controls=0&rel=0&modestbranding=1`
 
 const container: Variants = {
   hidden: {},
@@ -22,14 +21,6 @@ function ArrowIcon() {
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden className="shrink-0">
       <path d="M3.75 9H14.25" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M9 3.75L14.25 9L9 14.25" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function PlayIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden className="shrink-0">
-      <path d="M5 3.5L14 9L5 14.5V3.5Z" fill="currentColor" />
     </svg>
   )
 }
@@ -93,14 +84,14 @@ export function Hero() {
         className="container-1200 relative z-20 flex flex-1 flex-col items-center text-center"
       >
         <motion.div variants={item}>
-          <SectionEyebrow className="justify-center">Add crypto as a checkout option</SectionEyebrow>
+          <SectionEyebrow className="justify-center">Add stablecoin as a checkout option</SectionEyebrow>
         </motion.div>
 
         <motion.h1
           variants={item}
           className="mt-7 max-w-[720px] text-[clamp(36px,4.6vw,54px)] font-semibold leading-[1.16] tracking-[-0.04em] max-md:mt-5"
         >
-          <span className="text-[#070711]">The complete crypto payment </span>
+          <span className="text-[#070711]">The complete stablecoin payment </span>
           <span className="text-[#8b8891]">experience, simplified.</span>
         </motion.h1>
 
@@ -108,13 +99,16 @@ export function Hero() {
           variants={item}
           className="relative mt-12 h-[390px] w-[min(470px,78vw)] overflow-hidden rounded-[28px] border border-white/70 bg-[#f3f4f8]/85 shadow-[0_30px_90px_rgba(110,70,195,0.12)] backdrop-blur-sm max-md:mt-10 max-md:h-[270px] max-md:rounded-[22px]"
         >
-          <iframe
-            className="h-full w-full"
-            src={HERO_VIDEO_URL}
+          <video
+            className="h-full w-full object-contain"
+            src={heroVideo}
             title="Stablezact product demo"
-            allow="autoplay; encrypted-media; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            controls={false}
           />
         </motion.div>
 
@@ -136,13 +130,7 @@ export function Hero() {
               <ArrowIcon />
             </span>
           </a>
-          <a
-            href="#watch-demo"
-            className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#eee4ff] px-6 py-2.5 text-[18px] font-medium tracking-[-0.03em] text-[#7042d2] transition-colors hover:bg-[#e2d2ff] max-md:w-full"
-          >
-            Watch Product Demo
-            <PlayIcon />
-          </a>
+         
         </motion.div>
       </motion.div>
     </section>

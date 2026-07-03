@@ -7,7 +7,6 @@ import tokensGlow from '@/assets/figma/tokens-glow.png'
 import iconWallet04 from '@/assets/figma/icon-wallet-04.svg'
 import iconTokenCircle from '@/assets/figma/icon-token-circle.svg'
 
-import tokenBase from '@/assets/figma/token-base.svg'
 import tokenOptimism from '@/assets/figma/token-optimism.svg'
 import tokenCelo from '@/assets/figma/token-celo.svg'
 import tokenUnichain from '@/assets/figma/token-unichain.svg'
@@ -15,7 +14,6 @@ import tokenSolana from '@/assets/figma/token-solana.svg'
 import tokenMonad from '@/assets/figma/token-monad.svg'
 import tokenGnosis from '@/assets/figma/token-gnosis.svg'
 import tokenCorn from '@/assets/figma/token-corn.svg'
-import tokenInk from '@/assets/figma/token-ink.svg'
 import tokenArbitrum from '@/assets/figma/token-arbitrum.svg'
 import tokenAvalanche from '@/assets/figma/token-avalanche.svg'
 
@@ -27,23 +25,17 @@ import walletTrust from '@/assets/figma/wallet-trust.png'
 import walletRainbow from '@/assets/figma/wallet-rainbow.png'
 import walletPhantom from '@/assets/figma/wallet-phantom.png'
 
-/* Token chips: first row (50px) and second row (slightly larger) from Figma. */
-const tokensRow1 = [
-  { src: tokenBase, name: 'Base' },
-  { src: tokenOptimism, name: 'Optimism' },
-  { src: tokenCelo, name: 'Celo', bg: '#fdfe54', inset: true },
-  { src: tokenUnichain, name: 'Unichain' },
-  { src: tokenSolana, name: 'Solana' },
-  { src: tokenMonad, name: 'Monad' },
-]
-
-const tokensRow2 = [
-  { src: tokenGnosis, name: 'Gnosis' },
-  { src: tokenCorn, name: 'Corn' },
-  { src: tokenInk, name: 'Ink' },
-  { src: tokenArbitrum, name: 'Arbitrum' },
-  { src: tokenAvalanche, name: 'Avalanche' },
-]
+const networkTokens = [
+  { src: tokenOptimism, name: 'Optimism', className: 'left-[8%] top-[7%] size-[50px]' },
+  { src: tokenCelo, name: 'Celo', bg: '#fdfe54', className: 'left-[33%] top-[7%] size-[50px]', iconClassName: 'size-[35px]' },
+  { src: tokenUnichain, name: 'Unichain', className: 'left-[61%] top-[9%] size-[48px]' },
+  { src: tokenSolana, name: 'Solana', className: 'right-[8%] top-[9%] size-[50px]' },
+  { src: tokenGnosis, name: 'Gnosis', className: 'left-[-6%] top-[32%] size-[50px]' },
+  { src: tokenCorn, name: 'Corn', className: 'left-[20%] top-[35%] size-[48px]' },
+  { src: tokenMonad, name: 'Monad', className: 'left-[46%] top-[32%] size-[50px]' },
+  { src: tokenArbitrum, name: 'Arbitrum', className: 'right-[18%] top-[34%] size-[48px]' },
+  { src: tokenAvalanche, name: 'Avalanche', className: 'right-[-6%] top-[30%] size-[50px]' },
+] as const
 
 const wallets = [
   { src: walletCoinbase, name: 'Coinbase Wallet' },
@@ -86,7 +78,7 @@ export function Ecosystem() {
               <div className="flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between rounded-[18px] border border-transparent bg-[#7042d2] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-white/30">
                 <div className="flex flex-col gap-1">
                   <p className="font-mono text-[64px] font-medium leading-none tracking-[-0.05em] text-white max-lg:text-[40px]">
-                    <CountUp value={300} suffix="+" />
+                    <CountUp value={5} suffix="M+" />
                   </p>
                   <p className="text-[18px] leading-[1.4] text-white">
                     Enable crypto holders to pay directly.
@@ -111,7 +103,7 @@ export function Ecosystem() {
                 />
                 <div className="relative flex flex-col gap-1">
                   <p className="font-mono text-[64px] font-medium leading-none tracking-[-0.05em] text-white max-lg:text-[40px]">
-                    <CountUp value={100} suffix="+" />
+                    <CountUp value={1000} suffix="+" />
                   </p>
                   <p className="text-[18px] leading-[1.4] text-[var(--color-muted)]">
                     Over 100 tokens to choose from
@@ -129,43 +121,28 @@ export function Ecosystem() {
             {/* Card 3 — blockchain networks */}
             <RevealItem className="h-full">
               <div className="relative flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between overflow-hidden rounded-[18px] border border-transparent bg-[var(--color-bg-dark)] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50">
-                <div className="flex flex-col gap-6">
-                <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
-                  {tokensRow1.map((t) =>
-                    t.bg ? (
+                <div className="relative h-[210px] max-lg:h-[150px]">
+                  {networkTokens.map((t) =>
+                    'bg' in t ? (
                       <span
                         key={t.name}
-                        className="flex size-[50px] items-center justify-center overflow-hidden rounded-full"
+                        className={`absolute flex items-center justify-center overflow-hidden rounded-full ${t.className}`}
                         style={{ backgroundColor: t.bg }}
                       >
-                        <img
-                          src={t.src}
-                          alt={t.name}
-                          className="size-[35px]"
-                        />
+                        <img src={t.src} alt={t.name} className={t.iconClassName ?? 'size-full'} />
                       </span>
                     ) : (
                       <img
                         key={t.name}
                         src={t.src}
                         alt={t.name}
-                        className="size-[50px] shrink-0"
+                        className={`absolute shrink-0 object-contain ${t.className}`}
                       />
                     ),
                   )}
                 </div>
-                <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
-                  {tokensRow2.map((t) => (
-                    <img
-                      key={t.name}
-                      src={t.src}
-                      alt={t.name}
-                      className="size-[52px] shrink-0"
-                    />
-                  ))}
-                </div>
-              </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-3">
+                  <img src={iconTokenCircle} alt="" className="size-6 opacity-95" />
                   <p className="text-[24px] font-medium leading-none tracking-[-0.05em] text-white max-lg:text-[20px]">
                     Multiple blockchain network
                   </p>
