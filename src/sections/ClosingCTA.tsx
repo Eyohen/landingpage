@@ -162,51 +162,15 @@ export function ClosingCTA() {
               DISCLAIMER
             </p>
             <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
-              Stablezact provides non-custodial software infrastructure that
-              enables merchants, payment companies and other business users to
-              accept crypto wallet payments at checkout. Stablezact is not a
-              bank, crypto exchange, custodial wallet provider, broker,
-              investment adviser, or issuer of cryptoassets, stablecoins or
-              e-money.
-            </p>
-            <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
-              Stablezact does not hold, custody, control or manage client or
-              end-user funds. Stablezact does not have access to users&rsquo;
-              private keys, seed phrases or self-custody wallets. Digital
-              assets remain under the control of the relevant wallet holder
-              and/or the client&rsquo;s designated wallet infrastructure.
-            </p>
-            <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
-              Blockchain transactions may be irreversible and are subject to
-              network conditions, smart contract risk, wallet-provider risk,
-              asset volatility and other risks outside Stablezact&rsquo;s
-              control. Stablezact does not guarantee the value, availability,
-              legality or settlement outcome of any cryptoasset, wallet,
-              blockchain network or third-party service.
-            </p>
-            <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
-              Each client is solely responsible for determining whether its use
-              of Stablezact is lawful in the jurisdictions where it operates or
-              serves customers. This includes responsibility for any applicable
-              licensing, registration, AML/CTF, sanctions screening, consumer
-              protection, tax, accounting, refund, chargeback, data protection
-              and reporting obligations, unless expressly agreed otherwise in
-              writing.
-            </p>
-            <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
-              Stablezact&rsquo;s services must not be used by, for, or on behalf
-              of any person, entity, wallet, business or jurisdiction subject
-              to applicable sanctions, embargoes or restrictions, or for any
-              unlawful, fraudulent, deceptive, high-risk or prohibited
-              activity. Stablezact may restrict, suspend or terminate access
-              where required by law, regulation, partner requirements, risk
-              controls, or its internal compliance policies.
-            </p>
-            <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
-              Nothing on this website constitutes financial, investment, legal,
-              tax or regulatory advice. Users and clients should obtain
-              independent professional advice before using cryptoassets or
-              enabling cryptoasset payments.
+              Stablezact provides non-custodial software infrastructure for
+              crypto wallet payments at checkout. Stablezact does not custody
+              funds, control private keys, operate as a crypto exchange, or
+              provide financial, investment, legal or tax advice. Clients are
+              responsible for ensuring that their use of Stablezact complies
+              with applicable laws, including licensing, AML/CTF, sanctions,
+              tax, consumer protection and reporting obligations. Stablezact
+              services must not be used in sanctioned jurisdictions or for
+              unlawful activity.
             </p>
           </div>
         </footer>
