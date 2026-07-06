@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
 import logo from '@/assets/figma/stablezact-logo.svg'
 import bgCloud from '@/assets/figma/footer-bg-cloud.svg'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
+import { openCookieSettings } from '@/lib/consent'
 
 /**
  * Closing CTA / footer section. Figma node 352:25674.
@@ -172,6 +174,26 @@ export function ClosingCTA() {
               services must not be used in sanctioned jurisdictions or for
               unlawful activity.
             </p>
+          </div>
+
+          {/* Legal + copyright */}
+          <div className="mt-3 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--color-border-dark)] pt-6 text-[14px] text-[var(--color-muted)]">
+            <span>© {new Date().getFullYear()} Stablezact FINTECH LTD</span>
+            <nav className="flex flex-wrap items-center gap-6">
+              <Link to="/privacy" className="transition-colors hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link to="/cookies" className="transition-colors hover:text-white">
+                Cookie Policy
+              </Link>
+              <button
+                type="button"
+                onClick={openCookieSettings}
+                className="transition-colors hover:text-white"
+              >
+                Cookie settings
+              </button>
+            </nav>
           </div>
         </footer>
       </div>
