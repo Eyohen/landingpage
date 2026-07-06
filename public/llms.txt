@@ -1,0 +1,25 @@
+# Stablezact
+
+> Stablezact is a crypto payments company focused on making crypto wallets usable at checkout for merchants, businesses, and payment companies.
+
+Stablezact helps businesses accept crypto payments while receiving settlement in stablecoins or supported fiat currencies. The public website explains Stablezact at a marketing level, including the product value proposition, how the checkout flow works, merchant benefits, integration positioning, and customer FAQs.
+
+This website is primarily a single-page marketing site rather than a documentation portal.
+
+## Main Pages
+
+- [Homepage](/): Public marketing page covering what Stablezact does, how it works, who it is built for, integration positioning, ecosystem reach, merchant benefits, customer story, and FAQs.
+- [LLMs Summary](/llms.txt): LLM-friendly summary of the public marketing site.
+
+## Key Topics
+
+- [Crypto payments at checkout](/): Public overview of adding crypto as a checkout option.
+- [How Stablezact works](/): Public explanation of the wallet-based payment flow, payment validation, and merchant settlement.
+- [Merchant benefits](/): Public messaging on simplicity, non-custodial design, instant settlement, and customer reach.
+- [Integration positioning](/): Public overview of compatibility with existing business and payment workflows.
+- [Ecosystem and reach](/): Public marketing content about wallets, tokens, networks, and supported business use cases.
+
+## Notes
+
+- This file summarizes the public marketing site only.
+- Technical integration details, commercial terms, privacy terms, and product-specific obligations may be governed by separate documentation or agreements.
