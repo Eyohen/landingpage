@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { label: 'Home', href: '#' },
   { label: 'Problems', href: '#problems' },
   { label: 'Solutions', href: '#solutions' },
-  { label: 'Documentation', href: '#documentation' },
+  { label: 'Documentation', href: 'https://docs.stablezact.com', external: true },
 ] as const
 
 export function Navbar() {
@@ -41,6 +41,9 @@ export function Navbar() {
             <a
               key={link.label}
               href={link.href}
+              {...('external' in link && link.external
+                ? { target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
               className="whitespace-nowrap text-[#17131a] transition-opacity hover:opacity-60"
             >
               {link.label}
@@ -86,6 +89,9 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
+                {...('external' in link && link.external
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
                 onClick={() => setOpen(false)}
                 className="py-2 transition-opacity hover:opacity-60"
               >

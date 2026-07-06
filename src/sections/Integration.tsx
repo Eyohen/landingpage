@@ -18,6 +18,7 @@ type IntegrationCard = {
   title: string
   description: string
   cta: string
+  href?: string
   icon?: string
   iconClassName?: string
 }
@@ -65,6 +66,7 @@ const cards: IntegrationCard[] = [
     description:
       'Explore our documentation and guides to start building your first integration.',
     cta: 'Open Docs',
+    href: 'https://docs.stablezact.com',
     icon: documentationIcon,
     iconClassName: 'h-[44px] w-[50px] object-contain',
   },
@@ -132,7 +134,8 @@ function Card({ card }: { card: IntegrationCard }) {
         </div>
 
         <a
-          href="#"
+          href={card.href ?? '#'}
+          {...(card.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           className="flex w-full items-center justify-between rounded-[10px] border-[0.4px] border-[var(--color-border)] bg-[var(--color-surface)] p-2 transition-colors hover:bg-[var(--color-border)]/40"
         >
           <span className="truncate text-[15px] font-medium leading-[21px] tracking-[-0.6px] text-[#0a0a0a]">
