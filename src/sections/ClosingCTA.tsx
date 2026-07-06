@@ -11,7 +11,13 @@ import { openCookieSettings } from '@/lib/consent'
  * RESOURCES / PRODUCTS / SOLUTIONS columns and a UK disclaimer.
  */
 
-const RESOURCES = ['Documentation', 'API Reference', 'FAQs']
+type FooterItem = string | { label: string; href: string }
+
+const RESOURCES: FooterItem[] = [
+  { label: 'Documentation', href: 'https://docs.stablezact.com' },
+  'API Reference',
+  'FAQs',
+]
 const PRODUCTS = ['Developers', 'Solutions', 'Plugins']
 const SOLUTIONS = [
   'Payment service providers',
@@ -49,21 +55,27 @@ function ArrowIcon() {
   )
 }
 
-function FooterColumn({ title, items }: { title: string; items: string[] }) {
+function FooterColumn({ title, items }: { title: string; items: FooterItem[] }) {
   return (
     <div className="flex flex-col gap-4">
       <p className="text-[16px] font-medium tracking-[-0.32px] text-[var(--color-muted)]">
         {title}
       </p>
-      {items.map((item) => (
-        <a
-          key={item}
-          href="#"
-          className="text-[18px] font-light leading-[1.4] text-white transition-colors hover:text-[var(--color-purple-bright)] max-lg:text-[14px]"
-        >
-          {item}
-        </a>
-      ))}
+      {items.map((item) => {
+        const label = typeof item === 'string' ? item : item.label
+        const href = typeof item === 'string' ? '#' : item.href
+        const external = href.startsWith('http')
+        return (
+          <a
+            key={label}
+            href={href}
+            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            className="text-[18px] font-light leading-[1.4] text-white transition-colors hover:text-[var(--color-purple-bright)] max-lg:text-[14px]"
+          >
+            {label}
+          </a>
+        )
+      })}
     </div>
   )
 }
