@@ -80,10 +80,10 @@ export function Hero() {
 
         <motion.h1
           variants={item}
-          className="mt-7 max-w-[720px] text-[clamp(36px,4.6vw,54px)] font-semibold leading-[1.16] tracking-[-0.04em] max-md:mt-5"
+          className="mt-7 max-w-[980px] text-[clamp(34px,4.2vw,54px)] font-semibold leading-[1.12] tracking-[-0.02em] max-md:mt-5 max-md:max-w-[360px] max-md:text-[38px]"
         >
-          <span className="text-[#070711]">The complete stablecoin payment </span>
-          <span className="text-[#8b8891]">experience, simplified.</span>
+          <span className="block text-[#070711] md:whitespace-nowrap">The complete stablecoin payment</span>
+          <span className="block text-[#8b8891]">experience, simplified.</span>
         </motion.h1>
 
         <motion.div

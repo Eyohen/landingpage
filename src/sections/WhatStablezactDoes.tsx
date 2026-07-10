@@ -62,7 +62,7 @@ export function WhatStablezactDoes() {
               {TRUSTED_COMPANIES.map((company) => (
                 <div
                   key={company.number}
-                  className="relative flex h-[100px] min-w-0 items-center justify-center rounded-[12px] bg-[#fbfbfb] px-6 shadow-[0_18px_45px_rgba(20,20,20,0.035)]"
+                  className="relative flex h-[100px] min-w-0 items-center justify-center rounded-[12px] bg-white px-6 shadow-[0_18px_45px_rgba(20,20,20,0.035)]"
                 >
                   <span className="absolute left-4 top-3 font-mono text-[14px] font-medium tracking-[0.04em] text-[var(--color-accent)]">
                     [{company.number}]
