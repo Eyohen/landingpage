@@ -126,14 +126,16 @@ export function Solutions() {
                   >
                     {/* pinned left rail: number + rotated label */}
                     <div className="flex w-[88px] shrink-0 flex-col items-center gap-3 px-5 py-6">
-                      <span className="text-[32px] font-medium leading-none text-white">
+                      <span className="text-[32px] font-medium leading-none text-white" 
+                      style={{ writingMode: 'vertical-rl', transform: 'rotate(0deg)' }}
+                      >
                         {panel.num}
                       </span>
                       <span
                         className={`mt-auto text-[32px] font-medium tracking-[-0.96px] transition-colors duration-300 ${
                           isActive ? 'text-white' : 'text-white/40'
                         }`}
-                        style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                        style={{ writingMode: 'vertical-rl', transform: 'rotate(0deg)' }}
                       >
                         {panel.label}
                       </span>
@@ -153,7 +155,7 @@ export function Solutions() {
                         />
                       </div>
                       <div className="flex flex-col gap-2">
-                        <h3 className="font-[family-name:var(--font-display)] text-[40px] font-medium leading-[44px] tracking-[-0.02em] text-white">
+                        <h3 className="text-[30px] font-medium leading-[44px] tracking-[-0.02em] text-white">
                           {panel.title}
                         </h3>
                         <p className="text-[18px] leading-[27px] text-[#888]">
@@ -194,7 +196,7 @@ export function Solutions() {
 
                   {/* title + subtitle */}
                   <div className="flex flex-col gap-2">
-                    <h3 className="font-[family-name:var(--font-display)] text-[18px] font-medium leading-[22px] text-white">
+                    <h3 className="text-[14px] font-medium leading-[22px] text-white">
                       {panel.title}
                     </h3>
                     <p className="text-[16px] leading-[24px] text-[#888]">
