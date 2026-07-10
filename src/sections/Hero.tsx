@@ -88,7 +88,7 @@ export function Hero() {
 
         <motion.div
           variants={item}
-          className="relative mt-12 h-[390px] w-[min(470px,78vw)] overflow-hidden rounded-[28px] border border-white/70 bg-[#f3f4f8]/85 shadow-[0_30px_90px_rgba(110,70,195,0.12)] backdrop-blur-sm max-md:mt-10 max-md:h-[270px] max-md:rounded-[22px]"
+          className="relative mt-12 h-[543.59px] w-[min(400px,78vw)] overflow-hidden rounded-[28px] border border-white/70 bg-[#f3f4f8]/85 shadow-[0_30px_90px_rgba(110,70,195,0.12)] backdrop-blur-sm max-md:mt-10 max-md:h-[270px] max-md:rounded-[22px]"
         >
           <video
             className="h-full w-full object-contain"
