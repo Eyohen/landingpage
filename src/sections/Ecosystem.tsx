@@ -78,7 +78,7 @@ export function Ecosystem() {
               <div className="flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between rounded-[18px] border border-transparent bg-[#7042d2] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-white/30">
                 <div className="flex flex-col gap-1">
                   <p className="font-mono text-[64px] font-medium leading-none tracking-[-0.05em] text-white max-lg:text-[40px]">
-                    <CountUp value={5} suffix="M+" />
+                    <CountUp value={300} suffix="M+" />
                   </p>
                   <p className="text-[18px] leading-[1.4] text-white">
                     Enable crypto holders to pay directly.

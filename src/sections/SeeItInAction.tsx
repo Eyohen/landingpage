@@ -74,28 +74,6 @@ function PlusIcon({ open, color }: { open: boolean; color: string }) {
   )
 }
 
-function ArrowIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="shrink-0"
-      aria-hidden="true"
-    >
-      <path
-        d="M3.75 9h10.5M9.75 4.5 14.25 9l-4.5 4.5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
 export function SeeItInAction() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
@@ -127,10 +105,7 @@ export function SeeItInAction() {
                 href="#book-a-demo"
                 className="group inline-flex w-fit items-center justify-center gap-2 rounded-[12px] bg-[#7041d2] px-4 py-3.5 text-[18px] font-medium tracking-[-0.035em] text-white transition-colors hover:bg-[#5f35bb]"
               >
-                Contact Us
-                <span className="inline-flex transition-transform duration-300 group-hover:translate-x-0.5">
-                  <ArrowIcon />
-                </span>
+                Book a demo
               </a>
             </Reveal>
           </div>

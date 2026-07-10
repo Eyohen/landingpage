@@ -27,34 +27,6 @@ const SOLUTIONS = [
   'Retail Stores',
 ]
 
-function ArrowIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-      fill="none"
-      className="shrink-0"
-      aria-hidden="true"
-    >
-      <path
-        d="M3.75 9H14.25"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M9 3.75L14.25 9L9 14.25"
-        stroke="currentColor"
-        strokeWidth="1.25"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
 function FooterColumn({ title, items }: { title: string; items: FooterItem[] }) {
   return (
     <div className="flex flex-col gap-4">
@@ -127,9 +99,6 @@ export function ClosingCTA() {
               className="group flex items-center justify-center gap-2 border-[0.6px] border-[var(--color-purple)] bg-[rgba(112,66,210,0.1)] p-4 text-[18px] font-medium tracking-[-0.64px] text-[var(--color-purple)] transition-all duration-300 hover:bg-[rgba(112,66,210,0.2)] hover:border-[var(--color-purple-bright)] hover:-translate-y-0.5 max-sm:w-full"
             >
               Contact Sales
-              <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                <ArrowIcon />
-              </span>
             </a>
           </Reveal>
         </div>
