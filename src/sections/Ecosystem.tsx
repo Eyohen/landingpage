@@ -40,9 +40,9 @@ const networkTokens = [
 const wallets = [
   { src: walletCoinbase, name: 'Coinbase Wallet' },
   { src: walletMetamask, name: 'MetaMask' },
-  { src: walletRabby, name: 'Rabby Wallet', label: true },
   { src: walletTrust, name: 'Trust Wallet' },
   { src: walletZerion, name: 'Zerion' },
+  { src: walletRabby, name: 'Rabby Wallet', label: true, labelBefore: true },
   { src: walletRainbow, name: 'Rainbow Wallet', label: true },
   { src: walletPhantom, name: 'Phantom' },
 ]
@@ -158,13 +158,18 @@ export function Ecosystem() {
           >
             <Marquee speed={28} gap={60}>
               {wallets.map((w) => (
-                <div key={w.name} className="flex items-center gap-2.5">
+                <div key={w.name} className="flex min-w-max items-center gap-2.5">
+                  {'labelBefore' in w && w.labelBefore && (
+                    <span className="whitespace-nowrap text-[20px] font-medium tracking-[-0.04em] text-white">
+                      {w.name}
+                    </span>
+                  )}
                   <img
                     src={w.src}
                     alt={w.name}
-                    className="h-[40px] w-auto max-w-[120px] object-contain max-lg:h-[52px] max-lg:max-w-[150px]"
+                    className="size-[58px] shrink-0 object-contain max-lg:size-[44px]"
                   />
-                  {w.label && (
+                  {w.label && !('labelBefore' in w && w.labelBefore) && (
                     <span className="whitespace-nowrap text-[20px] font-medium tracking-[-0.04em] text-white">
                       {w.name}
                     </span>

@@ -10,9 +10,9 @@ import logoUrl from '@/assets/figma/stablezact-logo-color.svg'
  */
 
 const NAV_LINKS = [
-  { label: 'Home', href: '#' },
-  { label: 'Problems', href: '#problems' },
-  { label: 'Solutions', href: '#solutions' },
+  { label: 'Home', href: '/' },
+  { label: 'Problems', href: '/#problems' },
+  { label: 'Solutions', href: '/#solutions' },
   { label: 'Documentation', href: 'https://docs.stablezact.com', external: true },
 ] as const
 
@@ -24,19 +24,19 @@ export function Navbar() {
       initial={{ y: -88, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 w-full border-b border-transparent bg-[linear-gradient(90deg,rgba(255,255,255,0.78)_0%,rgba(248,244,255,0.58)_46%,rgba(255,241,247,0.58)_100%)] font-[family-name:var(--font-geist)] text-black backdrop-blur-[8px]"
+      className="fixed inset-x-0 top-0 z-50 w-full border-b border-transparent bg-[linear-gradient(90deg,rgba(255,255,255,0.78)_0%,rgba(248,244,255,0.58)_46%,rgba(255,241,247,0.58)_100%)] text-black backdrop-blur-[8px]"
     >
-      <div className="container-1200 flex h-[88px] items-center justify-between">
+      <div className="container-1200 flex h-[74px] items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-[5px]" aria-label="Stablezact home">
-          <img src={logoUrl} alt="" className="h-[37px] w-8" />
-          <span className="text-[25px] font-normal tracking-[-0.01em] whitespace-nowrap">
+        <a href="/" className="flex items-center gap-[5px]" aria-label="Stablezact home">
+          <img src={logoUrl} alt="" className="h-[32px] w-[28px]" />
+          <span className="whitespace-nowrap text-[22px] font-medium tracking-[-0.01em]">
             Stablezact
           </span>
         </a>
 
         {/* Desktop nav links */}
-        <nav className="ml-auto hidden items-center gap-8 text-[19px] font-normal md:flex">
+        <nav className="ml-auto hidden items-center gap-8 text-[17px] font-medium tracking-[-0.01em] md:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
