@@ -161,6 +161,9 @@ export function ClosingCTA() {
           <div className="mt-3 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--color-border-dark)] pt-6 text-[14px] text-[var(--color-muted)]">
             <span>© {new Date().getFullYear()} Stablezact FINTECH LTD</span>
             <nav className="flex flex-wrap items-center gap-6">
+              <Link to="/terms" className="transition-colors hover:text-white">
+                Terms of Use
+              </Link>
               <Link to="/privacy" className="transition-colors hover:text-white">
                 Privacy Policy
               </Link>

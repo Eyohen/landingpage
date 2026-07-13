@@ -6,6 +6,7 @@ import { getConsent } from '@/lib/consent'
 import { CookiePolicy } from '@/pages/CookiePolicy'
 import { Landing } from '@/pages/Landing'
 import { PrivacyPolicy } from '@/pages/PrivacyPolicy'
+import { TermsOfUse } from '@/pages/TermsOfUse'
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/terms" element={<TermsOfUse />} />
         </Routes>
         <CookieConsent />
       </div>

@@ -1,9 +1,7 @@
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { CountUp } from '@/components/motion/CountUp'
-import headIllustration from '@/assets/figma/customer-story-head.svg'
 import avatarImage from '@/assets/figma/customer-story-avatar.jpg'
-import tickDouble from '@/assets/figma/customer-story-tick.svg'
 
 /**
  * "Customer story" section — Elitesafrica testimonial + stat cards.
@@ -12,116 +10,111 @@ import tickDouble from '@/assets/figma/customer-story-tick.svg'
  */
 export function CustomerStory() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#fafafa] py-[100px] max-md:py-[72px]">
+    <section className="relative isolate overflow-hidden bg-[#fafafa] py-[128px] max-md:py-[72px]">
       <div className="container-1200">
-        <div className="flex flex-col gap-[40px]">
-          <Reveal>
+        <div className="flex flex-col gap-[62px]">
+          <Reveal className="flex flex-col gap-5">
             <SectionEyebrow>Customer story</SectionEyebrow>
+            <div className="flex items-end gap-9 max-lg:flex-col max-lg:items-start max-lg:gap-4">
+              <h2 className="text-[clamp(72px,7.4vw,84px)] font-medium leading-[0.92] tracking-[-0.075em] text-black max-md:text-[46px]">
+                Case study
+              </h2>
+              <p className="mb-2 max-w-[520px] text-[28px] font-normal leading-[1.12] tracking-[-0.055em] text-[#8f8f8f] max-md:text-[22px]">
+                How Elitesafrica started
+                <br />
+                accepting crypto with stablezact
+              </p>
+            </div>
           </Reveal>
 
-          <div className="flex flex-col gap-[20px]">
-            {/* Testimonial card */}
-            <Reveal delay={0.1} className="relative flex flex-col justify-between gap-8 max-md:gap-16 overflow-hidden rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white p-5 max-md:p-3 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50 md:min-h-[276px]">
-              {/* Case study badge */}
-              <div className="absolute left-0 top-0 flex items-center justify-center rounded-br-[12px] border border-[rgba(229,229,238,0.33)] bg-[rgba(112,66,210,0.1)] px-3 py-2">
-                <span className="text-[18px] leading-[1.4] text-[var(--color-purple)]">
-                  Case study
-                </span>
-              </div>
-
-              <div className="flex flex-col items-start justify-between gap-6 pt-10 md:flex-row md:gap-8">
-                <p className="max-w-[802px] text-[28px] max-md:text-[24px] font-medium leading-[1.1] tracking-[-0.05em] md:text-[36px]">
-                  <span className="text-black">
+          <Reveal
+            delay={0.1}
+            className="rounded-[18px] border border-[rgba(10,10,10,0.07)] bg-white p-[18px] shadow-[0_20px_70px_rgba(10,10,10,0.03)] max-md:p-4"
+          >
+            <div className="flex min-h-[660px] flex-col justify-between gap-10 max-md:min-h-0">
+              <div className="flex items-start justify-between gap-10 px-1 pt-8 max-lg:flex-col max-lg:gap-8 max-md:pt-4">
+                <p className="max-w-[780px] text-[40px] font-medium leading-[1.14] tracking-[-0.065em] text-black max-lg:text-[34px] max-md:text-[28px]">
+                  <span>
                     &ldquo;Elitesafrica integrated stablezact to accept stablecoin
                     payments for everyday services,{' '}
                   </span>
-                  <span className="text-[var(--color-muted)]">
+                  <span className="text-[#8f8f8f]">
                     making it easier for customers to pay.&rdquo;
                   </span>
                 </p>
-                <img
-                  src={headIllustration}
-                  alt=""
-                  className="size-[90px] shrink-0 max-md:hidden md:size-[120px]"
-                />
+
+                <div className="flex min-h-[108px] w-[380px] shrink-0 items-center justify-between gap-5 rounded-[18px] border border-[rgba(10,10,10,0.07)] bg-[#fbfbfb] px-6 py-4 max-lg:w-full max-md:min-h-[96px] max-md:px-4">
+                  <div className="min-w-0">
+                    <p className="text-[26px] font-medium leading-none tracking-[-0.055em] text-black max-md:text-[22px]">
+                      Oluwaseun
+                    </p>
+                    <p className="mt-2 text-[14px] font-medium leading-[1.2] tracking-[-0.035em] text-[#6f6f6f] max-md:text-[12px]">
+                      Business Manager - Elitesafrica
+                    </p>
+                  </div>
+                  <div className="h-[78px] w-[86px] shrink-0 overflow-hidden rounded-[14px] max-md:h-[66px] max-md:w-[72px]">
+                    <img
+                      src={avatarImage}
+                      alt="Oluwaseun"
+                      className="size-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
 
-              <div className="flex items-center gap-3 max-md:flex-col-reverse max-md:items-start max-md:gap-[11px]">
-                <div className="flex flex-1 flex-col justify-center gap-2 max-md:gap-[4px]">
-                  <p className="text-[24px] max-md:text-[16px] font-medium leading-none tracking-[-0.05em] text-black">
-                    Blessing Lisafi
-                  </p>
-                  <p className="text-[18px] max-md:text-[12px] leading-[1.4]">
-                    <span className="text-black">Quality Analyst &amp; Sales manager</span>
-                    <span className="text-[var(--color-muted)]"> - Elitesafrica</span>
-                  </p>
-                </div>
-                <div className="size-[91px] shrink-0 overflow-hidden rounded-[8px]">
-                  <img
-                    src={avatarImage}
-                    alt="Blessing Lisafi"
-                    className="size-full object-cover"
-                  />
-                </div>
-              </div>
-            </Reveal>
+              <div className="mx-1 border-t border-dashed border-[#b99bff]" />
 
-            {/* Stat cards */}
-            <RevealGroup className="flex flex-col gap-2 max-md:gap-4 md:flex-row md:items-stretch">
-              {/* Instant settlement */}
-              <RevealItem className="md:w-[389px]">
-                <div className="flex h-full flex-col justify-between gap-8 rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white p-5 max-md:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50 max-md:min-h-[200px] md:min-h-[358px]">
-                  <img
-                    src={tickDouble}
-                    alt=""
-                    className="size-[113px] max-md:size-8"
-                  />
-                  <div className="flex flex-col gap-2 text-[#0a0a0a]">
-                    <p className="text-[20px] max-md:text-[16px] font-medium leading-[26px] tracking-[-0.04em]">
-                      Instant Settlement
-                    </p>
-                    <p className="text-[16px] max-md:text-[14px] leading-[21px] tracking-[-0.04em]">
-                      Receive Stablecoins or supported fiat currencies.
-                    </p>
+              <RevealGroup className="grid grid-cols-3 gap-3 max-lg:grid-cols-1">
+                <RevealItem>
+                  <div className="flex min-h-[250px] flex-col justify-between rounded-[18px] border border-[rgba(10,10,10,0.07)] bg-[#fbfbfb] p-8 max-md:min-h-[190px] max-md:p-6">
+                    <h3 className="text-[24px] font-medium tracking-[-0.055em] text-black max-md:text-[20px]">
+                      Success rate
+                    </h3>
+                    <div className="flex items-end justify-between gap-6">
+                      <p className="max-w-[210px] text-[18px] font-medium leading-[1.25] tracking-[-0.045em] text-[#6f6f6f] max-md:text-[16px]">
+                        Here is the customers completion rate for transactions.
+                      </p>
+                      <p className="shrink-0 text-[64px] font-medium leading-none tracking-[-0.06em] text-black max-md:text-[48px]">
+                        <CountUp value={99} suffix="%" />
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </RevealItem>
+                </RevealItem>
 
-              {/* Success rate */}
-              <RevealItem className="flex-1">
-                <div className="flex h-full flex-col justify-between gap-8 rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white p-5 max-md:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50 max-md:min-h-[200px] md:min-h-[358px]">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-[58px] max-md:text-[32px] leading-none tracking-[-0.02em] text-black">
-                      <CountUp value={96} suffix="%" />
-                    </p>
-                    <p className="text-[16px] max-md:text-[14px] leading-[21px] tracking-[-0.04em] text-[#0a0a0a]">
-                      Be sure to always complete your transaction with stablezact.
-                    </p>
+                <RevealItem>
+                  <div className="flex min-h-[250px] flex-col justify-between rounded-[18px] border border-[rgba(10,10,10,0.07)] bg-[#fbfbfb] p-8 max-md:min-h-[190px] max-md:p-6">
+                    <h3 className="text-[24px] font-medium tracking-[-0.055em] text-black max-md:text-[20px]">
+                      Instant settlement
+                    </h3>
+                    <div className="flex items-end justify-between gap-6">
+                      <p className="max-w-[230px] text-[18px] font-medium leading-[1.25] tracking-[-0.045em] text-[#6f6f6f] max-md:text-[16px]">
+                        Total settlement time after every transaction is less than 5 seconds
+                      </p>
+                      <p className="shrink-0 text-[64px] font-medium leading-none tracking-[-0.06em] text-black max-md:text-[48px]">
+                        &gt;3s
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-[20px] max-md:text-[16px] font-medium leading-[26px] tracking-[-0.04em] text-[#0a0a0a]">
-                    Success rate
-                  </p>
-                </div>
-              </RevealItem>
+                </RevealItem>
 
-              {/* Transactions */}
-              <RevealItem className="flex-1">
-                <div className="flex h-full flex-col justify-between gap-8 rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-[var(--color-purple)] p-5 max-md:p-6 text-white transition-all duration-300 hover:-translate-y-1 hover:border-white/50 max-md:min-h-[200px] md:min-h-[358px]">
-                  <div className="flex flex-col gap-1">
-                    <p className="text-[58px] max-md:text-[32px] leading-none tracking-[-0.02em]">
-                      <CountUp value={700} suffix="+" />
-                    </p>
-                    <p className="text-[16px] max-md:text-[14px] leading-[21px] tracking-[-0.04em]">
-                      Over 700 processed transaction in months.
-                    </p>
+                <RevealItem>
+                  <div className="flex min-h-[250px] flex-col justify-between rounded-[18px] bg-[#7042d2] p-8 text-white max-md:min-h-[190px] max-md:p-6">
+                    <h3 className="text-[24px] font-medium tracking-[-0.055em]">
+                      Transactions
+                    </h3>
+                    <div className="flex items-end justify-between gap-6">
+                      <p className="max-w-[250px] text-[18px] font-medium leading-[1.25] tracking-[-0.045em] max-md:text-[16px]">
+                        Elitesafrica has processed over 1,000 transactions in days after launch.
+                      </p>
+                      <p className="shrink-0 text-[64px] font-medium leading-none tracking-[-0.06em] max-md:text-[48px]">
+                        <CountUp value={1} suffix="k+" />
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-[20px] max-md:text-[16px] font-medium leading-[26px] tracking-[-0.04em]">
-                    Transactions
-                  </p>
-                </div>
-              </RevealItem>
-            </RevealGroup>
-          </div>
+                </RevealItem>
+              </RevealGroup>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
