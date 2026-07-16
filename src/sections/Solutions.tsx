@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { motion } from 'motion/react'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
-import providersImg from '@/assets/figma/sol-providers.png'
-import facilitatorsImg from '@/assets/figma/sol-facilitators.png'
-import merchantsImg from '@/assets/figma/sol-merchants.png'
+import providersImg from '@/assets/figma/sol-provider.jpeg'
+import facilitatorsImg from '@/assets/figma/sol-facilitator.jpeg'
+import merchantsImg from '@/assets/figma/sol-merchant.jpeg'
 
 /**
  * "Solutions" / WHO WE BUILT IT FOR section — dark.
@@ -87,7 +87,7 @@ export function Solutions() {
 
               <Reveal delay={0.2}>
                 <a
-                  href="#book-a-demo"
+                  href="/book-a-demo"
                   className="group inline-flex w-fit items-center justify-center gap-2 bg-[var(--color-purple)] px-4 py-4 text-[18px] font-medium leading-[19.2px] tracking-[-0.64px] text-white transition-colors hover:bg-[var(--color-purple-bright)]"
                 >
                   Book a Demo

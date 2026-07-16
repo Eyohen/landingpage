@@ -309,11 +309,6 @@ export function TermsOfUse() {
 
           <address className="mt-8 not-italic font-semibold text-[#242424]">
             <p>Stablezact FINTECH LTD</p>
-            <p>Email: info@stablezact.com</p>
-            <p>Phone: 07557972647</p>
-            <p>Address: 3rd Floor, 86-90 Paul Street, London, England, EC2A 4NE</p>
-            <p>Company Registration Number: 16226143</p>
-            <p>VAT Number: 486881233</p>
           </address>
         </article>
       </main>

@@ -89,7 +89,7 @@ export function ClosingCTA() {
 
           <Reveal delay={0.2} className="mt-2 flex flex-wrap items-center justify-center gap-3 max-sm:w-full max-sm:flex-col">
             <a
-              href="#"
+              href="/book-a-demo"
               className="group flex items-center justify-center gap-2 bg-[var(--color-purple)] p-4 text-[18px] font-medium tracking-[-0.64px] text-white transition-all duration-300 hover:bg-[var(--color-purple-bright)] hover:-translate-y-0.5 max-sm:w-full"
             >
               Book a Demo
