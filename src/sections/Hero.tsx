@@ -113,7 +113,7 @@ export function Hero() {
 
         <motion.div variants={item} className="relative z-20 mt-8 flex flex-wrap items-center justify-center gap-4 max-md:w-full max-md:flex-col max-md:items-stretch">
           <a
-            href="#book-a-demo"
+            href="/book-a-demo"
             className="group inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5] max-md:w-full"
           >
             Book a Demo

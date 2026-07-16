@@ -102,7 +102,7 @@ export function SeeItInAction() {
                 Contact us and we&apos;ll respond within a day.
               </p>
               <a
-                href="#book-a-demo"
+                href="/book-a-demo"
                 className="group inline-flex w-fit items-center justify-center gap-2 rounded-[12px] bg-[#7041d2] px-4 py-3.5 text-[18px] font-medium tracking-[-0.035em] text-white transition-colors hover:bg-[#5f35bb]"
               >
                 Book a demo
