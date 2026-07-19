@@ -78,7 +78,7 @@ export function SeeItInAction() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="relative isolate overflow-hidden bg-white py-[120px] max-md:py-[72px]">
+    <section id="faq" className="relative isolate scroll-mt-[96px] overflow-hidden bg-white py-[120px] max-md:py-[72px]">
       <div className="container-1200">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-stretch">
           {/* Left column: eyebrow + heading + CTA card */}

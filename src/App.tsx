@@ -4,17 +4,25 @@ import { CookieConsent } from '@/components/CookieConsent'
 import { applyAnalyticsConsent } from '@/lib/analytics'
 import { getConsent } from '@/lib/consent'
 import { BookDemo } from '@/pages/BookDemo'
+import { Contact } from '@/pages/Contact'
 import { CookiePolicy } from '@/pages/CookiePolicy'
 import { Landing } from '@/pages/Landing'
 import { PrivacyPolicy } from '@/pages/PrivacyPolicy'
 import { TermsOfUse } from '@/pages/TermsOfUse'
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { hash, pathname } = useLocation()
 
   useEffect(() => {
+    if (hash) {
+      requestAnimationFrame(() => {
+        document.querySelector(hash)?.scrollIntoView({ block: 'start' })
+      })
+      return
+    }
+
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-  }, [pathname])
+  }, [hash, pathname])
 
   return null
 }
@@ -32,6 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/book-a-demo" element={<BookDemo />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/cookies" element={<CookiePolicy />} />
           <Route path="/terms" element={<TermsOfUse />} />
