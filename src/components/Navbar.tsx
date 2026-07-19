@@ -11,9 +11,10 @@ import logoUrl from '@/assets/figma/stablezact-logo-color.svg'
 
 const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'Problems', href: '/#problems' },
-  { label: 'Solutions', href: '/#solutions' },
+  // { label: 'Problems', href: '/#problems' },
+  // { label: 'Solutions', href: '/#solutions' },
   { label: 'Documentation', href: 'https://docs.stablezact.com', external: true },
+  { label: 'Contact', href: '/contact' },
 ] as const
 
 export function Navbar() {

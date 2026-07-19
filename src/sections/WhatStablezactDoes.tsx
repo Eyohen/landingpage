@@ -1,25 +1,26 @@
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal } from '@/components/motion/Reveal'
+import algorandLogo from '@/assets/figma/algorand-logo.svg'
 import woocommerceLogo from '@/assets/figma/woocommerce.png'
 
 const TRUSTED_COMPANIES = [
   {
     number: '01',
-    name: 'Algorand',
-    logo: null,
-    logoClassName: '',
-  },
-  {
-    number: '02',
-    name: 'Microsoft Startups',
-    logo: null,
-    logoClassName: '',
-  },
-  {
-    number: '03',
     name: 'WooCommerce',
     logo: woocommerceLogo,
     logoClassName: 'h-[22px] w-auto object-contain',
+  },
+  {
+    number: '02',
+    name: 'Algorand',
+    logo: algorandLogo,
+    logoClassName: 'h-[28px] w-auto object-contain',
+  },
+  {
+    number: '03',
+    name: 'Microsoft Startups',
+    logo: null,
+    logoClassName: '',
   },
 ] as const
 
@@ -54,7 +55,7 @@ export function WhatStablezactDoes() {
 
           <Reveal delay={0.24} className="mt-[92px] max-md:mt-14">
             <p className="text-[16px] leading-none tracking-normal text-[#8b8b8b]">
-              Trusted by leading companies in the industry
+              Trusted by partners
             </p>
 
             <div className="mt-5 grid grid-cols-3 gap-3 max-md:grid-cols-1">
@@ -75,23 +76,15 @@ export function WhatStablezactDoes() {
                     </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center gap-2 leading-none tracking-normal text-black">
-                      {company.name === 'Algorand' ? (
-                        <span className="text-[26px] font-semibold tracking-[-0.04em]">
-                          Algorand
-                        </span>
-                      ) : (
-                        <>
-                          <span className="grid grid-cols-2 gap-[3px]" aria-hidden="true">
-                            <span className="size-[10px] bg-[#f35325]" />
-                            <span className="size-[10px] bg-[#81bc06]" />
-                            <span className="size-[10px] bg-[#05a6f0]" />
-                            <span className="size-[10px] bg-[#ffba08]" />
-                          </span>
-                          <span className="text-[16px] font-medium leading-none">
-                            Microsoft Startups
-                          </span>
-                        </>
-                      )}
+                      <span className="grid grid-cols-2 gap-[3px]" aria-hidden="true">
+                        <span className="size-[10px] bg-[#f35325]" />
+                        <span className="size-[10px] bg-[#81bc06]" />
+                        <span className="size-[10px] bg-[#05a6f0]" />
+                        <span className="size-[10px] bg-[#ffba08]" />
+                      </span>
+                      <span className="text-[16px] font-medium leading-none">
+                        Microsoft Startups
+                      </span>
                     </div>
                   )}
                 </div>

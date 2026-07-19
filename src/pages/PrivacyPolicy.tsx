@@ -12,10 +12,9 @@ export function PrivacyPolicy() {
 
       <h2>Who we are</h2>
       <p>
-        We're <strong>Stablezact FINTECH LTD</strong>, a company registered in England and Wales
-        (company number 16226143), with our office at 3rd Floor, 86-90 Paul Street, London, EC2A 4NE
-        (VAT 486881233). We look after the information described here, and you can always reach us at{' '}
-        <a href="mailto:info@stablezact.com">info@stablezact.com</a>.
+        We're <strong>Stablezact FINTECH LTD</strong>, a company registered in England and Wales.
+        We look after the information described here, and you can always reach us by{' '}
+        <Link to="/contact">email</Link>.
       </p>
 
       <h2>What this covers</h2>
@@ -70,7 +69,7 @@ export function PrivacyPolicy() {
         <li>withdraw your analytics consent at any time.</li>
       </ul>
       <p>
-        Just email <a href="mailto:info@stablezact.com">info@stablezact.com</a> and we'll sort it out.
+        Use our <Link to="/contact">email</Link> link and we'll sort it out.
       </p>
 
       <h2>Updates</h2>
@@ -78,8 +77,7 @@ export function PrivacyPolicy() {
 
       <h2>Get in touch</h2>
       <p>
-        Stablezact FINTECH LTD · 3rd Floor, 86-90 Paul Street, London, EC2A 4NE ·{' '}
-        <a href="mailto:info@stablezact.com">info@stablezact.com</a>
+        Stablezact FINTECH LTD · <Link to="/contact">contact page</Link>
       </p>
     </LegalLayout>
   )

@@ -15,10 +15,8 @@ type FooterItem = string | { label: string; href: string }
 
 const RESOURCES: FooterItem[] = [
   { label: 'Documentation', href: 'https://docs.stablezact.com' },
-  'API Reference',
-  'FAQs',
+  { label: 'FAQs', href: '/#faq' },
 ]
-const PRODUCTS = ['Developers', 'Solutions', 'Plugins']
 const SOLUTIONS = [
   'Payment service providers',
   'E-commerce platforms',
@@ -95,7 +93,7 @@ export function ClosingCTA() {
               Book a Demo
             </a>
             <a
-              href="#"
+              href="/contact"
               className="group flex items-center justify-center gap-2 border-[0.6px] border-[var(--color-purple)] bg-[rgba(112,66,210,0.1)] p-4 text-[18px] font-medium tracking-[-0.64px] text-[var(--color-purple)] transition-all duration-300 hover:bg-[rgba(112,66,210,0.2)] hover:border-[var(--color-purple-bright)] hover:-translate-y-0.5 max-sm:w-full"
             >
               Contact Sales
@@ -129,9 +127,6 @@ export function ClosingCTA() {
             <div className="flex flex-wrap gap-x-16 gap-y-10 max-lg:flex-col max-lg:gap-3 lg:flex-nowrap lg:justify-end">
               <RevealItem>
                 <FooterColumn title="RESOURCES" items={RESOURCES} />
-              </RevealItem>
-              <RevealItem>
-                <FooterColumn title="PRODUCTS" items={PRODUCTS} />
               </RevealItem>
               <RevealItem>
                 <FooterColumn title="SOLUTIONS" items={SOLUTIONS} />

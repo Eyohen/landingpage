@@ -5,18 +5,17 @@ export function TermsOfUse() {
   return (
     <div className="min-h-screen bg-white text-black">
       <Navbar />
-      <main className="mx-auto max-w-[980px] px-6 pb-28 pt-[220px] max-md:pt-[150px]">
+      <main className="mx-auto max-w-[760px] px-6 pb-28 pt-[150px] max-md:pt-[120px]">
         <header>
-          <h1 className="text-[56px] font-medium leading-none tracking-[-0.055em] text-black max-md:text-[40px]">
+          <h1 className="text-[36px] font-medium tracking-[-0.02em] text-black max-sm:text-[28px]">
             Term of Use
           </h1>
-          <p className="mt-6 text-[22px] font-medium tracking-[-0.04em] text-[#9a9a9a] max-md:text-[18px]">
+          <p className="mt-2 text-[14px] text-[var(--color-muted)]">
             Last updated: July 2026
           </p>
-          <div className="mt-10 border-t border-[#b8b8b8]" />
         </header>
 
-        <article className="mt-20 max-w-[960px] text-[24px] font-normal leading-[1.45] tracking-[-0.045em] text-[#3c3c3c] max-md:mt-12 max-md:text-[18px]">
+        <article className="legal-prose mt-10">
           <p>
             These Terms of Use govern your access to and use of the Stablezact website,
             including any public pages, content, materials, and demo or contact request

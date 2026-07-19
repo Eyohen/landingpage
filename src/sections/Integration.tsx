@@ -2,14 +2,12 @@ import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import shopifyIcon from '@/assets/figma/shopify.png'
 import woocommerceIcon from '@/assets/figma/woocommerce.png'
-import restApisIcon from '@/assets/figma/rest-apis.svg'
-import sdksIcon from '@/assets/figma/sdks.svg'
 import documentationIcon from '@/assets/figma/documentation.svg'
 
 /**
  * Integration section — "Connect with your existing stack seamlessly".
- * Developer-focused: 6 integration cards (Shopify, Woocommerce, REST APIs,
- * SDKs, Documentation, Cal.com). Light section on #fafafa surface.
+ * Developer-focused: Documentation, WooCommerce, Shopify, and Wix cards.
+ * Light section on #fafafa surface.
  * Figma node 564:81969.
  */
 
@@ -18,6 +16,7 @@ type IntegrationCard = {
   title: string
   description: string
   cta: string
+  comingSoon?: boolean
   href?: string
   icon?: string
   iconClassName?: string
@@ -26,42 +25,6 @@ type IntegrationCard = {
 const cards: IntegrationCard[] = [
   {
     index: '01',
-    title: 'Shopify',
-    description:
-      'Install in minutes with our free plugin & start accepting crypto at checkout',
-    cta: 'Open plugin',
-    icon: shopifyIcon,
-    iconClassName: 'h-10 w-10 object-contain',
-  },
-  {
-    index: '02',
-    title: 'Woocommerce',
-    description:
-      'Developers love us! Use our APIs & SDKs to add Stablecoins payments to digital products.',
-    cta: 'Open plugin',
-    icon: woocommerceIcon,
-    iconClassName: 'h-[31px] w-[50px] object-contain',
-  },
-  {
-    index: '03',
-    title: 'RESTAPIs',
-    description:
-      'Install in minutes with our free plugin & start accepting crypto at checkout',
-    cta: 'Open plugin',
-    icon: restApisIcon,
-    iconClassName: 'h-[57px] w-[60px] object-contain',
-  },
-  {
-    index: '04',
-    title: 'SDKs',
-    description:
-      'Integrate Stablezact into existing SDKs and enjoy seamless payment experience',
-    cta: 'Open plugin',
-    icon: sdksIcon,
-    iconClassName: 'h-[46px] w-[50px] object-contain',
-  },
-  {
-    index: '05',
     title: 'Documentation',
     description:
       'Explore our documentation and guides to start building your first integration.',
@@ -71,11 +34,31 @@ const cards: IntegrationCard[] = [
     iconClassName: 'h-[44px] w-[50px] object-contain',
   },
   {
-    index: '06',
-    title: 'Cal.com',
+    index: '02',
+    title: 'WooCommerce',
     description:
-      'Let clients book sessions & pay Stablecoins, directly from your calender.',
+      'Install in minutes with our free plugin and start accepting crypto at checkout.',
     cta: 'Open plugin',
+    icon: woocommerceIcon,
+    iconClassName: 'h-[31px] w-[50px] object-contain',
+  },
+  {
+    index: '03',
+    title: 'Shopify',
+    description:
+      'Accept stablecoin payments in Shopify checkout with minimal setup.',
+    cta: 'Open plugin',
+    comingSoon: true,
+    icon: shopifyIcon,
+    iconClassName: 'h-10 w-10 object-contain',
+  },
+  {
+    index: '04',
+    title: 'Wix',
+    description:
+      'Add Stablezact payments to Wix storefronts as soon as the integration is available.',
+    cta: 'Open plugin',
+    comingSoon: true,
   },
 ]
 
@@ -122,24 +105,35 @@ function Card({ card }: { card: IntegrationCard }) {
       <div className="flex w-full flex-col gap-[25px]">
         {card.icon ? (
           <img src={card.icon} alt="" className={card.iconClassName} />
-        ) : null}
+        ) : (
+          <div className="text-[34px] font-semibold tracking-[-0.06em] text-black">
+            Wix
+          </div>
+        )}
 
         <div className="flex w-full flex-col gap-4">
-          <h3 className="text-[20px] font-medium leading-[26px] tracking-[-0.8px] text-[#0a0a0a]">
-            {card.title}
-          </h3>
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className="text-[20px] font-medium leading-[26px] tracking-[-0.8px] text-[#0a0a0a]">
+              {card.title}
+            </h3>
+            {card.comingSoon && (
+              <span className="rounded-full bg-[rgba(112,66,210,0.1)] px-2.5 py-1 text-[12px] font-medium text-[var(--color-purple)]">
+                Coming Soon
+              </span>
+            )}
+          </div>
           <p className="text-[15px] font-normal leading-[21px] tracking-[-0.6px] text-[#0a0a0a] opacity-60">
             {card.description}
           </p>
         </div>
 
         <a
-          href={card.href ?? '#'}
+          href={card.comingSoon ? '#' : card.href ?? '#'}
           {...(card.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
           className="flex w-full items-center justify-between rounded-[10px] border-[0.4px] border-[var(--color-border)] bg-[var(--color-surface)] p-2 transition-colors hover:bg-[var(--color-border)]/40"
         >
           <span className="truncate text-[15px] font-medium leading-[21px] tracking-[-0.6px] text-[#0a0a0a]">
-            {card.cta}
+            {card.comingSoon ? 'Coming Soon' : card.cta}
           </span>
           <span className="inline-flex shrink-0 transition-transform duration-300 group-hover:translate-x-0.5">
             <ArrowUpRight />
@@ -180,7 +174,7 @@ export function Integration() {
           </div>
 
           {/* Cards grid */}
-          <RevealGroup className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <RevealGroup className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {cards.map((card) => (
               <RevealItem key={card.index} className="h-full">
                 <Card card={card} />
