@@ -61,7 +61,7 @@ export function SplitPanelSection({
     <section className="relative isolate overflow-hidden bg-[#f5f5f5] py-[110px] max-md:py-[64px]">
       <div className="container-1200 flex items-start gap-8 max-lg:flex-col">
         {/* Left: heading + chips */}
-        <Reveal className="flex flex-1 flex-col gap-8 lg:sticky lg:top-[120px]">
+        <Reveal className="flex flex-1 flex-col gap-8 lg:justify-between lg:self-stretch">
           <div className="flex flex-col gap-4">
             {eyebrow ? <SectionEyebrow>{eyebrow}</SectionEyebrow> : null}
             <h2 className="max-w-[447px] text-[30px] font-medium leading-[1.3] tracking-[-0.04em] text-black max-md:text-[24px]">
@@ -75,8 +75,8 @@ export function SplitPanelSection({
           </div>
           {chips && chips.length > 0 ? (
             <div className="flex max-w-[591px] flex-wrap gap-2">
-              {chips.map((chip) => (
-                <Pill key={chip.label + (chip.prefix ?? '')} chip={chip} />
+              {chips.map((chip, i) => (
+                <Pill key={`${chip.label}-${i}`} chip={chip} />
               ))}
               {chipCount ? (
                 <div className="flex items-center justify-center rounded-[50px] border border-[#e5e5e5] bg-[#fafafa] p-4 text-[12px] font-medium tracking-[-0.04em] text-black">
