@@ -1,11 +1,8 @@
-import type { FormEvent, ReactNode } from 'react'
-import { useState } from 'react'
+import type { ReactNode } from 'react'
 import { Navbar } from '@/components/Navbar'
 import { InnerFooter } from '@/components/SiteFooter'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal } from '@/components/motion/Reveal'
-import { HoneypotField } from '@/components/inner/form'
-import { readFormData, submitForm, type SubmitResult } from '@/lib/forms'
 import heroRings from '@/assets/figma/inner/hero-rings.svg'
 import mailIcon from '@/assets/figma/inner/icon-mail.svg'
 import userGroupIcon from '@/assets/figma/inner/icon-user-group.svg'
@@ -100,93 +97,6 @@ export function FormSidebar({
         </div>
       </div>
     </div>
-  )
-}
-
-export type FormStatus = 'idle' | 'sending' | SubmitResult | 'error'
-
-export function SalesForm({
-  formKind,
-  mailSubject,
-  submitLabel,
-  footnote,
-  sidebar,
-  children,
-  onResult,
-  successContent,
-}: {
-  formKind: string
-  mailSubject: string
-  submitLabel: string
-  footnote: string
-  sidebar: ReactNode
-  children: ReactNode
-  onResult?: (status: FormStatus) => void
-  /** when provided and the form was sent via the endpoint, replaces the card */
-  successContent?: ReactNode
-}) {
-  const [status, setStatus] = useState<FormStatus>('idle')
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const formEl = e.currentTarget
-    const { data, isSpam } = readFormData(formEl)
-    if (isSpam) return
-    setStatus('sending')
-    try {
-      const result = await submitForm(formKind, mailSubject, data)
-      setStatus(result)
-      onResult?.(result)
-      if (result === 'sent') formEl.reset()
-    } catch {
-      setStatus('error')
-      onResult?.('error')
-    }
-  }
-
-  if (status === 'sent' && successContent) {
-    return <>{successContent}</>
-  }
-
-  return (
-    <Reveal delay={0.1} className="container-1200 pb-[110px] pt-14 max-md:pb-[64px]">
-      <div className="mx-auto flex max-w-[1080px] gap-12 rounded-[18px] bg-white p-10 shadow-[0_30px_90px_rgba(20,10,40,0.06)] max-lg:flex-col max-md:p-6">
-        {sidebar}
-        <form
-          onSubmit={handleSubmit}
-          className="relative flex flex-1 flex-col gap-7 font-[family-name:var(--font-geist)]"
-          noValidate={false}
-        >
-          <HoneypotField />
-          {children}
-          <div className="flex flex-col gap-3">
-            <button
-              type="submit"
-              disabled={status === 'sending'}
-              className="inline-flex w-fit items-center justify-center rounded-[12px] bg-[#7042d2] p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.02em] text-white transition-colors hover:bg-[#5f35bb] disabled:cursor-not-allowed disabled:opacity-60 max-sm:w-full"
-            >
-              {status === 'sending' ? 'Sending…' : submitLabel}
-            </button>
-            {status === 'sent' ? (
-              <p className="text-[14px] text-[#148c54]">
-                Thanks — your message has been sent. We&apos;ll get back to you shortly.
-              </p>
-            ) : status === 'mailto' ? (
-              <p className="text-[14px] text-[#6c6c6c]">
-                Your email client has been opened with the details — hit send to
-                deliver your message.
-              </p>
-            ) : status === 'error' ? (
-              <p className="text-[14px] text-[var(--color-accent)]">
-                Something went wrong sending your message. Please try again or
-                email support@stablezact.com.
-              </p>
-            ) : null}
-            <p className="text-[13px] leading-[1.5] text-[#9b9b9b]">{footnote}</p>
-          </div>
-        </form>
-      </div>
-    </Reveal>
   )
 }
 

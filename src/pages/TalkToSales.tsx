@@ -1,36 +1,17 @@
+import { CalendlyEmbed } from '@/components/CalendlyEmbed'
 import { FaqSection } from '@/components/FaqSection'
 import {
-  SalesForm,
+  FormSidebar,
   SalesHero,
   SalesPageShell,
-  FormSidebar,
 } from '@/components/inner/SalesShell'
-import {
-  ConsentCheckbox,
-  LabeledSelect,
-  LabeledTextarea,
-  UnderlineInput,
-} from '@/components/inner/form'
+import { Reveal } from '@/components/motion/Reveal'
 import { usePageMeta } from '@/lib/usePageMeta'
 
 /** Figma frame 1805:1819 — "Talk to sales". */
 
-const COMPANY_TYPES = [
-  'Payment service provider / PayFac',
-  'E-commerce platform',
-  'Enterprise merchant',
-  'Travel company',
-  'Retail / POS business',
-  'Other',
-]
-
-const VOLUME_RANGES = [
-  'Under $10k / month',
-  '$10k – $100k / month',
-  '$100k – $1M / month',
-  'Over $1M / month',
-  'Not processing yet',
-]
+const CALENDLY_URL =
+  'https://calendly.com/d/d3kq-mvj-k36?hide_gdpr_banner=1&primary_color=7042d2'
 
 export default function TalkToSales() {
   usePageMeta(
@@ -45,44 +26,23 @@ export default function TalkToSales() {
         title="Talk to our payments team"
         sub="Tell us what you are looking to enable and we will connect you with the right person at Stablezact."
       />
-      <SalesForm
-        formKind="talk-to-sales"
-        mailSubject="Sales enquiry — Stablezact"
-        submitLabel="Contact Sales"
-        footnote="We normally respond within one business day. For a product walkthrough, use Book a Demo."
-        sidebar={
+
+      <Reveal delay={0.1} className="container-1200 pb-[110px] pt-14 max-md:pb-[64px]">
+        <div className="mx-auto flex max-w-[1080px] gap-12 rounded-[18px] bg-white p-10 shadow-[0_30px_90px_rgba(20,10,40,0.06)] max-lg:flex-col max-md:p-6">
           <FormSidebar
             title="Requirements?"
-            body="Complete the form and a member of our commercial team will get back to you."
+            body="Book a slot with our commercial team to discuss technical integration, merchant rollout and commercial structure."
           />
-        }
-      >
-        <div className="grid grid-cols-2 gap-x-8 gap-y-7 max-sm:grid-cols-1">
-          <UnderlineInput name="Full name" label="Full name" required />
-          <UnderlineInput name="Work email" label="Work Email address" type="email" required />
-          <UnderlineInput name="Company name" label="Company Name" />
-          <UnderlineInput name="Company website" label="Company website" />
-          <LabeledSelect
-            name="Company type"
-            label="Which best describes your company?"
-            placeholder="Select company type"
-            options={COMPANY_TYPES}
-          />
-          <LabeledSelect
-            name="Monthly volume"
-            label="Estimated monthly transaction volume"
-            placeholder="Select a range"
-            options={VOLUME_RANGES}
-          />
+          <div className="min-w-0 flex-1">
+            <CalendlyEmbed url={CALENDLY_URL} />
+            <p className="mt-4 text-center text-[13px] leading-[1.5] text-[#9b9b9b]">
+              We normally respond within one business day. For a product
+              walkthrough, use Book a Demo.
+            </p>
+          </div>
         </div>
-        <LabeledTextarea
-          name="Message"
-          label="What would you like to discuss?"
-          placeholder="Tell us more about what you want to enable, the markets & settlement requirements."
-          required
-        />
-        <ConsentCheckbox />
-      </SalesForm>
+      </Reveal>
+
       <FaqSection />
     </SalesPageShell>
   )
