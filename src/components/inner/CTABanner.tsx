@@ -1,0 +1,45 @@
+import { Reveal } from '@/components/motion/Reveal'
+import { CtaButton, type Cta } from '@/components/inner/CtaButton'
+import agreementIcon from '@/assets/figma/inner/icon-agreement.svg'
+import gridBg from '@/assets/figma/inner/cta-grid.svg'
+
+/**
+ * Purple CTA banner — Figma node 1660:25317. Solid purple section with a
+ * faint grid overlay, a small "Partnership" badge, centered white headline,
+ * supporting line and a crimson CTA.
+ */
+
+export interface CTABannerContent {
+  badge?: string
+  heading: string
+  sub: string
+  cta: Cta
+}
+
+export function CTABanner({ badge = 'Partnership', heading, sub, cta }: CTABannerContent) {
+  return (
+    <section className="relative isolate overflow-hidden bg-[#7042d2] py-[140px] max-md:py-[80px]">
+      <img
+        src={gridBg}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[768px] w-[1738px] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-70"
+      />
+      <Reveal className="container-1200 relative flex flex-col items-center gap-4 text-center">
+        <div className="flex items-center gap-1.5 rounded-[8px] border-[0.3px] border-white bg-white/10 px-2.5 py-2">
+          <img src={agreementIcon} alt="" aria-hidden="true" className="size-[18px]" />
+          <span className="text-[14px] font-medium text-white">{badge}</span>
+        </div>
+        <h2 className="max-w-[898px] text-[52px] font-medium leading-[1.12] tracking-[-0.055em] text-white max-lg:text-[40px] max-md:text-[30px]">
+          {heading}
+        </h2>
+        <p className="max-w-[700px] text-[20px] leading-[1.5] text-white max-md:text-[16px]">
+          {sub}
+        </p>
+        <div className="mt-2">
+          <CtaButton {...cta} variant={cta.variant ?? 'crimson'} />
+        </div>
+      </Reveal>
+    </section>
+  )
+}

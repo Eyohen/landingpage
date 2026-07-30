@@ -59,7 +59,8 @@ export function HowItWorks() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-[#080808] py-[120px] text-white max-md:py-[60px]"
+      id="how-it-works"
+      className="relative isolate scroll-mt-[96px] overflow-hidden bg-[#080808] py-[120px] text-white max-md:py-[60px]"
     >
       {/* faint noise texture (approximated) */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.13] [background-image:radial-gradient(rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:3px_3px]" />
