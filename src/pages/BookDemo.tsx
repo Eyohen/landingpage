@@ -1,8 +1,9 @@
+import { CalendlyEmbed } from '@/components/CalendlyEmbed'
 import { Navbar } from '@/components/Navbar'
 import { ClosingCTA } from '@/sections/ClosingCTA'
 
-const MICROSOFT_FORM_URL =
-  'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=w81GV3jAtku00dFHQ-ZSdzY-OaL7aSVKtDKXkwyjIpdUQlIxTVAxSjdCTUYwSzgzVlQ0RUgwUk1WSi4u&embed=true'
+const CALENDLY_URL =
+  'https://calendly.com/d/dv5n-y29-hz2?hide_gdpr_banner=1&primary_color=7042d2'
 
 const BENEFITS = [
   'Accept wallet payments across web, mobile and in-store checkout.',
@@ -106,26 +107,15 @@ export function BookDemo() {
             <div className="relative overflow-hidden rounded-[24px] border border-[rgba(216,221,232,0.95)] bg-white shadow-[0_24px_70px_rgba(26,39,75,0.12)] before:absolute before:inset-x-0 before:top-0 before:h-1 before:bg-[linear-gradient(90deg,var(--color-purple),var(--color-purple-bright),var(--color-accent))] max-lg:max-w-[760px] max-md:rounded-[19px]">
               <div className="border-b border-[#e5e8ef] px-[34px] pb-6 pt-[30px] max-md:px-5 max-md:pb-5 max-md:pt-6">
                 <h2 className="text-[25px] font-semibold leading-[1.25] tracking-[-0.03em]">
-                  Tell us about your business
+                  Pick a time that works for you
                 </h2>
                 <p className="mt-2 text-[14px] leading-[1.55] text-[#5d6370]">
-                  Complete the form and our team will follow up with the right next step.
+                  Book a slot and our team will walk you through Stablezact.
                 </p>
               </div>
 
-              <div className="min-h-[760px] bg-white px-2 pb-3 pt-1.5 max-md:min-h-[810px] max-md:px-0 max-md:pt-0">
-                <iframe
-                  title="Stablezact demo request form"
-                  width="640"
-                  height="760"
-                  src={MICROSOFT_FORM_URL}
-                  frameBorder="0"
-                  marginWidth={0}
-                  marginHeight={0}
-                  loading="eager"
-                  allowFullScreen
-                  className="block min-h-[760px] w-full border-0 bg-white max-md:min-h-[810px]"
-                />
+              <div className="bg-white px-2 pb-3 pt-1.5 max-md:px-0 max-md:pt-0">
+                <CalendlyEmbed url={CALENDLY_URL} minHeight={760} />
               </div>
 
               <div className="flex items-center justify-center gap-2 px-6 pb-6 text-center text-[12px] text-[#7b8290]">
