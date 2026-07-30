@@ -31,7 +31,7 @@ export function CapabilitiesGrid({
       <div className="container-1200 flex flex-col gap-8">
         <Reveal className="flex flex-col items-center gap-4 text-center">
           <SectionEyebrow>{eyebrow}</SectionEyebrow>
-          <h2 className="max-w-[640px] text-[40px] font-medium leading-[1.15] tracking-[-0.04em] text-black max-md:text-[28px]">
+          <h2 className="max-w-[640px] font-[family-name:var(--font-geist)] text-[40px] font-medium leading-[1.15] tracking-[-0.04em] text-black max-md:text-[28px]">
             {headingDark}
             {headingGray ? (
               <>
@@ -44,15 +44,15 @@ export function CapabilitiesGrid({
         <RevealGroup className="grid grid-cols-3 gap-[10px] max-lg:grid-cols-2 max-md:grid-cols-1">
           {cards.map((card, i) => (
             <RevealItem key={card.title} className="h-full">
-              <div className="flex h-full min-h-[300px] flex-col justify-between rounded-[18px] border border-[#e5e5e5] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50 max-md:min-h-0 max-md:gap-8">
+              <div className="flex h-full min-h-[350px] flex-col justify-between rounded-[18px] border border-[#e5e5e5] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50 max-md:min-h-0 max-md:gap-8">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex max-w-[217px] flex-col gap-2">
                     <img src={card.icon} alt="" aria-hidden="true" className="size-[24px]" />
-                    <h3 className="text-[20px] font-semibold leading-[1.2] tracking-[-0.036em] text-[#0a0a0a]">
+                    <h3 className="font-[family-name:var(--font-bricolage)] text-[20px] font-semibold leading-[1.2] tracking-[-0.036em] text-[#0a0a0a]">
                       {card.title}
                     </h3>
                   </div>
-                  <span className="text-[20px] font-semibold leading-[1.2] tracking-[-0.036em] text-[#e5e5e5]">
+                  <span className="font-[family-name:var(--font-bricolage)] text-[20px] font-semibold leading-[1.2] tracking-[-0.036em] text-[#e5e5e5]">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>

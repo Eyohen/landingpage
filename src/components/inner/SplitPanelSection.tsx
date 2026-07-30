@@ -92,7 +92,7 @@ export function SplitPanelSection({
           <div className="flex flex-1 flex-col gap-4">
             {panelTitle ? (
               <Reveal>
-                <h3 className="text-[20px] font-medium tracking-[-0.02em] text-black">
+                <h3 className="font-[family-name:var(--font-geist)] text-[20px] font-medium tracking-[-0.02em] text-black">
                   {panelTitle}
                 </h3>
               </Reveal>
@@ -102,10 +102,10 @@ export function SplitPanelSection({
                 <RevealItem key={card.title}>
                   <div className="flex flex-col gap-3 rounded-[14px] border border-[#e5e5e5] bg-white p-6 transition-all duration-300 hover:border-[var(--color-purple)]/50">
                     <div className="flex items-center justify-between gap-4">
-                      <h4 className="text-[18px] font-medium leading-[1.2] tracking-[-0.04em] text-[#0a0a0a]">
+                      <h4 className="font-[family-name:var(--font-geist)] text-[18px] font-medium leading-[1.2] tracking-[-0.04em] text-[#0a0a0a]">
                         {card.title}
                       </h4>
-                      <span className="text-[20px] font-semibold leading-[1.2] text-[#e5e5e5]">
+                      <span className="font-[family-name:var(--font-bricolage)] text-[20px] font-semibold leading-[1.2] text-[#e5e5e5]">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                     </div>

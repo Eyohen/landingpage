@@ -20,7 +20,7 @@ export function FeatureSplit({ heading, body, cta, image, imageAlt = '' }: Featu
     <section className="relative isolate overflow-hidden bg-[#f5f5f5] py-[110px] max-md:py-[64px]">
       <div className="container-1200 flex items-center gap-12 max-lg:flex-col max-lg:gap-8">
         <Reveal className="flex flex-1 flex-col gap-5">
-          <h2 className="max-w-[520px] text-[36px] font-medium leading-[1.2] tracking-[-0.045em] text-[#090909] max-md:text-[26px]">
+          <h2 className="max-w-[520px] font-[family-name:var(--font-geist)] text-[32px] font-semibold leading-[1.2] tracking-[-0.0225em] text-[#090909] max-md:text-[26px]">
             {heading}
           </h2>
           <p className="max-w-[540px] text-[17px] leading-[1.55] tracking-[-0.02em] text-[var(--color-muted)]">

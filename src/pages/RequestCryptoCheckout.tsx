@@ -82,10 +82,10 @@ function SuccessCard({ onReset }: { onReset: () => void }) {
   return (
     <div className="container-1200 pb-[110px] pt-14 max-md:pb-[64px]">
       <div className="mx-auto flex max-w-[900px] flex-col gap-6 rounded-[18px] border border-[#e5e5e5] bg-white p-12 text-center max-md:p-6">
-        <span aria-hidden="true" className="text-[64px] font-bold leading-none text-[#148c54]">
+        <span aria-hidden="true" className="text-[70px] font-bold leading-none text-[#148c54]">
           ✓
         </span>
-        <h2 className="text-[40px] font-medium tracking-[-0.04em] text-[#090909] max-md:text-[28px]">
+        <h2 className="text-[44px] font-bold tracking-[-0.02em] text-[#090909] max-md:text-[30px]">
           Thanks. We&rsquo;ve received your request.
         </h2>
         <p className="mx-auto max-w-[600px] text-[18px] leading-[1.55] text-[#5c5c5c]">
@@ -135,6 +135,7 @@ export default function RequestCryptoCheckout() {
       <SalesHero
         eyebrow="REQUEST CRYPTO CHECKOUT"
         title="Tell us where you want to pay with crypto."
+        compact
         sub="Name the business you wish accepted crypto. Each request helps us show where customer demand already exists."
       />
 
@@ -148,7 +149,7 @@ export default function RequestCryptoCheckout() {
           sidebar={
             <div className="flex w-[300px] shrink-0 flex-col gap-6 max-lg:w-full">
               <div className="flex flex-col gap-3">
-                <h2 className="text-[24px] font-medium tracking-[-0.03em] text-black">
+                <h2 className="font-[family-name:var(--font-geist)] text-[36px] font-medium leading-[1.15] tracking-[-0.03em] text-black max-md:text-[28px]">
                   Tell us about the business
                 </h2>
                 <p className="text-[14px] leading-[1.55] tracking-[-0.01em] text-[#6c6c6c]">
@@ -218,7 +219,7 @@ export default function RequestCryptoCheckout() {
         <div className="container-1200 flex flex-col gap-9">
           <Reveal className="flex flex-col gap-3">
             <SectionEyebrow>HOW IT WORKS</SectionEyebrow>
-            <h2 className="max-w-[560px] text-[36px] font-medium leading-[1.15] tracking-[-0.045em] text-[#090909] max-md:text-[26px]">
+            <h2 className="max-w-[600px] font-[family-name:var(--font-geist)] text-[40px] font-medium leading-[1.15] tracking-[-0.05em] text-[#090909] max-md:text-[28px]">
               Your request becomes a real demand signal
             </h2>
             <p className="max-w-[560px] text-[16px] leading-[1.5] tracking-[-0.02em] text-[var(--color-muted)]">
@@ -234,7 +235,7 @@ export default function RequestCryptoCheckout() {
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex flex-col gap-2">
                       <img src={step.icon} alt="" aria-hidden="true" className="size-[24px]" />
-                      <h3 className="text-[20px] font-semibold leading-[1.2] tracking-[-0.036em] text-[#0a0a0a]">
+                      <h3 className="font-[family-name:var(--font-bricolage)] text-[20px] font-semibold leading-[1.2] tracking-[-0.036em] text-[#0a0a0a]">
                         {step.title}
                       </h3>
                     </div>

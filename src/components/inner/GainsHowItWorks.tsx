@@ -35,7 +35,7 @@ export function GainsHowItWorks({
 }: GainsHowItWorksContent) {
   const lastSpans = steps.length % 2 === 1
   return (
-    <section className="relative isolate overflow-hidden bg-[#f5f5f5] py-[110px] max-md:py-[64px]">
+    <section className="relative isolate overflow-hidden bg-[#f5f5f5] py-[110px] font-[family-name:var(--font-geist)] max-md:py-[64px]">
       <div className="container-1200 flex flex-col gap-[34px]">
         <Reveal className="flex flex-col gap-3">
           <SectionEyebrow>{eyebrow}</SectionEyebrow>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
  */
 
 const UNDERLINE =
-  'w-full border-0 border-b border-[#e0e0e0] bg-transparent pb-3 pt-1 text-[16px] tracking-[-0.02em] text-[#0a0a0a] outline-none transition-colors placeholder:text-[#9b9b9b] focus:border-[var(--color-purple)]'
+  'w-full border-0 border-b border-[#e0e0e0] bg-transparent pb-3 pt-1 text-[18px] tracking-[-0.02em] text-[#0a0a0a] outline-none transition-colors placeholder:text-[#999] focus:border-[var(--color-purple)]'
 
 export function UnderlineInput({
   name,
