@@ -1,24 +1,170 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
 import logoUrl from '@/assets/figma/stablezact-logo-color.svg'
 
 /**
- * Top navigation bar — Figma node 352:21541.
- * Light header: white background, black text, Stablezact logo + wordmark,
- * four nav links, and a purple-outlined "Book a Demo" CTA with arrow.
- * Collapses behind a hamburger toggle on mobile.
+ * Top navigation bar — Figma inner-page nav (node 1430:6683).
+ * Products / Solutions / Developers / Resources / Company; Solutions,
+ * Resources and Company open dropdowns. Collapses behind a hamburger on
+ * mobile, where dropdown groups render as labelled link lists.
  */
 
-const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  // { label: 'Problems', href: '/#problems' },
-  // { label: 'Solutions', href: '/#solutions' },
-  { label: 'Documentation', href: 'https://docs.stablezact.com', external: true },
-  { label: 'Contact', href: '/contact' },
-] as const
+interface NavChild {
+  label: string
+  href: string
+  external?: boolean
+}
+
+interface NavItem {
+  label: string
+  href?: string
+  external?: boolean
+  children?: NavChild[]
+}
+
+const SOLUTION_LINKS: NavChild[] = [
+  { label: 'Payment service providers', href: '/solutions/payment-providers' },
+  { label: 'Enterprise merchants', href: '/solutions/enterprise-merchants' },
+  { label: 'E-commerce platforms', href: '/solutions/e-commerce' },
+  { label: 'Travel companies', href: '/solutions/travel' },
+  { label: 'Retail & POS', href: '/solutions/retail-pos' },
+]
+
+const NAV_ITEMS: NavItem[] = [
+  { label: 'Products', href: '/#how-it-works' },
+  { label: 'Solutions', children: SOLUTION_LINKS },
+  { label: 'Developers', href: 'https://docs.stablezact.com', external: true },
+  {
+    label: 'Resources',
+    children: [
+      { label: 'Documentation', href: 'https://docs.stablezact.com', external: true },
+      { label: 'FAQs', href: '/#faq' },
+      { label: 'Contact Us', href: '/contact-us' },
+    ],
+  },
+  {
+    label: 'Company',
+    children: [
+      { label: 'Contact Us', href: '/contact-us' },
+      { label: 'Talk to Sales', href: '/talk-to-sales' },
+      { label: 'Request Crypto Checkout', href: '/request-crypto-checkout' },
+    ],
+  },
+]
+
+function NavLink({
+  item,
+  className,
+  onNavigate,
+}: {
+  item: NavChild
+  className: string
+  onNavigate?: () => void
+}) {
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onNavigate}
+        className={className}
+      >
+        {item.label}
+      </a>
+    )
+  }
+  if (item.href.startsWith('/#')) {
+    return (
+      <a href={item.href} onClick={onNavigate} className={className}>
+        {item.label}
+      </a>
+    )
+  }
+  return (
+    <Link to={item.href} onClick={onNavigate} className={className}>
+      {item.label}
+    </Link>
+  )
+}
+
+function DesktopDropdown({ item }: { item: NavItem }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const location = useLocation()
+
+  // close when the route changes or on outside click / Escape
+  useEffect(() => setOpen(false), [location.pathname, location.hash])
+  useEffect(() => {
+    if (!open) return
+    const onPointer = (e: PointerEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false)
+    }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointer)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('pointerdown', onPointer)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-1.5 whitespace-nowrap py-2 text-[#17131a] transition-opacity hover:opacity-60"
+      >
+        {item.label}
+        <svg
+          width="10"
+          height="6"
+          viewBox="0 0 10 6"
+          fill="none"
+          aria-hidden="true"
+          className={`transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+        >
+          <path
+            d="M1 1L5 5L9 1"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+      {open && (
+        <div className="absolute left-1/2 top-full min-w-[240px] -translate-x-1/2 pt-2">
+          <div className="flex flex-col rounded-[14px] border border-[var(--color-border)] bg-white p-2 shadow-[0_24px_60px_rgba(20,10,40,0.14)]">
+            {item.children?.map((child) => (
+              <NavLink
+                key={child.label}
+                item={child}
+                onNavigate={() => setOpen(false)}
+                className="rounded-[8px] px-3 py-2.5 text-[15px] text-[#17131a] transition-colors hover:bg-[var(--color-surface)]"
+              />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const close = () => setOpen(false)
 
   return (
     <motion.header
@@ -36,20 +182,19 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* Desktop nav links */}
-        <nav className="ml-auto hidden items-center gap-8 text-[17px] font-medium tracking-[-0.01em] md:flex">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              {...('external' in link && link.external
-                ? { target: '_blank', rel: 'noopener noreferrer' }
-                : {})}
-              className="whitespace-nowrap text-[#17131a] transition-opacity hover:opacity-60"
-            >
-              {link.label}
-            </a>
-          ))}
+        {/* Desktop nav */}
+        <nav className="ml-auto hidden items-center gap-7 text-[17px] font-medium tracking-[-0.01em] md:flex">
+          {NAV_ITEMS.map((item) =>
+            item.children ? (
+              <DesktopDropdown key={item.label} item={item} />
+            ) : (
+              <NavLink
+                key={item.label}
+                item={{ label: item.label, href: item.href!, external: item.external }}
+                className="whitespace-nowrap py-2 text-[#17131a] transition-opacity hover:opacity-60"
+              />
+            ),
+          )}
         </nav>
 
         {/* Mobile hamburger */}
@@ -84,21 +229,34 @@ export function Navbar() {
 
       {/* Mobile menu panel */}
       {open && (
-        <div className="border-t border-[var(--color-border)] bg-white md:hidden">
+        <div className="max-h-[calc(100dvh-74px)] overflow-y-auto border-t border-[var(--color-border)] bg-white md:hidden">
           <nav className="container-1200 flex flex-col gap-1 py-4 text-[18px]">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                {...('external' in link && link.external
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {})}
-                onClick={() => setOpen(false)}
-                className="py-2 transition-opacity hover:opacity-60"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_ITEMS.map((item) =>
+              item.children ? (
+                <div key={item.label} className="py-2">
+                  <p className="pb-1 font-mono text-[13px] font-medium uppercase tracking-[0.04em] text-[var(--color-muted)]">
+                    {item.label}
+                  </p>
+                  <div className="flex flex-col">
+                    {item.children.map((child) => (
+                      <NavLink
+                        key={child.label}
+                        item={child}
+                        onNavigate={close}
+                        className="py-2 transition-opacity hover:opacity-60"
+                      />
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <NavLink
+                  key={item.label}
+                  item={{ label: item.label, href: item.href!, external: item.external }}
+                  onNavigate={close}
+                  className="py-2 transition-opacity hover:opacity-60"
+                />
+              ),
+            )}
           </nav>
         </div>
       )}

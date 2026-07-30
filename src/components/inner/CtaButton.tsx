@@ -1,0 +1,43 @@
+import { Link } from 'react-router-dom'
+
+/**
+ * CTA button used across the inner pages — Figma "Link - Primary_md".
+ * Variants: purple (primary), soft (lavender), crimson (partnership CTAs on
+ * the purple banner).
+ */
+
+export interface Cta {
+  label: string
+  href: string
+  variant?: 'purple' | 'soft' | 'crimson'
+}
+
+const VARIANTS = {
+  purple:
+    'bg-[var(--color-purple)] text-white hover:bg-[var(--color-purple-bright)]',
+  soft: 'bg-[#e7dcff] text-[#7042d2] hover:bg-[#dccbff]',
+  crimson: 'bg-[var(--color-accent)] text-white hover:bg-[#a82545]',
+} as const
+
+export function CtaButton({ label, href, variant = 'purple' }: Cta) {
+  const className = `inline-flex items-center justify-center rounded-[12px] p-4 text-[18px] font-medium tracking-[-0.64px] transition-all duration-300 hover:-translate-y-0.5 max-sm:w-full ${VARIANTS[variant]}`
+  if (href.startsWith('http')) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+        {label}
+      </a>
+    )
+  }
+  if (href.startsWith('/#') || href.startsWith('#')) {
+    return (
+      <a href={href} className={className}>
+        {label}
+      </a>
+    )
+  }
+  return (
+    <Link to={href} className={className}>
+      {label}
+    </Link>
+  )
+}

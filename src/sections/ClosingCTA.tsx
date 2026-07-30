@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom'
-import logo from '@/assets/figma/stablezact-logo.svg'
 import bgCloud from '@/assets/figma/footer-bg-cloud.svg'
-import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
-import { openCookieSettings } from '@/lib/consent'
+import { Reveal } from '@/components/motion/Reveal'
+import { SiteFooter } from '@/components/SiteFooter'
 
 /**
  * Closing CTA / footer section. Figma node 352:25674.
@@ -10,45 +8,6 @@ import { openCookieSettings } from '@/lib/consent'
  * centered 1200px column with headline + CTAs, then a footer with
  * RESOURCES / PRODUCTS / SOLUTIONS columns and a UK disclaimer.
  */
-
-type FooterItem = string | { label: string; href: string }
-
-const RESOURCES: FooterItem[] = [
-  { label: 'Documentation', href: 'https://docs.stablezact.com' },
-  { label: 'FAQs', href: '/#faq' },
-]
-const SOLUTIONS = [
-  'Payment service providers',
-  'E-commerce platforms',
-  'Enterprise merchants',
-  'Travel companies',
-  'Retail Stores',
-]
-
-function FooterColumn({ title, items }: { title: string; items: FooterItem[] }) {
-  return (
-    <div className="flex flex-col gap-4">
-      <p className="text-[16px] font-medium tracking-[-0.32px] text-[var(--color-muted)]">
-        {title}
-      </p>
-      {items.map((item) => {
-        const label = typeof item === 'string' ? item : item.label
-        const href = typeof item === 'string' ? '#' : item.href
-        const external = href.startsWith('http')
-        return (
-          <a
-            key={label}
-            href={href}
-            {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            className="text-[18px] font-light leading-[1.4] text-white transition-colors hover:text-[var(--color-purple-bright)] max-lg:text-[14px]"
-          >
-            {label}
-          </a>
-        )
-      })}
-    </div>
-  )
-}
 
 export function ClosingCTA() {
   return (
@@ -102,79 +61,7 @@ export function ClosingCTA() {
         </div>
 
         {/* Footer */}
-        <footer className="flex flex-col gap-3">
-          <RevealGroup className="flex flex-col justify-between gap-12 max-lg:gap-10 lg:flex-row">
-            {/* Brand */}
-            <RevealItem className="flex max-w-[334px] flex-col gap-4">
-              <div className="flex items-center gap-[1.6px]">
-                <img
-                  src={logo}
-                  alt=""
-                  className="h-[23px] w-[20px]"
-                  aria-hidden="true"
-                />
-                <span className="text-[19.44px] font-bold tracking-[-0.78px] text-white">
-                  Stablezact
-                </span>
-              </div>
-              <p className="text-[18px] leading-[1.4] text-[var(--color-muted)]">
-                Crypto wallets usable at checkouts. Settle instantly in
-                stablecoins or supported fiat currenices
-              </p>
-            </RevealItem>
-
-            {/* Link columns */}
-            <div className="flex flex-wrap gap-x-16 gap-y-10 max-lg:flex-col max-lg:gap-3 lg:flex-nowrap lg:justify-end">
-              <RevealItem>
-                <FooterColumn title="RESOURCES" items={RESOURCES} />
-              </RevealItem>
-              <RevealItem>
-                <FooterColumn title="SOLUTIONS" items={SOLUTIONS} />
-              </RevealItem>
-            </div>
-          </RevealGroup>
-
-          {/* Disclaimer */}
-          <div className="mt-3 border-t border-[var(--color-border-dark)] pt-6">
-            <p className="text-[16px] font-medium tracking-[-0.32px] text-[var(--color-muted)]">
-              DISCLAIMER
-            </p>
-            <p className="mt-4 text-[18px] font-light leading-[1.4] text-[var(--color-muted)] max-lg:text-[14px]">
-              Stablezact provides non-custodial software infrastructure for
-              crypto wallet payments at checkout. Stablezact does not custody
-              funds, control private keys, operate as a crypto exchange, or
-              provide financial, investment, legal or tax advice. Clients are
-              responsible for ensuring that their use of Stablezact complies
-              with applicable laws, including licensing, AML/CTF, sanctions,
-              tax, consumer protection and reporting obligations. Stablezact
-              services must not be used in sanctioned jurisdictions or for
-              unlawful activity.
-            </p>
-          </div>
-
-          {/* Legal + copyright */}
-          <div className="mt-3 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--color-border-dark)] pt-6 text-[14px] text-[var(--color-muted)]">
-            <span>© {new Date().getFullYear()} Stablezact FINTECH LTD</span>
-            <nav className="flex flex-wrap items-center gap-6">
-              <Link to="/terms" className="transition-colors hover:text-white">
-                Terms of Use
-              </Link>
-              <Link to="/privacy" className="transition-colors hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link to="/cookies" className="transition-colors hover:text-white">
-                Cookie Policy
-              </Link>
-              <button
-                type="button"
-                onClick={openCookieSettings}
-                className="transition-colors hover:text-white"
-              >
-                Cookie settings
-              </button>
-            </nav>
-          </div>
-        </footer>
+        <SiteFooter />
       </div>
     </section>
   )
