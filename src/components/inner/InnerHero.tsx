@@ -22,13 +22,13 @@ export function InnerHero({ eyebrow, titleDark, titleGray, body, ctas }: InnerHe
       <div className="container-1200 flex items-start gap-6 max-lg:flex-col">
         <Reveal className="flex w-[57%] flex-col gap-4 max-lg:w-full">
           <SectionEyebrow>{eyebrow}</SectionEyebrow>
-          <h1 className="text-[48px] font-medium leading-[1.28] tracking-[-0.06em] text-[#090909] max-lg:text-[40px] max-md:text-[32px]">
+          <h1 className="text-[48px] font-medium leading-[1.375] tracking-[-0.0625em] text-[#090909] max-lg:text-[40px] max-md:text-[32px]">
             {titleDark}{' '}
             <span className="text-[rgba(10,10,10,0.6)]">{titleGray}</span>
           </h1>
         </Reveal>
         <Reveal delay={0.12} className="flex flex-1 flex-col gap-6">
-          <div className="flex flex-col text-[20px] leading-[1.5] tracking-[-0.5px] text-[var(--color-muted)] max-md:text-[17px]">
+          <div className="flex flex-col font-[family-name:var(--font-geist)] text-[20px] leading-[1.5] tracking-[-0.5px] text-[var(--color-muted)] max-md:text-[17px]">
             {body.map((p) => (
               <p key={p} className="m-0">
                 {p}

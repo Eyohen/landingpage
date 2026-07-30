@@ -13,14 +13,13 @@ export interface Cta {
 }
 
 const VARIANTS = {
-  purple:
-    'bg-[var(--color-purple)] text-white hover:bg-[var(--color-purple-bright)]',
+  purple: 'bg-[#7042d2] text-white hover:bg-[#5f35bb]',
   soft: 'bg-[#e7dcff] text-[#7042d2] hover:bg-[#dccbff]',
   crimson: 'bg-[var(--color-accent)] text-white hover:bg-[#a82545]',
 } as const
 
 export function CtaButton({ label, href, variant = 'purple' }: Cta) {
-  const className = `inline-flex items-center justify-center rounded-[12px] p-4 text-[18px] font-medium tracking-[-0.64px] transition-all duration-300 hover:-translate-y-0.5 max-sm:w-full ${VARIANTS[variant]}`
+  const className = `inline-flex items-center justify-center rounded-[12px] p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] transition-all duration-300 hover:-translate-y-0.5 max-sm:w-full ${VARIANTS[variant]}`
   if (href.startsWith('http')) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={className}>

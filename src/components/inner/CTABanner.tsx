@@ -30,10 +30,10 @@ export function CTABanner({ badge = 'Partnership', heading, sub, cta }: CTABanne
           <img src={agreementIcon} alt="" aria-hidden="true" className="size-[18px]" />
           <span className="text-[14px] font-medium text-white">{badge}</span>
         </div>
-        <h2 className="max-w-[898px] text-[52px] font-medium leading-[1.12] tracking-[-0.055em] text-white max-lg:text-[40px] max-md:text-[30px]">
+        <h2 className="max-w-[898px] text-[60px] font-medium leading-[1.12] tracking-[-0.058em] text-white max-lg:text-[44px] max-md:text-[32px]">
           {heading}
         </h2>
-        <p className="max-w-[700px] text-[20px] leading-[1.5] text-white max-md:text-[16px]">
+        <p className="max-w-[700px] font-[family-name:var(--font-geist)] text-[20px] leading-[1.5] text-white max-md:text-[16px]">
           {sub}
         </p>
         <div className="mt-2">

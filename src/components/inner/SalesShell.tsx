@@ -21,10 +21,13 @@ export function SalesHero({
   eyebrow,
   title,
   sub,
+  compact = false,
 }: {
   eyebrow: string
   title: string
   sub: string
+  /** Request page style: Inter 40px instead of Geist 60px */
+  compact?: boolean
 }) {
   return (
     <div className="relative pt-[170px] max-md:pt-[128px]">
@@ -36,10 +39,16 @@ export function SalesHero({
       />
       <Reveal className="container-1200 flex flex-col items-center gap-4 text-center">
         <SectionEyebrow>{eyebrow}</SectionEyebrow>
-        <h1 className="max-w-[760px] text-[44px] font-medium leading-[1.15] tracking-[-0.05em] text-[#090909] max-md:text-[32px]">
+        <h1
+          className={
+            compact
+              ? 'max-w-[760px] text-[40px] font-medium leading-[1.2] tracking-[-0.05em] text-[#090909] max-md:text-[30px]'
+              : 'max-w-[820px] font-[family-name:var(--font-geist)] text-[60px] font-medium leading-[1.1] tracking-[-0.06em] text-[#090909] max-lg:text-[44px] max-md:text-[34px]'
+          }
+        >
           {title}
         </h1>
-        <p className="max-w-[520px] text-[17px] leading-[1.5] tracking-[-0.02em] text-[var(--color-muted)]">
+        <p className="max-w-[520px] font-[family-name:var(--font-geist)] text-[18px] leading-[1.5] tracking-[-0.02em] text-[#999]">
           {sub}
         </p>
       </Reveal>
@@ -59,7 +68,9 @@ export function FormSidebar({
   return (
     <div className="flex w-[300px] shrink-0 flex-col justify-between gap-10 max-lg:w-full">
       <div className="flex flex-col gap-3">
-        <h2 className="text-[24px] font-medium tracking-[-0.03em] text-black">{title}</h2>
+        <h2 className="font-[family-name:var(--font-geist)] text-[36px] font-medium leading-[1.15] tracking-[-0.03em] text-black max-md:text-[28px]">
+          {title}
+        </h2>
         <p className="text-[14px] leading-[1.55] tracking-[-0.01em] text-[#6c6c6c]">{body}</p>
       </div>
       <div className="flex flex-col gap-6">
@@ -141,14 +152,18 @@ export function SalesForm({
     <Reveal delay={0.1} className="container-1200 pb-[110px] pt-14 max-md:pb-[64px]">
       <div className="mx-auto flex max-w-[1080px] gap-12 rounded-[18px] bg-white p-10 shadow-[0_30px_90px_rgba(20,10,40,0.06)] max-lg:flex-col max-md:p-6">
         {sidebar}
-        <form onSubmit={handleSubmit} className="relative flex flex-1 flex-col gap-7" noValidate={false}>
+        <form
+          onSubmit={handleSubmit}
+          className="relative flex flex-1 flex-col gap-7 font-[family-name:var(--font-geist)]"
+          noValidate={false}
+        >
           <HoneypotField />
           {children}
           <div className="flex flex-col gap-3">
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="inline-flex w-fit items-center justify-center rounded-[12px] bg-[var(--color-purple)] px-5 py-3.5 text-[16px] font-medium tracking-[-0.02em] text-white transition-colors hover:bg-[var(--color-purple-bright)] disabled:cursor-not-allowed disabled:opacity-60 max-sm:w-full"
+              className="inline-flex w-fit items-center justify-center rounded-[12px] bg-[#7042d2] p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.02em] text-white transition-colors hover:bg-[#5f35bb] disabled:cursor-not-allowed disabled:opacity-60 max-sm:w-full"
             >
               {status === 'sending' ? 'Sending…' : submitLabel}
             </button>

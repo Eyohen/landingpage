@@ -69,7 +69,7 @@ function FooterColumn({ title, items }: { title: string; items: FooterLink[] }) 
 
 export function SiteFooter() {
   return (
-    <footer className="flex flex-col gap-3">
+    <footer className="flex flex-col gap-3 font-[family-name:var(--font-geist)]">
       <RevealGroup className="flex flex-col justify-between gap-12 max-lg:gap-10 lg:flex-row">
         {/* Brand */}
         <RevealItem className="flex max-w-[334px] flex-col gap-4">
