@@ -38,11 +38,11 @@ const networkTokens = [
 ] as const
 
 type MarqueeWallet =
-  | { kind: 'banner'; src: string; name: string; zoom?: boolean }
+  | { kind: 'banner'; src: string; name: string; zoom?: boolean; scale?: number }
   | { kind: 'labelled'; src: string; name: string; iconClass: string; imgClass: string }
 
 const wallets: MarqueeWallet[] = [
-  { kind: 'banner', src: walletCoinbase, name: 'Coinbase Wallet' },
+  { kind: 'banner', src: walletCoinbase, name: 'Coinbase Wallet', scale: 1.25 },
   { kind: 'banner', src: walletMetamask, name: 'MetaMask' },
   {
     kind: 'labelled',
@@ -60,7 +60,7 @@ const wallets: MarqueeWallet[] = [
     iconClass: 'relative h-[39px] w-[39px] overflow-hidden',
     imgClass: 'absolute left-[-52.4%] top-[-4.3%] h-[109%] w-[205%] max-w-none',
   },
-  { kind: 'banner', src: walletPhantom, name: 'Phantom' },
+  { kind: 'banner', src: walletPhantom, name: 'Phantom', scale: 1.25 },
 ]
 
 /**
@@ -187,6 +187,7 @@ export function Ecosystem() {
                           ? 'absolute left-[-53.8%] top-[-52.4%] h-[208%] w-[208%] max-w-none'
                           : 'size-full object-cover'
                       }
+                      style={w.scale ? { transform: `scale(${w.scale})` } : undefined}
                     />
                   </div>
                 ) : (
