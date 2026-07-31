@@ -7,8 +7,8 @@
 @theme {
   /* Surfaces */
   --color-bg: #ffffff;
-  --color-bg-dark: #0a0a0b;
-  --color-surface: #f5f5f6;
+  --color-bg-dark: #080808;
+  --color-surface: #f5f5f5;
   --color-surface-dark: #141416;
   --color-border: #e5e4e7;
   --color-border-dark: #26262b;
@@ -21,7 +21,7 @@
 
   /* Brand */
   --color-accent: #c73154; /* crimson eyebrow accent */
-  --color-purple: #6e46c3; /* glow / primary brand purple */
+  --color-purple: #7042d2; /* glow / primary brand purple */
   --color-purple-bright: #aa3bff;
 
   /* Type */
@@ -29,6 +29,7 @@
   --font-geist: 'Geist', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   --font-bricolage: 'Bricolage Grotesque', var(--font-sans);
+  --font-geist-mono: 'Geist Mono', ui-monospace, monospace;
   --font-display: 'Melodrama', Georgia, 'Times New Roman', serif;
 
   /* Layout */
@@ -73,7 +74,7 @@ body {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-50% - 24px));
+    transform: translateX(calc(-50% - var(--marquee-half-gap, 24px)));
   }
 }
 

@@ -9,10 +9,10 @@ import type { FeatureSplitContent } from '@/components/inner/FeatureSplit'
 /** Ordered page-specific middle sections rendered between the capabilities
  * grid and the closing CTA banner. */
 export type SolutionSection =
-  | ({ kind: 'gains-how-it-works' } & GainsHowItWorksContent)
-  | ({ kind: 'chip-grid' } & ChipGridContent)
-  | ({ kind: 'split-panel' } & SplitPanelContent)
-  | ({ kind: 'feature-split' } & FeatureSplitContent)
+  | ({ kind: 'gains-how-it-works'; merged?: boolean } & GainsHowItWorksContent)
+  | ({ kind: 'chip-grid'; merged?: boolean } & ChipGridContent)
+  | ({ kind: 'split-panel'; merged?: boolean } & SplitPanelContent)
+  | ({ kind: 'feature-split'; merged?: boolean } & FeatureSplitContent)
 
 export interface SolutionContent {
   metaTitle: string

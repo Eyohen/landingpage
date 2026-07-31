@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 import { Navbar } from '@/components/Navbar'
 import { InnerFooter } from '@/components/SiteFooter'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
@@ -73,14 +74,14 @@ export function FormSidebar({
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-1.5">
           <img src={mailIcon} alt="" aria-hidden="true" className="size-[20px]" />
-          <p className="text-[14px] font-medium text-black">Email address</p>
+          <p className="text-[14px] font-medium text-black">Reach the team</p>
           <p className="text-[13px] leading-[1.5] text-[#6c6c6c]">{emailNote}</p>
-          <a
-            href="mailto:support@stablezact.com"
+          <Link
+            to="/contact-us"
             className="text-[13px] text-[var(--color-purple)] underline underline-offset-2"
           >
-            support@stablezact.com
-          </a>
+            Contact us
+          </Link>
         </div>
         <div className="flex flex-col gap-1.5">
           <img src={userGroupIcon} alt="" aria-hidden="true" className="size-[20px]" />
@@ -89,7 +90,9 @@ export function FormSidebar({
             Stay updated with latest news, tips, and updates.
           </p>
           <a
-            href="/contact-us"
+            href="https://x.com/stablezact"
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-[13px] text-[var(--color-purple)] underline underline-offset-2"
           >
             Follow community now

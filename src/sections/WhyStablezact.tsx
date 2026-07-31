@@ -67,7 +67,7 @@ export function WhyStablezact() {
         <RevealGroup className="grid grid-cols-3 gap-2 max-lg:grid-cols-2 max-sm:grid-cols-1">
           {valueProps.map((prop) => (
             <RevealItem key={prop.title}>
-              <div className="flex h-full min-h-[240px] flex-col justify-between rounded-[18px] border border-[var(--color-border-dark)] bg-[var(--color-bg-dark)] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50 max-sm:min-h-[150px]">
+              <div className="flex h-full min-h-[240px] flex-col justify-between rounded-[18px] border border-[var(--color-border-dark)] bg-[var(--color-bg-dark)] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 max-sm:min-h-[150px]">
                 <img
                   src={prop.icon}
                   alt=""

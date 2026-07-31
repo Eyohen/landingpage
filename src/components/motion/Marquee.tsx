@@ -35,9 +35,10 @@ export function Marquee({
         className="flex w-max shrink-0 items-center group-hover:[animation-play-state:paused]"
         style={{
           gap,
+          '--marquee-half-gap': `${gap / 2}px`,
           animation: `marquee-scroll ${speed}s linear infinite`,
           animationDirection: direction === 'right' ? 'reverse' : 'normal',
-        }}
+        } as React.CSSProperties}
       >
         <div className="flex shrink-0 items-center" style={{ gap }}>
           {children}

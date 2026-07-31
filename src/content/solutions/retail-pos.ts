@@ -76,6 +76,7 @@ export const retailPos: SolutionContent = {
   },
   sections: [
     {
+      merged: true,
       kind: 'split-panel',
       heading: 'Your customers are global. Payment access is not.',
       body: 'Shoppers hold value in wallets across many currencies and markets. Stablezact lets them spend it at your counter.',

@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { motion } from 'motion/react'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
-import providersImg from '@/assets/figma/sol-provider.jpeg'
-import facilitatorsImg from '@/assets/figma/sol-facilitator.jpeg'
-import merchantsImg from '@/assets/figma/sol-merchant.jpeg'
+import providersImg from '@/assets/figma/sol-providers-illustration.svg'
+import facilitatorsImg from '@/assets/figma/sol-facilitators-illustration.svg'
+import merchantsImg from '@/assets/figma/sol-merchants-illustration.svg'
 
 /**
  * "Solutions" / WHO WE BUILT IT FOR section — dark.
@@ -19,7 +19,7 @@ const PANELS = [
   {
     num: '01',
     label: 'Providers',
-    title: 'Payment service providers',
+    title: 'Payment Service Providers',
     image: providersImg,
   },
   {
@@ -120,9 +120,7 @@ export function Solutions() {
                     animate={{ flexGrow: isActive ? 1 : 0 }}
                     transition={SPRING}
                     style={{ flexBasis: 100 }}
-                    className={`group relative flex min-w-[88px] cursor-pointer overflow-hidden rounded-[18px] border bg-[#0b0b0d] transition-colors duration-300 ${
-                      isActive ? 'border-[var(--color-purple)]/50' : 'border-[#1a1a1a]'
-                    }`}
+                    className="group relative flex min-w-[88px] cursor-pointer overflow-hidden rounded-[18px] border border-[#1a1a1a] bg-[#080808] transition-colors duration-300"
                   >
                     {/* pinned left rail: number + rotated label */}
                     <div className="flex w-[88px] shrink-0 flex-col items-center gap-3 px-5 py-6">
@@ -145,13 +143,13 @@ export function Solutions() {
                     <motion.div
                       animate={{ opacity: isActive ? 1 : 0 }}
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="flex min-w-[480px] flex-1 flex-col justify-between gap-8 py-10 pr-8"
+                      className="flex min-w-[480px] flex-1 flex-col justify-end gap-12 py-10 pl-1 pr-[29px]"
                     >
-                      <div className="flex flex-1 items-center justify-center overflow-hidden">
+                      <div className="flex w-full items-end justify-center overflow-hidden">
                         <img
                           src={panel.image}
                           alt={panel.title}
-                          className="max-h-[360px] w-auto max-w-full object-contain"
+                          className="h-[428px] w-full object-contain max-xl:h-[360px]"
                         />
                       </div>
                       <div className="flex flex-col gap-2">
@@ -173,7 +171,7 @@ export function Solutions() {
               {PANELS.map((panel) => (
                 <div
                   key={panel.num}
-                  className="flex flex-col rounded-[18px] border border-[#1a1a1a] bg-[#0b0b0d] px-6 pb-7 pt-5"
+                  className="flex flex-col rounded-[18px] border border-[#1a1a1a] bg-[#080808] px-6 pb-7 pt-5"
                 >
                   {/* header row: number + name */}
                   <div className="flex items-center justify-between gap-4">
@@ -190,7 +188,7 @@ export function Solutions() {
                     <img
                       src={panel.image}
                       alt={panel.title}
-                      className="max-h-[260px] w-auto max-w-full object-contain"
+                      className="h-[260px] w-full object-contain"
                     />
                   </div>
 
@@ -213,7 +211,7 @@ export function Solutions() {
         <RevealGroup className="grid grid-cols-1 gap-2 md:grid-cols-3">
           {bottomCards.map((card) => (
             <RevealItem key={card.num} className="h-full">
-              <div className="flex h-full flex-col justify-between gap-[100px] rounded-[18px] border border-[#1a1a1a] bg-[#080808] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50">
+              <div className="flex h-full flex-col justify-between gap-[100px] rounded-[18px] border border-[#1a1a1a] bg-[#080808] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1">
                 <span className="text-[16px] font-medium leading-[15.6px] text-white">
                   {card.num}
                 </span>

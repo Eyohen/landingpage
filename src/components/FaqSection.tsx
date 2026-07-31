@@ -96,7 +96,7 @@ export function FaqSection() {
 
             <Reveal
               delay={0.1}
-              className="flex w-full flex-col gap-4 rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50 max-lg:hidden"
+              className="flex w-full flex-col gap-4 rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white p-5 transition-all duration-300 hover:-translate-y-1 max-lg:hidden"
             >
               <h3 className="text-[20px] font-medium leading-[26px] tracking-[-0.04em] text-[#0a0a0a]">
                 You have questions still?
@@ -119,7 +119,7 @@ export function FaqSection() {
               const open = openIndex === i
               return (
                 <RevealItem key={faq.question} className="w-full">
-                  <div className="rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white px-3 py-6 transition-all duration-300 hover:border-[var(--color-purple)]/50">
+                  <div className="rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white px-3 py-6 transition-all duration-300">
                     <button
                       type="button"
                       onClick={() => setOpenIndex(open ? null : i)}

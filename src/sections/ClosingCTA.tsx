@@ -1,68 +1,54 @@
-import bgCloud from '@/assets/figma/footer-bg-cloud.svg'
+import { Link } from 'react-router-dom'
 import { Reveal } from '@/components/motion/Reveal'
-import { SiteFooter } from '@/components/SiteFooter'
+import { InnerFooter } from '@/components/SiteFooter'
+import agreementIcon from '@/assets/figma/inner/icon-agreement.svg'
+import gridBg from '@/assets/figma/inner/cta-grid.svg'
 
 /**
- * Closing CTA / footer section. Figma node 352:25674.
- * Dark section: near-black bg, soft purple glow above the headline,
- * centered 1200px column with headline + CTAs, then a footer with
- * RESOURCES / PRODUCTS / SOLUTIONS columns and a UK disclaimer.
+ * Closing CTA + footer — Figma node 1673:461. Solid purple section with a
+ * faint grid overlay, "Partnership" badge, centered white headline and two
+ * CTAs (white filled + white outlined), followed by the dark site footer.
  */
 
 export function ClosingCTA() {
   return (
-    <section className="relative isolate overflow-hidden bg-[var(--color-bg-dark)] py-[160px] max-lg:py-[80px]">
-      {/* concentric warm ring sweep (Figma "BG cloud": 3 radial-gradient circles, mix-blend-screen).
-          Centre sits off the left edge so the arcs sweep concave-right through the footer, matching the prototype.
-          The wrapper is mirrored on X so the rings land on the left like the reference. */}
-      <div className="pointer-events-none absolute inset-0 -scale-x-100 overflow-hidden mix-blend-screen">
+    <>
+      <section className="relative isolate overflow-hidden bg-[#7042d2] py-[140px] text-white max-md:py-[80px]">
         <img
-          src={bgCloud}
+          src={gridBg}
           alt=""
           aria-hidden="true"
-          className="absolute left-[-66%] top-1/2 h-[175%] w-[185%] max-w-none -translate-y-1/2 rotate-[90deg] object-cover"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[768px] w-[1738px] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-70"
         />
-      </div>
-      {/* purple glow above the headline */}
-      <div className="pointer-events-none absolute left-1/2 top-[60px] h-[200px] w-[460px] -translate-x-1/2 rounded-full bg-[var(--color-purple)] opacity-50 blur-[200px]" />
-      {/* thin purple light streak under the glow */}
-      <div className="pointer-events-none absolute left-1/2 top-[112px] h-[2px] w-[170px] -translate-x-1/2 rounded-full bg-gradient-to-r from-transparent via-[var(--color-purple-bright)] to-transparent opacity-90" />
-
-      <div className="container-1200 relative flex flex-col gap-[210px] max-lg:gap-[96px]">
-        {/* Headline + CTA */}
-        <div className="flex flex-col items-center gap-4 text-center">
-          <Reveal as="h2" className="max-w-[760px] text-[32px] font-medium leading-[1.1] tracking-[-0.05em] sm:text-[40px]">
-            <span className="bg-gradient-to-r from-[var(--color-purple-bright)] via-[#b88bff] to-white bg-clip-text text-transparent">
-              The future of payments won&rsquo;t replace{' '}
-            </span>
-            <span className="text-white">
-              cards. It will add stablecoin as another option
-            </span>
-          </Reveal>
-
-          <Reveal as="p" delay={0.1} className="max-w-[708px] text-[18px] leading-[1.5] text-white max-sm:text-[15px] sm:text-[20px]">
-            Stablezact makes crypto wallets usable at checkout.
-          </Reveal>
-
-          <Reveal delay={0.2} className="mt-2 flex flex-wrap items-center justify-center gap-3 max-sm:w-full max-sm:flex-col">
-            <a
-              href="/book-a-demo"
-              className="group flex items-center justify-center gap-2 bg-[var(--color-purple)] p-4 text-[18px] font-medium tracking-[-0.64px] text-white transition-all duration-300 hover:bg-[var(--color-purple-bright)] hover:-translate-y-0.5 max-sm:w-full"
+        <Reveal className="container-1200 relative flex flex-col items-center gap-4 text-center">
+          <div className="flex items-center gap-1.5 rounded-[8px] border-[0.3px] border-white bg-white/10 px-2.5 py-2">
+            <img src={agreementIcon} alt="" aria-hidden="true" className="size-[18px]" />
+            <span className="text-[14px] font-medium text-white">Partnership</span>
+          </div>
+          <h2 className="max-w-[898px] text-[60px] font-medium leading-[1.12] tracking-[-0.058em] max-lg:text-[44px] max-md:text-[32px]">
+            The future of payments won&rsquo;t replace cards. It will add
+            stablecoin as another option
+          </h2>
+          <p className="max-w-[700px] font-[family-name:var(--font-geist)] text-[20px] leading-[1.5] max-md:text-[16px]">
+            Stablezact makes crypto wallets usable at checkout
+          </p>
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/book-a-demo"
+              className="inline-flex items-center justify-center rounded-[12px] bg-white p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-[#7042d2] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f0eafd]"
             >
               Book a Demo
-            </a>
-            <a
-              href="/contact"
-              className="group flex items-center justify-center gap-2 border-[0.6px] border-[var(--color-purple)] bg-[rgba(112,66,210,0.1)] p-4 text-[18px] font-medium tracking-[-0.64px] text-[var(--color-purple)] transition-all duration-300 hover:bg-[rgba(112,66,210,0.2)] hover:border-[var(--color-purple-bright)] hover:-translate-y-0.5 max-sm:w-full"
+            </Link>
+            <Link
+              to="/contact-us"
+              className="inline-flex items-center justify-center rounded-[12px] border-[0.3px] border-white p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
             >
-              Contact Sales
-            </a>
-          </Reveal>
-        </div>
-
-        {/* Footer */}
-        <SiteFooter />
-      </div>
-    </section>
+              Contact sales
+            </Link>
+          </div>
+        </Reveal>
+      </section>
+      <InnerFooter />
+    </>
   )
 }
