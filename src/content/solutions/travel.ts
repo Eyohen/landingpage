@@ -72,6 +72,7 @@ export const travel: SolutionContent = {
   },
   sections: [
     {
+      merged: true,
       kind: 'split-panel',
       heading: 'Travel is global. Payment access is not.',
       body: 'Customers hold value in wallets across many currencies and markets. Stablezact lets them pay you from wherever they are.',

@@ -41,8 +41,8 @@ export function SolutionPage({ content }: { content: SolutionContent }) {
         <SectionDivider />
         <CapabilitiesGrid {...content.capabilities} />
         {content.sections.map((section, i) => (
-          <div key={i}>
-            <SectionDivider />
+          <div key={i} className={section.merged ? '-mt-12 [&>section]:pt-0' : undefined}>
+            {!section.merged && <SectionDivider />}
             <Section section={section} />
           </div>
         ))}

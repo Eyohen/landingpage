@@ -9,6 +9,7 @@ import { Ecosystem } from '@/sections/Ecosystem'
 import { Integration } from '@/sections/Integration'
 import { CustomerStory } from '@/sections/CustomerStory'
 import { SeeItInAction } from '@/sections/SeeItInAction'
+import { CryptoHolders } from '@/sections/CryptoHolders'
 import { ClosingCTA } from '@/sections/ClosingCTA'
 
 export function Landing() {
@@ -26,6 +27,7 @@ export function Landing() {
         <Integration />
         <CustomerStory />
         <SeeItInAction />
+        <CryptoHolders />
         <ClosingCTA />
       </main>
     </>

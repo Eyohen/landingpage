@@ -17,13 +17,13 @@ import tokenCorn from '@/assets/figma/token-corn.svg'
 import tokenArbitrum from '@/assets/figma/token-arbitrum.svg'
 import tokenAvalanche from '@/assets/figma/token-avalanche.svg'
 
-import walletCoinbase from '@/assets/figma/wallet-coinbase.png'
-import walletMetamask from '@/assets/figma/wallet-metamask.png'
-import walletRabby from '@/assets/figma/wallet-rabby.png'
-import walletZerion from '@/assets/figma/wallet-zerion.png'
-import walletTrust from '@/assets/figma/wallet-trust.png'
-import walletRainbow from '@/assets/figma/wallet-rainbow.png'
-import walletPhantom from '@/assets/figma/wallet-phantom.png'
+import walletCoinbase from '@/assets/figma/wallet-m-1.png'
+import walletMetamask from '@/assets/figma/wallet-m-2.png'
+import walletZerion from '@/assets/figma/wallet-m-3.png'
+import walletPhantom from '@/assets/figma/wallet-m-4.png'
+import walletTrust from '@/assets/figma/wallet-m-5.png'
+import walletRabbyIcon from '@/assets/figma/wallet-m-rabby-icon.png'
+import walletRainbowIcon from '@/assets/figma/wallet-m-rainbow-icon.png'
 
 const networkTokens = [
   { src: tokenOptimism, name: 'Optimism', className: 'left-[8%] top-[7%] size-[50px]' },
@@ -37,14 +37,30 @@ const networkTokens = [
   { src: tokenAvalanche, name: 'Avalanche', className: 'right-[-6%] top-[30%] size-[50px]' },
 ] as const
 
-const wallets = [
-  { src: walletCoinbase, name: 'Coinbase Wallet' },
-  { src: walletMetamask, name: 'MetaMask' },
-  { src: walletTrust, name: 'Trust Wallet' },
-  { src: walletZerion, name: 'Zerion' },
-  { src: walletRabby, name: 'Rabby Wallet', label: true, labelBefore: true },
-  { src: walletRainbow, name: 'Rainbow Wallet', label: true },
-  { src: walletPhantom, name: 'Phantom' },
+type MarqueeWallet =
+  | { kind: 'banner'; src: string; name: string; zoom?: boolean }
+  | { kind: 'labelled'; src: string; name: string; iconClass: string; imgClass: string }
+
+const wallets: MarqueeWallet[] = [
+  { kind: 'banner', src: walletCoinbase, name: 'Coinbase Wallet' },
+  { kind: 'banner', src: walletMetamask, name: 'MetaMask' },
+  {
+    kind: 'labelled',
+    src: walletRabbyIcon,
+    name: 'Rabby Wallet',
+    iconClass: 'size-[29px] overflow-hidden rounded-[6px]',
+    imgClass: 'size-full object-cover',
+  },
+  { kind: 'banner', src: walletZerion, name: 'Zerion' },
+  { kind: 'banner', src: walletTrust, name: 'Trust Wallet', zoom: true },
+  {
+    kind: 'labelled',
+    src: walletRainbowIcon,
+    name: 'Rainbow Wallet',
+    iconClass: 'relative h-[39px] w-[39px] overflow-hidden',
+    imgClass: 'absolute left-[-52.4%] top-[-4.3%] h-[109%] w-[205%] max-w-none',
+  },
+  { kind: 'banner', src: walletPhantom, name: 'Phantom' },
 ]
 
 /**
@@ -64,7 +80,7 @@ export function Ecosystem() {
             <h2 className="max-w-[475px] text-[40px] font-medium leading-[44px] tracking-[-0.055em] max-lg:text-[28px] max-lg:leading-[33.6px]">
               One integration. The entire wallet economy!
             </h2>
-            <p className="max-w-[544px] text-[20px] font-normal leading-[1.5] tracking-[-0.04em] text-[#888] max-lg:text-[16px] max-lg:leading-[24px]">
+            <p className="max-w-[544px] font-[family-name:var(--font-geist)] text-[16px] font-medium leading-[1.4] tracking-[-0.04em] text-white max-lg:text-[15px]">
               Stablezact routes payments across every major wallet, token, and
               chain which allows your customers pay how they already hold.
               Multiple blockchain networks with instant settlement
@@ -77,7 +93,7 @@ export function Ecosystem() {
             <RevealItem className="h-full">
               <div className="flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between rounded-[18px] border border-transparent bg-[#7042d2] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-white/30">
                 <div className="flex flex-col gap-1">
-                  <p className="font-mono text-[64px] font-medium leading-none tracking-[-0.05em] text-white max-lg:text-[40px]">
+                  <p className="font-[family-name:var(--font-geist-mono)] text-[64px] font-medium leading-none tracking-[-0.03em] text-white max-lg:text-[40px]">
                     <CountUp value={300} suffix="M+" />
                   </p>
                   <p className="text-[18px] leading-[1.4] text-white">
@@ -95,18 +111,18 @@ export function Ecosystem() {
 
             {/* Card 2 — tokens */}
             <RevealItem className="h-full">
-              <div className="relative flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between overflow-hidden rounded-[18px] border border-transparent bg-[var(--color-bg-dark)] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50">
+              <div className="relative flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between overflow-hidden rounded-[18px] border border-transparent bg-[var(--color-bg-dark)] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-[#2a2a2e]">
                 <img
                   src={tokensGlow}
                   alt=""
                   className="pointer-events-none absolute left-1/2 top-[-230px] size-[461px] -translate-x-1/2 object-cover opacity-60"
                 />
                 <div className="relative flex flex-col gap-1">
-                  <p className="font-mono text-[64px] font-medium leading-none tracking-[-0.05em] text-white max-lg:text-[40px]">
+                  <p className="font-[family-name:var(--font-geist-mono)] text-[64px] font-medium leading-none tracking-[-0.03em] text-white max-lg:text-[40px]">
                     <CountUp value={1000} suffix="+" />
                   </p>
                   <p className="text-[18px] leading-[1.4] text-[var(--color-muted)]">
-                    Over 100 tokens to choose from
+                    Customers can pay from over 1000 tokens.
                   </p>
                 </div>
                 <div className="relative flex flex-col gap-2">
@@ -120,7 +136,7 @@ export function Ecosystem() {
 
             {/* Card 3 — blockchain networks */}
             <RevealItem className="h-full">
-              <div className="relative flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between overflow-hidden rounded-[18px] border border-transparent bg-[var(--color-bg-dark)] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50">
+              <div className="relative flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between overflow-hidden rounded-[18px] border border-transparent bg-[var(--color-bg-dark)] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-[#2a2a2e]">
                 <div className="relative h-[210px] max-lg:h-[150px]">
                   {networkTokens.map((t) =>
                     'bg' in t ? (
@@ -156,26 +172,34 @@ export function Ecosystem() {
             as="div"
             className="overflow-hidden border-y-[3px] border-[#1a1a1a] py-5"
           >
-            <Marquee speed={28} gap={60}>
-              {wallets.map((w) => (
-                <div key={w.name} className="flex min-w-max items-center gap-2.5">
-                  {'labelBefore' in w && w.labelBefore && (
-                    <span className="whitespace-nowrap text-[20px] font-medium tracking-[-0.04em] text-white">
+            <Marquee speed={28} gap={92}>
+              {wallets.map((w) =>
+                w.kind === 'banner' ? (
+                  <div
+                    key={w.name}
+                    className="relative h-[56px] w-[100px] shrink-0 overflow-hidden"
+                  >
+                    <img
+                      src={w.src}
+                      alt={w.name}
+                      className={
+                        w.zoom
+                          ? 'absolute left-[-53.8%] top-[-52.4%] h-[208%] w-[208%] max-w-none'
+                          : 'size-full object-cover'
+                      }
+                    />
+                  </div>
+                ) : (
+                  <div key={w.name} className="flex min-w-max items-center gap-[2px]">
+                    <span className={w.iconClass}>
+                      <img src={w.src} alt="" aria-hidden="true" className={w.imgClass} />
+                    </span>
+                    <span className="whitespace-nowrap font-[family-name:var(--font-geist)] text-[15px] font-medium tracking-[-0.02em] text-white">
                       {w.name}
                     </span>
-                  )}
-                  <img
-                    src={w.src}
-                    alt={w.name}
-                    className="size-[58px] shrink-0 object-contain max-lg:size-[44px]"
-                  />
-                  {w.label && !('labelBefore' in w && w.labelBefore) && (
-                    <span className="whitespace-nowrap text-[20px] font-medium tracking-[-0.04em] text-white">
-                      {w.name}
-                    </span>
-                  )}
-                </div>
-              ))}
+                  </div>
+                ),
+              )}
             </Marquee>
           </Reveal>
         </div>

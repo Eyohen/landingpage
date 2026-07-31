@@ -7,8 +7,8 @@ const CONTACT_OPTIONS = [
     label: 'Sales',
     title: 'Talk to our team',
     body: 'For partnership, merchant onboarding, and product questions.',
-    href: 'mailto:info@stablezact.com',
-    action: 'Email us',
+    href: '/contact-us',
+    action: 'Contact us',
   },
   {
     label: 'Demo',
@@ -45,7 +45,7 @@ export function Contact() {
                 <a
                   key={option.label}
                   href={option.href}
-                  className="group flex min-h-[260px] flex-col justify-between rounded-[18px] border border-[#ece8f6] bg-white p-6 shadow-[0_30px_90px_rgba(112,66,210,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50"
+                  className="group flex min-h-[260px] flex-col justify-between rounded-[18px] border border-[#ece8f6] bg-white p-6 shadow-[0_30px_90px_rgba(112,66,210,0.08)] transition-all duration-300 hover:-translate-y-1"
                 >
                   <span className="font-mono text-[14px] font-medium uppercase tracking-[0.04em] text-[var(--color-accent)]">
                     [{option.label}]

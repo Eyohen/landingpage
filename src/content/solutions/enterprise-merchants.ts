@@ -85,6 +85,7 @@ export const enterpriseMerchants: SolutionContent = {
       ],
     },
     {
+      merged: true,
       kind: 'split-panel',
       heading: 'Seven predictable steps',
       body: 'Add stablecoin wallets as another checkout option and receive settlement directly to infrastructure controlled by your business.',

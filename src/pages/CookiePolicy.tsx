@@ -100,8 +100,8 @@ export function CookiePolicy() {
 
       <h2>Get in touch</h2>
       <p>
-        Any questions, just email us at <a href="mailto:info@stablezact.com">info@stablezact.com</a>{' '}
-        and we're happy to help.
+        Any questions, just reach out through our <a href="/contact-us">contact form</a> and
+        we're happy to help.
       </p>
     </LegalLayout>
   )

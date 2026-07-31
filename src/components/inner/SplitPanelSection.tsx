@@ -61,7 +61,7 @@ export function SplitPanelSection({
     <section className="relative isolate overflow-hidden bg-[#f5f5f5] py-[110px] max-md:py-[64px]">
       <div className="container-1200 flex items-start gap-8 max-lg:flex-col">
         {/* Left: heading + chips */}
-        <Reveal className="flex flex-1 flex-col gap-8 lg:justify-between lg:self-stretch">
+        <Reveal className="flex flex-1 flex-col gap-8">
           <div className="flex flex-col gap-4">
             {eyebrow ? <SectionEyebrow>{eyebrow}</SectionEyebrow> : null}
             <h2 className="max-w-[447px] text-[30px] font-medium leading-[1.3] tracking-[-0.04em] text-black max-md:text-[24px]">
@@ -100,7 +100,7 @@ export function SplitPanelSection({
             <RevealGroup className="flex flex-col gap-3">
               {cards.map((card, i) => (
                 <RevealItem key={card.title}>
-                  <div className="flex flex-col gap-3 rounded-[14px] border border-[#e5e5e5] bg-white p-6 transition-all duration-300 hover:border-[var(--color-purple)]/50">
+                  <div className="flex flex-col gap-3 rounded-[14px] border border-[#e5e5e5] bg-white p-6 transition-all duration-300">
                     <div className="flex items-center justify-between gap-4">
                       <h4 className="font-[family-name:var(--font-geist)] text-[18px] font-medium leading-[1.2] tracking-[-0.04em] text-[#0a0a0a]">
                         {card.title}

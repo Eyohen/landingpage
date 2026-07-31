@@ -39,6 +39,7 @@ const cards: IntegrationCard[] = [
     description:
       'Install in minutes with our free plugin and start accepting crypto at checkout.',
     cta: 'Open plugin',
+    href: 'https://wordpress.org/plugins/stablezact-crypto-payments/',
     icon: woocommerceIcon,
     iconClassName: 'h-[31px] w-[50px] object-contain',
   },
@@ -95,7 +96,7 @@ function IndexBadge({ index }: { index: string }) {
 
 function Card({ card }: { card: IntegrationCard }) {
   return (
-    <div className="group flex h-full min-h-[380px] max-md:min-h-[330px] flex-col justify-between rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white p-[10px] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-purple)]/50 hover:shadow-[0_12px_30px_-12px_rgba(10,10,10,0.18)]">
+    <div className="group flex h-full min-h-[380px] max-md:min-h-[330px] flex-col justify-between rounded-[18px] border-[0.4px] border-[var(--color-border)] bg-white p-[10px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_-12px_rgba(10,10,10,0.18)]">
       {/* Top: numbered badge */}
       <div className="flex w-full flex-1 flex-col items-start px-5 pt-5">
         <IndexBadge index={card.index} />
@@ -127,18 +128,26 @@ function Card({ card }: { card: IntegrationCard }) {
           </p>
         </div>
 
-        <a
-          href={card.comingSoon ? '#' : card.href ?? '#'}
-          {...(card.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          className="flex w-full items-center justify-between rounded-[10px] border-[0.4px] border-[var(--color-border)] bg-[var(--color-surface)] p-2 transition-colors hover:bg-[var(--color-border)]/40"
-        >
-          <span className="truncate text-[15px] font-medium leading-[21px] tracking-[-0.6px] text-[#0a0a0a]">
-            {card.comingSoon ? 'Coming Soon' : card.cta}
-          </span>
-          <span className="inline-flex shrink-0 transition-transform duration-300 group-hover:translate-x-0.5">
-            <ArrowUpRight />
-          </span>
-        </a>
+        {card.comingSoon ? (
+          <div className="flex w-full items-center rounded-[10px] border-[0.4px] border-[var(--color-border)] bg-[var(--color-surface)] p-2">
+            <span className="truncate text-[15px] font-medium leading-[21px] tracking-[-0.6px] text-[#0a0a0a] opacity-60">
+              Coming Soon
+            </span>
+          </div>
+        ) : (
+          <a
+            href={card.href ?? '#'}
+            {...(card.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            className="flex w-full items-center justify-between rounded-[10px] border-[0.4px] border-[var(--color-border)] bg-[var(--color-surface)] p-2 transition-colors hover:bg-[var(--color-border)]/40"
+          >
+            <span className="truncate text-[15px] font-medium leading-[21px] tracking-[-0.6px] text-[#0a0a0a]">
+              {card.cta}
+            </span>
+            <span className="inline-flex shrink-0 transition-transform duration-300 group-hover:translate-x-0.5">
+              <ArrowUpRight />
+            </span>
+          </a>
+        )}
       </div>
     </div>
   )

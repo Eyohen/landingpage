@@ -22,7 +22,7 @@ export const eCommerce: SolutionContent = {
       'Add stablecoin payment capabilities to your commerce platform without requiring every merchant to build a separate wallet integration.',
     ],
     ctas: [
-      { label: 'Discuss a platform partnership', href: '/talk-to-sales', variant: 'purple' },
+      { label: 'Discuss a PSP partnership', href: '/talk-to-sales', variant: 'purple' },
       { label: 'View Developer Docs', href: 'https://docs.stablezact.com', variant: 'soft' },
     ],
   },
@@ -64,6 +64,7 @@ export const eCommerce: SolutionContent = {
   },
   sections: [
     {
+      merged: true,
       kind: 'split-panel',
       eyebrow: 'CAPABILITIES',
       heading: 'The payment companies powering modern commerce',
