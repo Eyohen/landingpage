@@ -107,8 +107,10 @@ export function Hero() {
           variants={item}
           className="relative z-20 mt-10 max-w-[590px] text-[18px] leading-[1.5] tracking-[-0.02em] text-[#1a1720] max-md:mt-8 max-md:text-[16px]"
         >
-          Accept stablecoin payments anywhere your business sells. Customers pay with
-          crypto, and you receive instant settlement
+          Stablezact is non-custodial payment infrastructure for PSPs, platforms
+          and merchants. Customers pay from the crypto wallets they already use
+          — across web, mobile and in-store checkout — while you settle
+          instantly in stablecoins or supported local currencies.
         </motion.p>
 
         <motion.div variants={item} className="relative z-20 mt-8 flex flex-wrap items-center justify-center gap-4 max-md:w-full max-md:flex-col max-md:items-stretch">

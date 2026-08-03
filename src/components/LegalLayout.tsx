@@ -1,3 +1,4 @@
+import { usePageMeta } from '@/lib/usePageMeta'
 import type { ReactNode } from 'react'
 import { Navbar } from '@/components/Navbar'
 import { ClosingCTA } from '@/sections/ClosingCTA'
@@ -9,6 +10,7 @@ type LegalLayoutProps = {
 }
 
 export function LegalLayout({ title, updated, children }: LegalLayoutProps) {
+  usePageMeta(`${title} | Stablezact`, `Stablezact ${title.toLowerCase()}.`)
   return (
     <div className="min-h-screen bg-[var(--color-bg)] font-[family-name:var(--font-geist)] text-[var(--color-ink)]">
       <Navbar />

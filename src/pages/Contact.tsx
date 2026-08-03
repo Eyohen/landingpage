@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/Navbar'
+import { usePageMeta } from '@/lib/usePageMeta'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { ClosingCTA } from '@/sections/ClosingCTA'
 
@@ -20,6 +21,10 @@ const CONTACT_OPTIONS = [
 ] as const
 
 export function Contact() {
+  usePageMeta(
+    'Contact | Stablezact',
+    'Get in touch with the Stablezact team about partnerships, merchant onboarding and product questions.',
+  )
   return (
     <div className="min-h-screen bg-white text-black">
       <Navbar />

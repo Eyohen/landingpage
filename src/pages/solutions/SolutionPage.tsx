@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import { Navbar } from '@/components/Navbar'
 import { InnerFooter } from '@/components/SiteFooter'
 import { InnerHero } from '@/components/inner/InnerHero'
@@ -32,9 +33,20 @@ function Section({ section }: { section: SolutionSection }) {
 
 export function SolutionPage({ content }: { content: SolutionContent }) {
   usePageMeta(content.metaTitle, content.metaDescription)
+  const { pathname } = useLocation()
+  const breadcrumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://stablezact.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Solutions', item: 'https://stablezact.com/solutions/payment-providers' },
+      { '@type': 'ListItem', position: 3, name: content.hero.eyebrow, item: `https://stablezact.com${pathname}` },
+    ],
+  }
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] text-black">
+      <script type="application/ld+json">{JSON.stringify(breadcrumbs)}</script>
       <Navbar />
       <main>
         <InnerHero {...content.hero} />

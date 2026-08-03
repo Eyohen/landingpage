@@ -1,7 +1,7 @@
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal } from '@/components/motion/Reveal'
 import tickIcon from '@/assets/figma/inner/icon-tick.svg'
-import purpleBg from '@/assets/figma/inner/howit-purple-bg.png'
+import purpleBg from '@/assets/figma/inner/howit-purple-bg.jpg'
 
 /**
  * "From merchant activation to settlement" — Figma node 1594:20791.
@@ -81,6 +81,8 @@ export function GainsHowItWorks({
               src={purpleBg}
               alt=""
               aria-hidden="true"
+              loading="lazy"
+              decoding="async"
               className="pointer-events-none absolute inset-0 size-full object-cover"
             />
             <div className="relative w-full bg-[rgba(112,66,210,0.4)] px-[59px] py-[100px] max-lg:px-6 max-lg:py-12">
