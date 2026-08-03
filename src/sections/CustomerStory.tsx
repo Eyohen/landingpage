@@ -1,7 +1,6 @@
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { CountUp } from '@/components/motion/CountUp'
-import avatarImage from '@/assets/figma/customer-story-avatar.jpg'
 
 /**
  * "Customer story" section — Elitesafrica testimonial + stat cards.
@@ -51,13 +50,6 @@ export function CustomerStory() {
                     <p className="mt-2 text-[14px] font-medium leading-[1.2] tracking-[-0.035em] text-[#6f6f6f] max-md:text-[12px]">
                       Business Manager - Elitesafrica
                     </p>
-                  </div>
-                  <div className="h-[78px] w-[86px] shrink-0 overflow-hidden rounded-[14px] max-md:h-[66px] max-md:w-[72px]">
-                    <img
-                      src={avatarImage}
-                      alt="Oluwaseun"
-                      className="size-full object-cover"
-                    />
                   </div>
                 </div>
               </div>

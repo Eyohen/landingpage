@@ -58,10 +58,12 @@ export function FormSidebar({
   title,
   body,
   emailNote = 'Our team will get back to you within 24 hours.',
+  showContactLink = true,
 }: {
   title: string
   body: string
   emailNote?: string
+  showContactLink?: boolean
 }) {
   return (
     <div className="flex w-[300px] shrink-0 flex-col justify-between gap-10 max-lg:w-full">
@@ -76,12 +78,14 @@ export function FormSidebar({
           <img src={mailIcon} alt="" aria-hidden="true" className="size-[20px]" />
           <p className="text-[14px] font-medium text-black">Reach the team</p>
           <p className="text-[13px] leading-[1.5] text-[#6c6c6c]">{emailNote}</p>
-          <Link
-            to="/contact-us"
-            className="text-[13px] text-[var(--color-purple)] underline underline-offset-2"
-          >
-            Contact us
-          </Link>
+          {showContactLink ? (
+            <Link
+              to="/contact-us"
+              className="text-[13px] text-[var(--color-purple)] underline underline-offset-2"
+            >
+              Contact us
+            </Link>
+          ) : null}
         </div>
         <div className="flex flex-col gap-1.5">
           <img src={userGroupIcon} alt="" aria-hidden="true" className="size-[20px]" />
