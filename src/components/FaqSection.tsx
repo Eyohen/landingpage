@@ -106,9 +106,9 @@ export function FaqSection() {
               </p>
               <a
                 href="/book-a-demo"
-                className="group inline-flex w-fit items-center justify-center gap-2 rounded-[12px] bg-[#7041d2] px-4 py-3.5 text-[18px] font-medium tracking-[-0.035em] text-white transition-colors hover:bg-[#5f35bb]"
+                className="group inline-flex w-fit items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5]"
               >
-                Book a demo
+                Book a Demo
               </a>
             </Reveal>
           </div>

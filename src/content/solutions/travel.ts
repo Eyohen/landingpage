@@ -32,7 +32,7 @@ export const travel: SolutionContent = {
     body: [
       'Give travellers another way to pay for flights, accommodation, experiences and travel services. Without relying exclusively on cards or domestic bank-payment methods — settle in supported stablecoins or fiat where available.',
     ],
-    ctas: [{ label: 'Book a demo', href: '/book-a-demo', variant: 'purple' }],
+    ctas: [{ label: 'Book a Demo', href: '/book-a-demo', variant: 'purple' }],
   },
   capabilities: {
     headingDark: 'Built for travel',
@@ -80,10 +80,6 @@ export const travel: SolutionContent = {
         { icon: flagUsd, label: 'USD', prefix: '$' },
         { icon: flagUk, label: 'GBP', prefix: '£' },
         { icon: flagCanada, label: 'CAD', prefix: '$' },
-        { icon: flagNigeria, label: 'NGN', prefix: '₦' },
-        { icon: flagCanada, label: 'CAD', prefix: '$' },
-        { icon: flagUk, label: 'GBP', prefix: '£' },
-        { icon: flagUsd, label: 'USD', prefix: '$' },
         { icon: flagNigeria, label: 'NGN', prefix: '₦' },
       ],
       chipCount: '40+',

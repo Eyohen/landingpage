@@ -71,7 +71,7 @@ export function CryptoHolders() {
               </p>
               <Link
                 to="/request-crypto-checkout"
-                className="inline-flex items-center gap-2 rounded-[12px] bg-[#7041d2] p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-white transition-colors hover:bg-[#5f35bb]"
+                className="inline-flex items-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5]"
               >
                 Request crypto checkout <span aria-hidden="true">→</span>
               </Link>
