@@ -128,7 +128,11 @@ function Card({ card }: { card: IntegrationCard }) {
           </p>
         </div>
 
-        {card.comingSoon ? null : (
+        {card.comingSoon ? (
+          <div aria-hidden="true" className="invisible flex w-full items-center rounded-[10px] border-[0.4px] p-2">
+            <span className="text-[15px] leading-[21px]">placeholder</span>
+          </div>
+        ) : (
           <a
             href={card.href ?? '#'}
             {...(card.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
