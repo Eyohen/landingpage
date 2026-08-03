@@ -21,7 +21,7 @@ export default function NotFound() {
         className="pointer-events-none absolute left-1/2 top-[100px] h-[908px] w-[908px] max-w-none -translate-x-1/2 opacity-70"
       />
       <Navbar />
-      <main className="container-1200 relative flex min-h-screen flex-col items-center justify-center gap-8 py-[140px] text-center">
+      <main className="container-1200 relative z-10 flex min-h-screen flex-col items-center justify-center gap-8 py-[140px] text-center">
         <Reveal>
           <img
             src={illustration}
@@ -43,7 +43,7 @@ export default function NotFound() {
           </p>
           <Link
             to="/"
-            className="inline-flex h-[52px] items-center justify-center gap-2 rounded-[12px] bg-[rgba(112,66,210,0.1)] p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-[#7042d2] transition-colors hover:bg-[rgba(112,66,210,0.18)]"
+            className="relative z-10 inline-flex h-[52px] items-center justify-center gap-2 rounded-[12px] bg-[#f1ecfa] p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-[#7042d2] transition-colors hover:bg-[#e6dcf7]"
           >
             <img src={homeIcon} alt="" aria-hidden="true" className="size-[16px]" />
             Take me to Home Page
