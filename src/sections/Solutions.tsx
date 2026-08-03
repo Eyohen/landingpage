@@ -130,8 +130,8 @@ export function Solutions() {
                         {panel.num}
                       </span>
                       <span
-                        className={`mt-auto text-[32px] font-medium tracking-[-0.96px] transition-colors duration-300 ${
-                          isActive ? 'text-white' : 'text-white/40'
+                        className={`text-[32px] font-medium tracking-[-0.96px] transition-colors duration-300 ${
+                          isActive ? 'mt-auto text-white' : 'mt-2 text-white/40'
                         }`}
                         style={{ writingMode: 'vertical-rl', transform: 'rotate(0deg)' }}
                       >
