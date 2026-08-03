@@ -128,13 +128,7 @@ function Card({ card }: { card: IntegrationCard }) {
           </p>
         </div>
 
-        {card.comingSoon ? (
-          <div className="flex w-full items-center rounded-[10px] border-[0.4px] border-[var(--color-border)] bg-[var(--color-surface)] p-2">
-            <span className="truncate text-[15px] font-medium leading-[21px] tracking-[-0.6px] text-[#0a0a0a] opacity-60">
-              Coming Soon
-            </span>
-          </div>
-        ) : (
+        {card.comingSoon ? null : (
           <a
             href={card.href ?? '#'}
             {...(card.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}

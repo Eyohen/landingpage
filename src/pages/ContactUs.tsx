@@ -45,6 +45,7 @@ export default function ContactUs() {
           <FormSidebar
             title="Send us a message"
             body="Book a slot below and the right person at Stablezact will speak with you. Use Book a Demo for a product walkthrough."
+            showContactLink={false}
           />
 
           <div className="min-w-0 flex-1">

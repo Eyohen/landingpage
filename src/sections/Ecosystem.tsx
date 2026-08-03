@@ -7,6 +7,8 @@ import tokensGlow from '@/assets/figma/tokens-glow.png'
 import iconWallet04 from '@/assets/figma/icon-wallet-04.svg'
 import iconTokenCircle from '@/assets/figma/icon-token-circle.svg'
 
+import tokenBase from '@/assets/figma/token-base.svg'
+import tokenInk from '@/assets/figma/token-ink.svg'
 import tokenOptimism from '@/assets/figma/token-optimism.svg'
 import tokenCelo from '@/assets/figma/token-celo.svg'
 import tokenUnichain from '@/assets/figma/token-unichain.svg'
@@ -25,17 +27,35 @@ import walletTrust from '@/assets/figma/wallet-m-5.png'
 import walletRabbyIcon from '@/assets/figma/wallet-m-rabby-icon.png'
 import walletRainbowIcon from '@/assets/figma/wallet-m-rainbow-icon.png'
 
-const networkTokens = [
-  { src: tokenOptimism, name: 'Optimism', className: 'left-[8%] top-[7%] size-[50px]' },
-  { src: tokenCelo, name: 'Celo', bg: '#fdfe54', className: 'left-[33%] top-[7%] size-[50px]', iconClassName: 'size-[35px]' },
-  { src: tokenUnichain, name: 'Unichain', className: 'left-[61%] top-[9%] size-[48px]' },
-  { src: tokenSolana, name: 'Solana', className: 'right-[8%] top-[9%] size-[50px]' },
-  { src: tokenGnosis, name: 'Gnosis', className: 'left-[-6%] top-[32%] size-[50px]' },
-  { src: tokenCorn, name: 'Corn', className: 'left-[20%] top-[35%] size-[48px]' },
-  { src: tokenMonad, name: 'Monad', className: 'left-[46%] top-[32%] size-[50px]' },
-  { src: tokenArbitrum, name: 'Arbitrum', className: 'right-[18%] top-[34%] size-[48px]' },
-  { src: tokenAvalanche, name: 'Avalanche', className: 'right-[-6%] top-[30%] size-[50px]' },
-] as const
+const networkRowOne = [
+  { src: tokenBase, name: 'Base' },
+  { src: tokenOptimism, name: 'Optimism' },
+  { src: tokenCelo, name: 'Celo', bg: '#fdfe54', iconClassName: 'size-[35px]' },
+  { src: tokenUnichain, name: 'Unichain' },
+  { src: tokenSolana, name: 'Solana' },
+  { src: tokenMonad, name: 'Monad' },
+]
+
+const networkRowTwo = [
+  { src: tokenGnosis, name: 'Gnosis' },
+  { src: tokenCorn, name: 'Corn' },
+  { src: tokenInk, name: 'Ink' },
+  { src: tokenArbitrum, name: 'Arbitrum' },
+  { src: tokenAvalanche, name: 'Avalanche' },
+]
+
+function NetworkIcon({ token }: { token: (typeof networkRowOne)[number] }) {
+  return 'bg' in token && token.bg ? (
+    <span
+      className="flex size-[50px] shrink-0 items-center justify-center overflow-hidden rounded-full"
+      style={{ backgroundColor: token.bg }}
+    >
+      <img src={token.src} alt={token.name} className={token.iconClassName ?? 'size-full'} />
+    </span>
+  ) : (
+    <img src={token.src} alt={token.name} className="size-[50px] shrink-0 object-contain" />
+  )
+}
 
 type MarqueeWallet =
   | { kind: 'banner'; src: string; name: string; zoom?: boolean; scale?: number }
@@ -137,25 +157,17 @@ export function Ecosystem() {
             {/* Card 3 — blockchain networks */}
             <RevealItem className="h-full">
               <div className="relative flex h-full min-h-[358px] max-lg:min-h-[270px] flex-col justify-between overflow-hidden rounded-[18px] border border-transparent bg-[var(--color-bg-dark)] px-6 pb-6 pt-[23px] transition-all duration-300 hover:-translate-y-1 hover:border-[#2a2a2e]">
-                <div className="relative h-[210px] max-lg:h-[150px]">
-                  {networkTokens.map((t) =>
-                    'bg' in t ? (
-                      <span
-                        key={t.name}
-                        className={`absolute flex items-center justify-center overflow-hidden rounded-full ${t.className}`}
-                        style={{ backgroundColor: t.bg }}
-                      >
-                        <img src={t.src} alt={t.name} className={t.iconClassName ?? 'size-full'} />
-                      </span>
-                    ) : (
-                      <img
-                        key={t.name}
-                        src={t.src}
-                        alt={t.name}
-                        className={`absolute shrink-0 object-contain ${t.className}`}
-                      />
-                    ),
-                  )}
+                <div className="relative flex flex-col gap-8 pt-2">
+                  <Marquee speed={24} gap={40} direction="right">
+                    {networkRowOne.map((t) => (
+                      <NetworkIcon key={t.name} token={t} />
+                    ))}
+                  </Marquee>
+                  <Marquee speed={30} gap={40} direction="right">
+                    {networkRowTwo.map((t) => (
+                      <NetworkIcon key={t.name} token={t} />
+                    ))}
+                  </Marquee>
                 </div>
                 <div className="flex flex-col gap-3">
                   <img src={iconTokenCircle} alt="" className="size-6 opacity-95" />

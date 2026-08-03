@@ -36,7 +36,7 @@ export const retailPos: SolutionContent = {
     body: [
       'Give customers another way to pay in store. Stablezact generates QR payment requests at the till, validates the transaction on-chain and settles directly to your business — in supported stablecoins or fiat where available.',
     ],
-    ctas: [{ label: 'Book a demo', href: '/book-a-demo', variant: 'purple' }],
+    ctas: [{ label: 'Book a Demo', href: '/book-a-demo', variant: 'purple' }],
   },
   capabilities: {
     headingDark: 'Built for everyday',
@@ -84,10 +84,6 @@ export const retailPos: SolutionContent = {
         { icon: flagUsd, label: 'USD', prefix: '$' },
         { icon: flagUk, label: 'GBP', prefix: '£' },
         { icon: flagCanada, label: 'CAD', prefix: '$' },
-        { icon: flagNigeria, label: 'NGN', prefix: '₦' },
-        { icon: flagCanada, label: 'CAD', prefix: '$' },
-        { icon: flagUk, label: 'GBP', prefix: '£' },
-        { icon: flagUsd, label: 'USD', prefix: '$' },
         { icon: flagNigeria, label: 'NGN', prefix: '₦' },
       ],
       chipCount: '40+',
