@@ -35,13 +35,13 @@ export function ClosingCTA() {
           <div className="mt-2 flex flex-wrap items-center justify-center gap-3">
             <Link
               to="/book-a-demo"
-              className="inline-flex items-center justify-center rounded-[12px] bg-white p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-[#7042d2] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f0eafd]"
+              className="inline-flex items-center justify-center rounded-[10px] bg-white px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-[#7042d2] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f0eafd]"
             >
               Book a Demo
             </Link>
             <Link
               to="/contact-us"
-              className="inline-flex items-center justify-center rounded-[12px] border-[0.3px] border-white p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+              className="inline-flex items-center justify-center rounded-[10px] border-[0.3px] border-white px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
             >
               Contact sales
             </Link>
