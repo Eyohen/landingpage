@@ -1,42 +1,55 @@
 import { Link } from 'react-router-dom'
 import { Navbar } from '@/components/Navbar'
-import { InnerFooter } from '@/components/SiteFooter'
-import { SectionEyebrow } from '@/components/SectionEyebrow'
+import { Reveal } from '@/components/motion/Reveal'
 import { useNoIndex, usePageMeta } from '@/lib/usePageMeta'
+import heroRings from '@/assets/figma/inner/hero-rings.svg'
+import homeIcon from '@/assets/figma/inner/icon-home.svg'
+import illustration from '@/assets/figma/not-found-illustration.png'
 
-/** 404 page — rendered for unknown routes; marked noindex. */
+/** 404 page — Figma node 2017:24514. Rendered for unknown routes; noindex. */
 export default function NotFound() {
   usePageMeta('Page not found — Stablezact')
   useNoIndex()
 
   return (
-    <div className="min-h-screen bg-[#f5f5f5] text-black">
+    <div className="relative min-h-screen overflow-hidden bg-white text-black">
+      {/* concentric rings backdrop */}
+      <img
+        src={heroRings}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-[100px] h-[908px] w-[908px] max-w-none -translate-x-1/2 opacity-70"
+      />
       <Navbar />
-      <main className="container-1200 flex min-h-[60vh] flex-col items-start justify-center gap-5 pt-[120px]">
-        <SectionEyebrow>404</SectionEyebrow>
-        <h1 className="max-w-[640px] font-[family-name:var(--font-geist)] text-[48px] font-medium leading-[1.15] tracking-[-0.05em] max-md:text-[32px]">
-          This page doesn&rsquo;t exist.
-        </h1>
-        <p className="max-w-[480px] text-[18px] leading-[1.5] text-[var(--color-muted)]">
-          The link may be outdated or mistyped. Head back to the homepage or
-          explore what Stablezact can do for your business.
-        </p>
-        <div className="mt-2 flex flex-wrap gap-3">
+      <main className="container-1200 relative flex min-h-screen flex-col items-center justify-center gap-8 py-[140px] text-center">
+        <Reveal>
+          <img
+            src={illustration}
+            alt=""
+            aria-hidden="true"
+            className="mx-auto w-[650px] max-w-full object-contain"
+          />
+        </Reveal>
+        <Reveal delay={0.1} className="flex flex-col items-center gap-[33px]">
+          <h1 className="font-[family-name:var(--font-geist)] text-[64px] font-medium leading-[1.05] tracking-[-0.05em] text-black max-md:text-[38px]">
+            Oooops! Page Not Found
+          </h1>
+          <p className="max-w-[698px] font-[family-name:var(--font-geist)] text-[18px] leading-[1.5] tracking-[-0.03em] text-[var(--color-muted)] max-md:text-[16px]">
+            Looks like this page doesn&rsquo;t exist.
+            <br />
+            No worries, we&rsquo;re still here to help. Tell us what you&rsquo;re
+            looking to enable, and the right person at Stablezact will get back
+            to you within 1–2 business days.
+          </p>
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-[10px] bg-[#7042d2] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5]"
+            className="inline-flex h-[52px] items-center justify-center gap-2 rounded-[12px] bg-[rgba(112,66,210,0.1)] p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-[#7042d2] transition-colors hover:bg-[rgba(112,66,210,0.18)]"
           >
-            Back to homepage
+            <img src={homeIcon} alt="" aria-hidden="true" className="size-[16px]" />
+            Take me to Home Page
           </Link>
-          <Link
-            to="/solutions/payment-providers"
-            className="inline-flex items-center justify-center rounded-[10px] bg-[#e7dcff] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-[#7042d2] transition-colors hover:bg-[#dccbff]"
-          >
-            Explore solutions
-          </Link>
-        </div>
+        </Reveal>
       </main>
-      <InnerFooter />
     </div>
   )
 }
