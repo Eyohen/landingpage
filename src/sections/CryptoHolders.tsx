@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
-import bgTexture from '@/assets/figma/crypto-holders-bg.png'
+import bgTexture from '@/assets/figma/crypto-holders-bg.jpg'
 import grid05 from '@/assets/figma/crypto-holders-grid05.svg'
 import grid11 from '@/assets/figma/crypto-holders-grid11.svg'
 
@@ -44,6 +44,8 @@ export function CryptoHolders() {
         src={bgTexture}
         alt=""
         aria-hidden="true"
+        loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute inset-0 size-full -scale-x-100 rotate-180 object-cover"
       />
       <div className="pointer-events-none absolute inset-0 bg-black/30" />

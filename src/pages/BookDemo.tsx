@@ -1,4 +1,5 @@
 import { CalendlyEmbed } from '@/components/CalendlyEmbed'
+import { usePageMeta } from '@/lib/usePageMeta'
 import { Navbar } from '@/components/Navbar'
 import { ClosingCTA } from '@/sections/ClosingCTA'
 
@@ -47,6 +48,10 @@ function LockIcon() {
 }
 
 export function BookDemo() {
+  usePageMeta(
+    'Book a Demo | Stablezact',
+    'Book a product demo and see how Stablezact adds crypto wallet payments to your checkout with settlement in stablecoins or supported local currencies.',
+  )
   return (
     <div className="min-h-screen bg-[#f7f8fc] text-[#16181d]">
       <Navbar />

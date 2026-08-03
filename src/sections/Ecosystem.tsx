@@ -19,13 +19,13 @@ import tokenCorn from '@/assets/figma/token-corn.svg'
 import tokenArbitrum from '@/assets/figma/token-arbitrum.svg'
 import tokenAvalanche from '@/assets/figma/token-avalanche.svg'
 
-import walletCoinbase from '@/assets/figma/wallet-m-1.png'
-import walletMetamask from '@/assets/figma/wallet-m-2.png'
-import walletZerion from '@/assets/figma/wallet-m-3.png'
-import walletPhantom from '@/assets/figma/wallet-m-4.png'
-import walletTrust from '@/assets/figma/wallet-m-5.png'
-import walletRabbyIcon from '@/assets/figma/wallet-m-rabby-icon.png'
-import walletRainbowIcon from '@/assets/figma/wallet-m-rainbow-icon.png'
+import walletCoinbase from '@/assets/figma/wallet-coinbase-lockup.png'
+import walletMetamask from '@/assets/figma/wallet-metamask-lockup.png'
+import walletZerion from '@/assets/figma/wallet-zerion-lockup.png'
+import walletPhantom from '@/assets/figma/wallet-phantom-lockup.png'
+import walletTrust from '@/assets/figma/wallet-trust-lockup.png'
+import walletRabbyIcon from '@/assets/figma/wallet-rabby-icon.png'
+import walletRainbowIcon from '@/assets/figma/wallet-rainbow-icon.png'
 
 const networkRowOne = [
   { src: tokenBase, name: 'Base' },
@@ -101,9 +101,9 @@ export function Ecosystem() {
               One integration. The entire wallet economy!
             </h2>
             <p className="max-w-[544px] font-[family-name:var(--font-geist)] text-[16px] font-medium leading-[1.4] tracking-[-0.04em] text-white max-lg:text-[15px]">
-              Stablezact routes payments across every major wallet, token, and
-              chain which allows your customers pay how they already hold.
-              Multiple blockchain networks with instant settlement
+              Stablezact routes payments across every major wallet, token and
+              chain, so your customers can pay with what they already hold —
+              multiple blockchain networks, instant settlement.
             </p>
           </Reveal>
 
@@ -172,7 +172,7 @@ export function Ecosystem() {
                 <div className="flex flex-col gap-3">
                   <img src={iconTokenCircle} alt="" className="size-6 opacity-95" />
                   <p className="text-[24px] font-medium leading-none tracking-[-0.05em] text-white max-lg:text-[20px]">
-                    Multiple blockchain network
+                    Multiple blockchain networks
                   </p>
                 </div>
               </div>

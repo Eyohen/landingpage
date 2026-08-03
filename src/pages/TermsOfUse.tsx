@@ -1,7 +1,9 @@
+import { usePageMeta } from '@/lib/usePageMeta'
 import { Navbar } from '@/components/Navbar'
 import { ClosingCTA } from '@/sections/ClosingCTA'
 
 export function TermsOfUse() {
+  usePageMeta('Terms of Use | Stablezact', 'Stablezact terms of use.')
   return (
     <div className="min-h-screen bg-white text-black">
       <Navbar />

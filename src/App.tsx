@@ -24,6 +24,7 @@ const RetailPos = lazy(() => solutions().then((m) => ({ default: m.RetailPosPage
 const TalkToSales = lazy(() => import('@/pages/TalkToSales'))
 const ContactUs = lazy(() => import('@/pages/ContactUs'))
 const RequestCryptoCheckout = lazy(() => import('@/pages/RequestCryptoCheckout'))
+const NotFound = lazy(() => import('@/pages/NotFound'))
 
 function ScrollToTop() {
   const { hash, pathname } = useLocation()
@@ -68,6 +69,7 @@ function App() {
             <Route path="/talk-to-sales" element={<TalkToSales />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/request-crypto-checkout" element={<RequestCryptoCheckout />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
         <CookieConsent />
