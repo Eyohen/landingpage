@@ -82,8 +82,8 @@ export function Hero() {
           variants={item}
           className="mt-7 max-w-[980px] text-[clamp(34px,4.2vw,54px)] font-semibold leading-[1.12] tracking-[-0.02em] max-md:mt-5 max-md:max-w-[360px] max-md:text-[38px]"
         >
-          <span className="block text-[#070711] md:whitespace-nowrap">The complete stablecoin payment</span>
-          <span className="block text-[#8b8891]">experience, simplified.</span>
+          <span className="block text-[#070711] md:whitespace-nowrap">Stablecoin payment infrastructure</span>
+          <span className="block text-[#8b8891]">for PSPs and merchants</span>
         </motion.h1>
 
         <motion.div
