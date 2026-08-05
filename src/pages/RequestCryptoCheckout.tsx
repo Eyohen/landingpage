@@ -57,7 +57,7 @@ export default function RequestCryptoCheckout() {
       />
 
       <Reveal delay={0.1} className="container-1200 pb-[110px] pt-14 max-md:pb-[64px]">
-        <div className="mx-auto flex max-w-[1080px] gap-12 rounded-[18px] bg-white p-10 shadow-[0_30px_90px_rgba(20,10,40,0.06)] max-lg:flex-col max-md:p-6">
+        <div className="mx-auto flex max-w-[1080px] gap-12 rounded-[18px] bg-white p-10 shadow-[0_30px_90px_rgba(20,10,40,0.06)] max-lg:flex-col max-md:gap-8 max-md:p-3">
           <div className="flex w-[300px] shrink-0 flex-col gap-6 max-lg:w-full">
             <div className="flex flex-col gap-3">
               <h2 className="font-[family-name:var(--font-geist)] text-[36px] font-medium leading-[1.15] tracking-[-0.03em] text-black max-md:text-[28px]">

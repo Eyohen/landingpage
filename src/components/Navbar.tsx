@@ -32,9 +32,7 @@ const SOLUTION_LINKS: NavChild[] = [
 ]
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Products', href: '/#how-it-works' },
   { label: 'Solutions', children: SOLUTION_LINKS },
-  { label: 'Developers', href: 'https://docs.stablezact.com', external: true },
   {
     label: 'Resources',
     children: [

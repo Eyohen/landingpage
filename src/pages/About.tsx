@@ -82,7 +82,7 @@ function StatCard({ label, value }: { label: string; value: string }) {
 export default function About() {
   usePageMeta(
     'About Stablezact | Stablecoin Payment Infrastructure',
-    'Stablezact is a fintech infrastructure company making stablecoin wallets usable at checkout — for payment companies, platforms and merchants across online, mobile and in-store commerce.',
+    'Stablezact is a fintech infrastructure company making crypto wallets usable at checkout — for payment companies, platforms and merchants across online, mobile and in-store commerce.',
   )
 
   return (
@@ -142,7 +142,7 @@ export default function About() {
               <Reveal delay={0.1} className="flex w-[780px] max-w-full flex-col gap-8">
                 <p className="font-[family-name:var(--font-geist)] text-[30px] font-semibold leading-[40px] tracking-[-0.04em] text-white max-md:text-[22px] max-md:leading-[1.4]">
                   Stablezact is a fintech infrastructure company making
-                  stablecoin wallets usable at checkout. The company helps
+                  crypto wallets usable at checkout. The company helps
                   payment companies, payment facilitators, travel platforms,
                   e-commerce merchants, and other digital businesses accept
                   wallet-based payments across online, mobile, in-store, and
