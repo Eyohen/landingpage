@@ -28,7 +28,7 @@ export default function TalkToSales() {
       />
 
       <Reveal delay={0.1} className="container-1200 pb-[110px] pt-14 max-md:pb-[64px]">
-        <div className="mx-auto flex max-w-[1080px] gap-12 rounded-[18px] bg-white p-10 shadow-[0_30px_90px_rgba(20,10,40,0.06)] max-lg:flex-col max-md:p-6">
+        <div className="mx-auto flex max-w-[1080px] gap-12 rounded-[18px] bg-white p-10 shadow-[0_30px_90px_rgba(20,10,40,0.06)] max-lg:flex-col max-md:gap-8 max-md:p-3">
           <FormSidebar
             title="Requirements?"
             body="Book a slot with our commercial team to discuss technical integration, merchant rollout and commercial structure."

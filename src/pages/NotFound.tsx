@@ -3,7 +3,7 @@ import { Navbar } from '@/components/Navbar'
 import { Reveal } from '@/components/motion/Reveal'
 import { useNoIndex, usePageMeta } from '@/lib/usePageMeta'
 import heroRings from '@/assets/figma/inner/hero-rings.svg'
-import homeIcon from '@/assets/figma/inner/icon-home.svg'
+import mailIcon from '@/assets/figma/inner/icon-mail.svg'
 import illustration from '@/assets/figma/not-found-illustration.png'
 
 /** 404 page — Figma node 2017:24514. Rendered for unknown routes; noindex. */
@@ -42,11 +42,11 @@ export default function NotFound() {
             to you within 1–2 business days.
           </p>
           <Link
-            to="/"
+            to="/contact-us"
             className="relative z-10 inline-flex h-[52px] items-center justify-center gap-2 rounded-[12px] bg-[#f1ecfa] p-4 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.64px] text-[#7042d2] transition-colors hover:bg-[#e6dcf7]"
           >
-            <img src={homeIcon} alt="" aria-hidden="true" className="size-[16px]" />
-            Take me to Home Page
+            <img src={mailIcon} alt="" aria-hidden="true" className="size-[16px]" />
+            Contact us
           </Link>
         </Reveal>
       </main>

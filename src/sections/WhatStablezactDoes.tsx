@@ -1,14 +1,15 @@
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal } from '@/components/motion/Reveal'
 import algorandLogo from '@/assets/figma/algorand-logo.svg'
-import woocommerceLogo from '@/assets/figma/woocommerce.png'
+import circleAllianceBadge from '@/assets/figma/circle-alliance-partner.jpg'
 
 const TRUSTED_COMPANIES = [
   {
     number: '01',
-    name: 'WooCommerce',
-    logo: woocommerceLogo,
-    logoClassName: 'h-[22px] w-auto object-contain',
+    name: 'Circle Alliance Partner',
+    logo: circleAllianceBadge,
+    logoClassName: 'h-[76px] w-auto rounded-[8px] object-contain',
+    imageOnly: true,
   },
   {
     number: '02',
@@ -67,7 +68,9 @@ export function WhatStablezactDoes() {
                   <span className="absolute left-4 top-3 font-mono text-[14px] font-medium tracking-[0.04em] text-[var(--color-accent)]">
                     [{company.number}]
                   </span>
-                  {company.logo ? (
+                  {company.logo && 'imageOnly' in company && company.imageOnly ? (
+                    <img src={company.logo} alt={company.name} className={company.logoClassName} />
+                  ) : company.logo ? (
                     <div className="flex flex-col items-center gap-1">
                       <img src={company.logo} alt="" className={company.logoClassName} />
                       <span className="text-[16px] font-medium leading-none tracking-normal text-black">

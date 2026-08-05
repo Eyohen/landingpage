@@ -52,7 +52,7 @@ export function CalendlyEmbed({ url, minHeight = 700 }: { url: string; minHeight
   return (
     <div
       ref={ref}
-      style={{ minWidth: 320, height: minHeight }}
+      style={{ minWidth: 0, width: '100%', height: minHeight }}
       aria-label="Scheduling calendar"
     />
   )
