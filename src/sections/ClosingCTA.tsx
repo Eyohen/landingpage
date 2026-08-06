@@ -37,7 +37,7 @@ export function ClosingCTA() {
               to="/book-a-demo"
               className="inline-flex items-center justify-center rounded-[10px] bg-white px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-[#7042d2] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f0eafd]"
             >
-              Book a Demo
+              Book a demo
             </Link>
             <Link
               to="/contact-us"

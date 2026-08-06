@@ -46,7 +46,7 @@ export function WhatStablezactDoes() {
 
         <div className="max-w-[740px]">
           <Reveal delay={0.08} as="h2" className="max-w-[720px] text-[56px] font-medium leading-[1.05] tracking-normal text-black max-lg:text-[48px] max-md:text-[38px]">
-            We make stablecoin wallets <span className="text-[#737373]">usable at product checkout</span>
+            We make crypto wallets <span className="text-[#737373]">usable at checkout.</span>
           </Reveal>
 
           <Reveal delay={0.16} as="p" className="mt-8 max-w-[650px] text-[17px] font-normal leading-[1.55] tracking-normal text-black max-md:mt-6 max-md:text-[16px]">

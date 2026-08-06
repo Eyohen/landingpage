@@ -44,7 +44,7 @@ export default function ContactUs() {
         <div className="mx-auto flex max-w-[1080px] gap-12 rounded-[18px] bg-white p-10 shadow-[0_30px_90px_rgba(20,10,40,0.06)] max-lg:flex-col max-md:gap-8 max-md:p-3">
           <FormSidebar
             title="Send us a message"
-            body="Book a slot below and the right person at Stablezact will speak with you. Use Book a Demo for a product walkthrough."
+            body="Book a slot below and the right person at Stablezact will speak with you. Use Book a demo for a product walkthrough."
             showContactLink={false}
           />
 

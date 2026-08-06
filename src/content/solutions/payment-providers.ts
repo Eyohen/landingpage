@@ -17,13 +17,13 @@ import {
 export const paymentProviders: SolutionContent = {
   metaTitle: 'Stablezact for Payment Service Providers — stablecoin payments for your merchant network',
   metaDescription:
-    'Give your merchants access to stablecoin wallet payments through the payment infrastructure they already use. Stablezact helps PSPs and PayFacs launch stablecoin acceptance without building wallet connectivity from the ground up.',
+    'Give your merchants access to crypto wallet payments through the payment infrastructure they already use. Stablezact helps PSPs and PayFacs launch stablecoin acceptance without building wallet connectivity from the ground up.',
   hero: {
     eyebrow: 'PAYMENT SERVICE PROVIDERS',
     titleDark: 'Add stablecoin payments across',
     titleGray: 'your merchant networks.',
     body: [
-      'Give your merchants access to stablecoin wallet payments through the payment infrastructure they already use.',
+      'Give your merchants access to crypto wallet payments through the payment infrastructure they already use.',
       'Stablezact helps PSPs and PayFacs launch stablecoin acceptance without building wallet connectivity, blockchain routing and transaction validation from the ground up.',
     ],
     ctas: [

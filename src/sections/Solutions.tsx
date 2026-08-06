@@ -20,39 +20,43 @@ const PANELS = [
     num: '01',
     label: 'Providers',
     title: 'Payment Service Providers',
+    subtitle:
+      'Add crypto payments to your existing payment stack and settle merchants in stablecoins or supported local currencies.',
     image: providersImg,
   },
   {
     num: '02',
     label: 'Facilitators',
     title: 'Payment Facilitators',
+    subtitle:
+      'Enable your merchant network to accept crypto through one integration, with fast settlement and simple reconciliation.',
     image: facilitatorsImg,
   },
   {
     num: '03',
     label: 'Merchants',
     title: 'Enterprise Merchants',
+    subtitle:
+      'Accept crypto across web, mobile and in-store checkout without taking custody of customer funds.',
     image: merchantsImg,
   },
 ]
-
-const PANEL_SUBTITLE = 'Offer crypto acceptance without blockchain infrastructure.'
 
 const bottomCards = [
   {
     num: '04',
     title: 'E-commerce Platforms',
-    body: 'Enable merchants to accept crypto with minimal integration effort.',
+    body: 'Enable merchants to accept crypto online with minimal integration effort.',
   },
   {
     num: '05',
     title: 'Travel Companies',
-    body: 'Accept global payments without card limitations for all users & clients',
+    body: 'Accept global payments from crypto wallet users without card limitations.',
   },
   {
     num: '06',
-    title: 'Retail Store & Marketplace',
-    body: 'Enable QR-powered crypto checkout in stores to enable buyers pay using digital assets.',
+    title: 'Retail Stores & Marketplaces',
+    body: 'Enable QR-powered crypto checkout and let customers pay using the digital assets they already hold.',
   },
 ]
 
@@ -90,7 +94,7 @@ export function Solutions() {
                   href="/book-a-demo"
                   className="group inline-flex w-fit items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5]"
                 >
-                  Book a Demo
+                  Book a demo
                 </a>
               </Reveal>
             </div>
@@ -157,7 +161,7 @@ export function Solutions() {
                           {panel.title}
                         </h3>
                         <p className="text-[18px] leading-[27px] text-[#888]">
-                          {PANEL_SUBTITLE}
+                          {panel.subtitle}
                         </p>
                       </div>
                     </motion.div>
@@ -198,7 +202,7 @@ export function Solutions() {
                       {panel.title}
                     </h3>
                     <p className="text-[16px] leading-[24px] text-[#888]">
-                      {PANEL_SUBTITLE}
+                      {panel.subtitle}
                     </p>
                   </div>
                 </div>

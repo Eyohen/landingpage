@@ -49,7 +49,7 @@ function LockIcon() {
 
 export function BookDemo() {
   usePageMeta(
-    'Book a Demo | Stablezact',
+    'Book a demo | Stablezact',
     'Book a product demo and see how Stablezact adds crypto wallet payments to your checkout with settlement in stablecoins or supported local currencies.',
   )
   return (

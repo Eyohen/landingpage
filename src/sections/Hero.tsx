@@ -108,9 +108,9 @@ export function Hero() {
           className="relative z-20 mt-10 max-w-[590px] text-[18px] leading-[1.5] tracking-[-0.02em] text-[#1a1720] max-md:mt-8 max-md:text-[16px]"
         >
           Stablezact is non-custodial payment infrastructure for PSPs, platforms
-          and merchants. Customers pay from the crypto wallets they already use
-          — across web, mobile and in-store checkout — while you settle
-          instantly in stablecoins or supported local currencies.
+          and merchants. Customers can pay from the crypto wallets they already
+          use across web, mobile and in-store checkout, while merchants receive
+          instant settlement in stablecoins or supported local currencies.
         </motion.p>
 
         <motion.div variants={item} className="relative z-20 mt-8 flex flex-wrap items-center justify-center gap-4 max-md:w-full max-md:flex-col max-md:items-stretch">
@@ -118,7 +118,7 @@ export function Hero() {
             href="/book-a-demo"
             className="group inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5] max-md:w-full"
           >
-            Book a Demo
+            Book a demo
           </a>
          
         </motion.div>

@@ -101,9 +101,9 @@ export function Ecosystem() {
               One integration. The entire wallet economy!
             </h2>
             <p className="max-w-[544px] font-[family-name:var(--font-geist)] text-[16px] font-medium leading-[1.4] tracking-[-0.04em] text-white max-lg:text-[15px]">
-              Stablezact routes payments across every major wallet, token and
-              chain, so your customers can pay with what they already hold —
-              multiple blockchain networks, instant settlement.
+              Stablezact connects major wallets, tokens and blockchain networks,
+              so customers can pay with the assets they already hold while
+              merchants receive instant settlement.
             </p>
           </Reveal>
 
