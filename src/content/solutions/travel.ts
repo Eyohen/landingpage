@@ -22,17 +22,17 @@ import {
 
 /** Figma frame 1634:23089 — "For Travel agencies". */
 export const travel: SolutionContent = {
-  metaTitle: 'Stablezact for Travel Companies — accept global payments from stablecoin wallets',
+  metaTitle: 'Stablezact for Travel Companies — accept global payments from crypto wallets',
   metaDescription:
     'Give travellers another way to pay for flights, accommodation, experiences and travel services — settle in supported stablecoins or fiat where available.',
   hero: {
     eyebrow: 'TRAVEL COMPANIES',
     titleDark: 'Accept global payments',
-    titleGray: 'from stablecoin wallets.',
+    titleGray: 'from crypto wallets.',
     body: [
       'Give travellers another way to pay for flights, accommodation, experiences and travel services. Without relying exclusively on cards or domestic bank-payment methods — settle in supported stablecoins or fiat where available.',
     ],
-    ctas: [{ label: 'Book a Demo', href: '/book-a-demo', variant: 'purple' }],
+    ctas: [{ label: 'Book a demo', href: '/book-a-demo', variant: 'purple' }],
   },
   capabilities: {
     headingDark: 'Built for travel',
@@ -103,6 +103,6 @@ export const travel: SolutionContent = {
   cta: {
     heading: 'Make it easier for global travellers to complete your booking',
     sub: 'Discuss your markets, average transaction value and settlement requirements with Stablezact.',
-    cta: { label: 'Book a Demo', href: '/book-a-demo' },
+    cta: { label: 'Book a demo', href: '/book-a-demo' },
   },
 }

@@ -16,7 +16,7 @@ const CONTACT_OPTIONS = [
     title: 'Book a guided demo',
     body: 'See how Stablezact fits into your checkout and settlement flow.',
     href: '/book-a-demo',
-    action: 'Book a Demo',
+    action: 'Book a demo',
   },
 ] as const
 

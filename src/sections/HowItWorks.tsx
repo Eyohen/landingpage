@@ -146,7 +146,7 @@ export function HowItWorks() {
                 href="/book-a-demo"
                 className="group inline-flex w-fit items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5] max-sm:text-[15px]"
               >
-                Book a Demo
+                Book a demo
                 <svg
                   width="18"
                   height="18"
@@ -198,7 +198,7 @@ export function HowItWorks() {
             href="/book-a-demo"
             className="group mt-2 inline-flex w-fit items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5]"
           >
-            Book a Demo
+            Book a demo
             <svg
               width="18"
               height="18"

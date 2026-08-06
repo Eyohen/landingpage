@@ -5,7 +5,7 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 /**
  * FAQ accordion section — Figma node 352:25576 (landing) / reused on the
  * Talk to Sales and Contact Us pages. Light section: left column holds the
- * bracketed eyebrow, heading and a "Book a Demo" CTA card; right column is
+ * bracketed eyebrow, heading and a "Book a demo" CTA card; right column is
  * an interactive accordion (first item open by default).
  */
 
@@ -41,9 +41,9 @@ const FAQS: Faq[] = [
       'No. Stablezact abstracts away the blockchain complexity so you can accept crypto payments without any specialist knowledge.',
   },
   {
-    question: 'How difficult is integration?',
+    question: 'How easy is it to integrate Stablezact?',
     answer:
-      'Integration is straightforward — drop in our SDK or call the REST API and you can be live in a single afternoon.',
+      'Integration is simple. Add our SDK or connect through our REST API, and most teams can be up and running within an afternoon.',
   },
   {
     question: 'Can I integrate with my existing payment stack?',
@@ -108,7 +108,7 @@ export function FaqSection() {
                 href="/book-a-demo"
                 className="group inline-flex w-fit items-center justify-center gap-2 rounded-[10px] bg-[#7042d2] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[18px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5]"
               >
-                Book a Demo
+                Book a demo
               </a>
             </Reveal>
           </div>

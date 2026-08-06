@@ -37,7 +37,7 @@ export default function TalkToSales() {
             <CalendlyEmbed url={CALENDLY_URL} />
             <p className="mt-4 text-center text-[13px] leading-[1.5] text-[#9b9b9b]">
               We normally respond within one business day. For a product
-              walkthrough, use Book a Demo.
+              walkthrough, use Book a demo.
             </p>
           </div>
         </div>

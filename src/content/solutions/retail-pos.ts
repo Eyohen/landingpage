@@ -26,17 +26,17 @@ import {
  * heading, chip icons); those are adapted to retail wording here.
  */
 export const retailPos: SolutionContent = {
-  metaTitle: 'Stablezact for Retail & POS — bring stablecoin wallets to the physical checkout',
+  metaTitle: 'Stablezact for Retail & POS — bring crypto wallets to the physical checkout',
   metaDescription:
     'Give customers another way to pay in store. Stablezact generates QR payment requests at the till, validates the transaction on-chain and settles directly to your business.',
   hero: {
     eyebrow: 'RETAIL & POS',
-    titleDark: 'Bring stablecoin wallets',
+    titleDark: 'Bring crypto wallets',
     titleGray: 'to the physical checkout.',
     body: [
       'Give customers another way to pay in store. Stablezact generates QR payment requests at the till, validates the transaction on-chain and settles directly to your business — in supported stablecoins or fiat where available.',
     ],
-    ctas: [{ label: 'Book a Demo', href: '/book-a-demo', variant: 'purple' }],
+    ctas: [{ label: 'Book a demo', href: '/book-a-demo', variant: 'purple' }],
   },
   capabilities: {
     headingDark: 'Built for everyday',
@@ -107,6 +107,6 @@ export const retailPos: SolutionContent = {
   cta: {
     heading: 'Let customers spend from their wallets in your stores.',
     sub: 'Speak with us about POS integration, store rollout and settlement.',
-    cta: { label: 'Book a Demo', href: '/book-a-demo' },
+    cta: { label: 'Book a demo', href: '/book-a-demo' },
   },
 }
