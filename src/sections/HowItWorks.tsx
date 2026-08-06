@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal } from '@/components/motion/Reveal'
-import step1 from '@/assets/figma/hiw-step-1.png'
-import step2 from '@/assets/figma/hiw-step-2.png'
-import step3 from '@/assets/figma/hiw-step-3.png'
-import step4 from '@/assets/figma/hiw-step-4.png'
+import stepSelectCrypto from '@/assets/figma/hiw-select-crypto.png'
+import stepTokenChoice from '@/assets/figma/hiw-token-choice.png'
+import stepSettlement from '@/assets/figma/hiw-step-4.png'
 
 /**
  * "How it works" section — dark.
@@ -23,27 +22,21 @@ const MOCKUP_GRADIENT =
 const STEPS = [
   {
     tab: '01. Select Crypto',
-    heading: '01. User selects crypto',
-    body: 'Select crypto as your payment option at checkout when you’re ready to complete your purchase. Just like selecting a card or bank transfer. Then you proceed to select a network & token.',
-    image: step1,
+    heading: '01. Select Crypto',
+    body: 'Select crypto as your payment option at checkout when you’re ready to complete your purchase. Just like selecting a card or bank transfer.',
+    image: stepSelectCrypto,
   },
   {
-    tab: '02. Preferred Wallet',
-    heading: '02. Preferred Wallet',
-    body: 'Choose your preferred blockchain network and complete the payment using a wallet you trust.',
-    image: step2,
+    tab: '02. Token Choice',
+    heading: '02. Token Choice',
+    body: 'Choose your preferred blockchain network and token, then complete the payment with a wallet you trust. We verify it in real time on the blockchain.',
+    image: stepTokenChoice,
   },
   {
-    tab: '03. Payment Validation',
-    heading: '03. Payment Validation',
-    body: 'Payment is automatically confirmed. We verify your payment in real time on the blockchain before settlement.',
-    image: step3,
-  },
-  {
-    tab: '04. Instant Settlement',
-    heading: '04. Instant Settlement',
+    tab: '03. Instant Settlement',
+    heading: '03. Instant Settlement',
     body: 'Once the payment is confirmed, funds are settled immediately to the merchant in stablecoins or supported fiat.',
-    image: step4,
+    image: stepSettlement,
   },
 ]
 
