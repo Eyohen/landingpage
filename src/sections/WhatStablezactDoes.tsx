@@ -1,15 +1,16 @@
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal } from '@/components/motion/Reveal'
 import algorandLogo from '@/assets/figma/algorand-logo.svg'
-import circleAllianceBadge from '@/assets/figma/circle-alliance-partner.jpg'
+import circleLogo from '@/assets/figma/circle-logo.png'
 
 const TRUSTED_COMPANIES = [
   {
     number: '01',
     name: 'Circle Alliance Partner',
-    logo: circleAllianceBadge,
-    logoClassName: 'h-[76px] w-auto rounded-[8px] object-contain',
+    logo: circleLogo,
+    logoClassName: 'h-[32px] w-auto object-contain',
     imageOnly: true,
+    href: 'https://partners.circle.com/partner/stablezact',
   },
   {
     number: '02',
@@ -60,10 +61,15 @@ export function WhatStablezactDoes() {
             </p>
 
             <div className="mt-5 grid grid-cols-3 gap-3 max-md:grid-cols-1">
-              {TRUSTED_COMPANIES.map((company) => (
-                <div
+              {TRUSTED_COMPANIES.map((company) => {
+                const CardTag = 'href' in company && company.href ? 'a' : 'div'
+                return (
+                <CardTag
                   key={company.number}
-                  className="relative flex h-[100px] min-w-0 items-center justify-center rounded-[12px] bg-white px-6 shadow-[0_18px_45px_rgba(20,20,20,0.035)]"
+                  {...('href' in company && company.href
+                    ? { href: company.href, target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                  className="relative flex h-[100px] min-w-0 items-center justify-center rounded-[12px] bg-white px-6 shadow-[0_18px_45px_rgba(20,20,20,0.035)] transition-transform duration-300 hover:-translate-y-0.5"
                 >
                   <span className="absolute left-4 top-3 font-mono text-[14px] font-medium tracking-[0.04em] text-[var(--color-accent)]">
                     [{company.number}]
@@ -90,8 +96,9 @@ export function WhatStablezactDoes() {
                       </span>
                     </div>
                   )}
-                </div>
-              ))}
+                </CardTag>
+                )
+              })}
             </div>
           </Reveal>
         </div>
