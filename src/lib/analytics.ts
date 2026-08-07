@@ -1,10 +1,10 @@
 // Analytics loaders, gated on consent. Nothing here touches the network until
 // `enableAnalytics()` is called, which only happens once the visitor has opted
-// into the analytics category. IDs come from env so the real values are supplied
-// at build/deploy time (Netlify) rather than committed.
+// into the analytics category. The production GA4/Clarity IDs are the defaults;
+// env vars can override them per environment.
 
-const GA4_ID = import.meta.env.VITE_GA4_ID as string | undefined
-const CLARITY_ID = import.meta.env.VITE_CLARITY_ID as string | undefined
+const GA4_ID = (import.meta.env.VITE_GA4_ID as string | undefined) || 'G-CHV550VCGD'
+const CLARITY_ID = (import.meta.env.VITE_CLARITY_ID as string | undefined) || 'xybku39tvu'
 
 declare global {
   interface Window {
