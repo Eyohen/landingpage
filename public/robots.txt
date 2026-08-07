@@ -1,0 +1,15 @@
+# stablezact.com
+User-agent: *
+Allow: /
+
+# AI search crawlers are welcome
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://stablezact.com/sitemap.xml

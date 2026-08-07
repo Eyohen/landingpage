@@ -32,9 +32,7 @@ const SOLUTION_LINKS: NavChild[] = [
 ]
 
 const NAV_ITEMS: NavItem[] = [
-  { label: 'Products', href: '/#how-it-works' },
   { label: 'Solutions', children: SOLUTION_LINKS },
-  { label: 'Developers', href: 'https://docs.stablezact.com', external: true },
   {
     label: 'Resources',
     children: [
@@ -46,6 +44,7 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: 'Company',
     children: [
+      { label: 'About Us', href: '/about' },
       { label: 'Contact Us', href: '/contact-us' },
       { label: 'Talk to Sales', href: '/talk-to-sales' },
       { label: 'Request Crypto Checkout', href: '/request-crypto-checkout' },
@@ -199,7 +198,7 @@ export function Navbar() {
             to="/book-a-demo"
             className="ml-2 inline-flex items-center justify-center rounded-[10px] bg-[#7042d2] px-5 py-2 font-[family-name:var(--font-geist)] text-[16px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5]"
           >
-            Book a Demo
+            Book a demo
           </Link>
         </nav>
 
@@ -268,7 +267,7 @@ export function Navbar() {
               onClick={close}
               className="mt-3 inline-flex w-full items-center justify-center rounded-[10px] bg-[#7042d2] px-6 py-2.5 font-[family-name:var(--font-geist)] text-[17px] font-medium tracking-[-0.03em] text-white transition-colors hover:bg-[#5f32c5]"
             >
-              Book a Demo
+              Book a demo
             </Link>
           </nav>
         </div>

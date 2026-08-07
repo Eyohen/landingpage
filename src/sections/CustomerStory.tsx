@@ -64,7 +64,7 @@ export function CustomerStory() {
                     </h3>
                     <div className="flex items-end justify-between gap-6">
                       <p className="max-w-[210px] text-[16px] font-medium leading-[1.4] tracking-[-0.04em] text-[rgba(10,10,10,0.6)]">
-                        Here is the customers completion rate for transactions.
+                        The customer completion rate across transactions.
                       </p>
                       <p className="shrink-0 font-[family-name:var(--font-geist)] text-[56px] font-normal leading-none tracking-[-0.07em] text-black max-md:text-[44px]">
                         <CountUp value={99} suffix="%" />
@@ -83,7 +83,7 @@ export function CustomerStory() {
                         Total settlement time after every transaction is less than 5 seconds
                       </p>
                       <p className="shrink-0 font-[family-name:var(--font-geist)] text-[56px] font-normal leading-none tracking-[-0.07em] text-black max-md:text-[44px]">
-                        &gt;3s
+                        &lt;5s
                       </p>
                     </div>
                   </div>

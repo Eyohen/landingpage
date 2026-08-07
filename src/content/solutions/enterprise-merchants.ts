@@ -19,16 +19,16 @@ import {
 export const enterpriseMerchants: SolutionContent = {
   metaTitle: 'Stablezact for Enterprise Merchants — accept stablecoins without changing how you operate',
   metaDescription:
-    'Add stablecoin wallets as another checkout option and receive settlement directly to infrastructure controlled by your business — without replacing your existing PSP or checkout infrastructure.',
+    'Add crypto wallets as another checkout option and receive settlement directly to infrastructure controlled by your business — without replacing your existing PSP or checkout infrastructure.',
   hero: {
     eyebrow: 'ENTERPRISE MERCHANTS',
     titleDark: 'Accept stablecoins without changing',
     titleGray: 'how your business operates.',
     body: [
-      'Add stablecoin wallets as another checkout option and receive settlement directly to infrastructure controlled by your business.',
+      'Add crypto wallets as another checkout option and receive settlement directly to infrastructure controlled by your business.',
     ],
     ctas: [
-      { label: 'Book an enterprise Demo', href: '/book-a-demo', variant: 'purple' },
+      { label: 'Book an enterprise demo', href: '/book-a-demo', variant: 'purple' },
       { label: 'See how it works', href: '/#how-it-works', variant: 'soft' },
     ],
   },
@@ -88,7 +88,7 @@ export const enterpriseMerchants: SolutionContent = {
       merged: true,
       kind: 'split-panel',
       heading: 'Seven predictable steps',
-      body: 'Add stablecoin wallets as another checkout option and receive settlement directly to infrastructure controlled by your business.',
+      body: 'Add crypto wallets as another checkout option and receive settlement directly to infrastructure controlled by your business.',
       chips: [
         { label: 'Retail & consumer brands' },
         { label: 'Digital goods' },
@@ -131,7 +131,7 @@ export const enterpriseMerchants: SolutionContent = {
     },
   ],
   cta: {
-    heading: 'Make your checkout accessible to the stablecoin wallet economy.',
+    heading: 'Make your checkout accessible to the crypto wallet economy.',
     sub: 'Speak with our team about technical integration, merchant rollout and commercial structure.',
     cta: { label: 'Discuss an enterprise partnership', href: '/talk-to-sales' },
   },

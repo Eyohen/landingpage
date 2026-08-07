@@ -36,7 +36,7 @@ export function FeatureSplit({ heading, body, cta, image, imageAlt = '' }: Featu
             ) : null}
           </div>
           <div className="min-h-[420px] flex-[1.2] max-lg:min-h-[280px]">
-            <img src={image} alt={imageAlt} className="size-full object-cover" />
+            <img src={image} alt={imageAlt} loading="lazy" decoding="async" className="size-full object-cover" />
           </div>
         </Reveal>
       </div>

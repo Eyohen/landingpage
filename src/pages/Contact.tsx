@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/Navbar'
+import { usePageMeta } from '@/lib/usePageMeta'
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { ClosingCTA } from '@/sections/ClosingCTA'
 
@@ -15,11 +16,15 @@ const CONTACT_OPTIONS = [
     title: 'Book a guided demo',
     body: 'See how Stablezact fits into your checkout and settlement flow.',
     href: '/book-a-demo',
-    action: 'Book a Demo',
+    action: 'Book a demo',
   },
 ] as const
 
 export function Contact() {
+  usePageMeta(
+    'Contact | Stablezact',
+    'Get in touch with the Stablezact team about partnerships, merchant onboarding and product questions.',
+  )
   return (
     <div className="min-h-screen bg-white text-black">
       <Navbar />

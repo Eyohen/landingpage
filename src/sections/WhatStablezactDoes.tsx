@@ -1,14 +1,16 @@
 import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal } from '@/components/motion/Reveal'
 import algorandLogo from '@/assets/figma/algorand-logo.svg'
-import woocommerceLogo from '@/assets/figma/woocommerce.png'
+import circleLogo from '@/assets/figma/circle-logo.png'
 
 const TRUSTED_COMPANIES = [
   {
     number: '01',
-    name: 'WooCommerce',
-    logo: woocommerceLogo,
-    logoClassName: 'h-[22px] w-auto object-contain',
+    name: 'Circle Alliance Partner',
+    logo: circleLogo,
+    logoClassName: 'h-[32px] w-auto object-contain',
+    imageOnly: true,
+    href: 'https://partners.circle.com/partner/stablezact',
   },
   {
     number: '02',
@@ -44,7 +46,7 @@ export function WhatStablezactDoes() {
 
         <div className="max-w-[740px]">
           <Reveal delay={0.08} as="h2" className="max-w-[720px] text-[56px] font-medium leading-[1.05] tracking-normal text-black max-lg:text-[48px] max-md:text-[38px]">
-            We make stablecoin wallets <span className="text-[#737373]">usable at product checkout</span>
+            We make crypto wallets <span className="text-[#737373]">usable at checkout.</span>
           </Reveal>
 
           <Reveal delay={0.16} as="p" className="mt-8 max-w-[650px] text-[17px] font-normal leading-[1.55] tracking-normal text-black max-md:mt-6 max-md:text-[16px]">
@@ -59,15 +61,22 @@ export function WhatStablezactDoes() {
             </p>
 
             <div className="mt-5 grid grid-cols-3 gap-3 max-md:grid-cols-1">
-              {TRUSTED_COMPANIES.map((company) => (
-                <div
+              {TRUSTED_COMPANIES.map((company) => {
+                const CardTag = 'href' in company && company.href ? 'a' : 'div'
+                return (
+                <CardTag
                   key={company.number}
-                  className="relative flex h-[100px] min-w-0 items-center justify-center rounded-[12px] bg-white px-6 shadow-[0_18px_45px_rgba(20,20,20,0.035)]"
+                  {...('href' in company && company.href
+                    ? { href: company.href, target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                  className="relative flex h-[100px] min-w-0 items-center justify-center rounded-[12px] bg-white px-6 shadow-[0_18px_45px_rgba(20,20,20,0.035)] transition-transform duration-300 hover:-translate-y-0.5"
                 >
                   <span className="absolute left-4 top-3 font-mono text-[14px] font-medium tracking-[0.04em] text-[var(--color-accent)]">
                     [{company.number}]
                   </span>
-                  {company.logo ? (
+                  {company.logo && 'imageOnly' in company && company.imageOnly ? (
+                    <img src={company.logo} alt={company.name} className={company.logoClassName} />
+                  ) : company.logo ? (
                     <div className="flex flex-col items-center gap-1">
                       <img src={company.logo} alt="" className={company.logoClassName} />
                       <span className="text-[16px] font-medium leading-none tracking-normal text-black">
@@ -87,8 +96,9 @@ export function WhatStablezactDoes() {
                       </span>
                     </div>
                   )}
-                </div>
-              ))}
+                </CardTag>
+                )
+              })}
             </div>
           </Reveal>
         </div>
