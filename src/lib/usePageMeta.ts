@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { trackPageView } from '@/lib/analytics'
 
 const ORIGIN = 'https://stablezact.com'
 
@@ -42,6 +43,10 @@ export function usePageMeta(title: string, description?: string) {
     if (ogTitle) ogTitle.content = title
     if (description && ogDesc) ogDesc.content = description
     if (ogUrl) ogUrl.content = url
+
+    // Reported after the tags above are in place, so the hit carries this
+    // page's title rather than the one we navigated away from.
+    trackPageView(pathname, title)
 
     return () => {
       document.title = prevTitle
