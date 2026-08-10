@@ -4,8 +4,6 @@ import { SectionEyebrow } from '@/components/SectionEyebrow'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { usePageMeta } from '@/lib/usePageMeta'
 import banner from '@/assets/figma/about/banner.jpg'
-import cornerA from '@/assets/figma/about/corner-a.svg'
-import cornerB from '@/assets/figma/about/corner-b.svg'
 import iconGlobe from '@/assets/figma/about/icon-globe.svg'
 import iconMoneyBag from '@/assets/figma/about/icon-money-bag.svg'
 import iconApiGateway from '@/assets/figma/about/icon-api-gateway.svg'
@@ -13,15 +11,9 @@ import iconBlockchain from '@/assets/figma/about/icon-blockchain.svg'
 
 /**
  * About page — Figma node 2050:25247 ("About page" section). Light hero with
- * photo banner, bracket-cornered stat cards, dark #1a1a1a company section
+ * photo banner, dark #1a1a1a company section
  * with four feature rows, then the shared purple CTA + footer.
  */
-
-const STATS = [
-  { label: 'Founded', value: 'In 2024' },
-  { label: 'Team', value: '7+ experts' },
-  { label: 'Based in', value: 'London, United Kingdom.' },
-]
 
 const FEATURES = [
   {
@@ -61,24 +53,6 @@ function MonoBadge({ children }: { children: string }) {
   )
 }
 
-function StatCard({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="relative flex flex-1 flex-col gap-3 bg-[rgba(112,66,210,0.03)] p-[30px] max-md:w-full">
-      {/* corner brackets */}
-      <img src={cornerA} alt="" aria-hidden="true" className="absolute left-0 top-0 size-[10px]" />
-      <img src={cornerB} alt="" aria-hidden="true" className="absolute right-0 top-0 size-[10px] -scale-y-100 rotate-180" />
-      <img src={cornerB} alt="" aria-hidden="true" className="absolute bottom-0 right-0 size-[10px] rotate-180" />
-      <img src={cornerA} alt="" aria-hidden="true" className="absolute bottom-0 left-0 size-[10px] -scale-y-100" />
-      <p className="font-[family-name:var(--font-geist)] text-[12px] font-medium tracking-[-0.2px] text-[var(--color-muted)]">
-        {label}
-      </p>
-      <p className="text-[16px] font-medium leading-[26px] tracking-[-0.05em] text-[#0a0a0a]">
-        {value}
-      </p>
-    </div>
-  )
-}
-
 export default function About() {
   usePageMeta(
     'About Stablezact | Stablecoin Payment Infrastructure',
@@ -89,7 +63,7 @@ export default function About() {
     <div className="min-h-screen bg-white text-black">
       <Navbar />
       <main>
-        {/* Hero: eyebrow + heading + photo banner + stat cards */}
+        {/* Hero: eyebrow + heading + photo banner */}
         <section className="relative isolate overflow-hidden bg-white pb-[82px] pt-[150px] max-md:pb-[56px] max-md:pt-[118px]">
           <div className="container-1200 flex flex-col gap-8">
             <Reveal className="flex flex-col gap-3">
@@ -121,14 +95,6 @@ export default function About() {
                 </span>
               </p>
             </Reveal>
-
-            <RevealGroup className="flex gap-3 max-md:flex-col">
-              {STATS.map((stat) => (
-                <RevealItem key={stat.label} className="flex flex-1">
-                  <StatCard {...stat} />
-                </RevealItem>
-              ))}
-            </RevealGroup>
           </div>
         </section>
 
