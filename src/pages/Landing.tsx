@@ -11,9 +11,16 @@ import { CustomerStory } from '@/sections/CustomerStory'
 import { SeeItInAction } from '@/sections/SeeItInAction'
 import { CryptoHolders } from '@/sections/CryptoHolders'
 import { ClosingCTA } from '@/sections/ClosingCTA'
+import { usePageMeta } from '@/lib/usePageMeta'
 
 export function Landing() {
   useSmoothScroll()
+  // Mirrors the defaults in index.html — restores them (and reports the page
+  // view) when navigating back to "/" from an inner page.
+  usePageMeta(
+    'Stablecoin Payment Infrastructure for Merchants | Stablezact',
+    'Stablezact enables crypto wallet payments across web, mobile and in-store checkout, with merchant settlement in stablecoins or supported local currencies.',
+  )
   return (
     <>
       <Navbar />
