@@ -4,7 +4,8 @@ import { ClosingCTA } from '@/sections/ClosingCTA'
 import { Reveal } from '@/components/motion/Reveal'
 import { ArticleToc } from '@/components/blog/ArticleToc'
 import { BracketCorners } from '@/components/blog/BracketCorners'
-import { getPost, type BlogPost as Post, type PostBlock } from '@/data/blog'
+import { PostContent } from '@/components/blog/PostContent'
+import { getPost, type BlogPost as Post } from '@/data/blog'
 import { usePageMeta } from '@/lib/usePageMeta'
 import clockIcon from '@/assets/figma/blog/icon-clock.svg'
 import moveRight from '@/assets/figma/blog/icon-move-right.svg'
@@ -14,53 +15,6 @@ import moveRight from '@/assets/figma/blog/icon-move-right.svg'
  * "In this article" sidebar and the article body, over the shared purple CTA
  * + footer. Anchors carry scroll-mt so the fixed navbar never covers a target.
  */
-
-/** Clears the 74px fixed navbar when jumping to an anchor. */
-const ANCHOR_OFFSET = 'scroll-mt-[120px]'
-
-function ArticleBlock({ block }: { block: PostBlock }) {
-  if (block.kind === 'heading') {
-    return (
-      <div id={block.id} className={`flex items-start gap-3 ${ANCHOR_OFFSET}`}>
-        <span
-          aria-hidden="true"
-          className="mt-[3px] h-[32px] w-[4px] shrink-0 rounded-full bg-[#c73154]"
-        />
-        <h2 className="text-[23px] font-semibold leading-[29.9px] tracking-[-0.92px] text-[#0a0a0a] max-md:text-[20px] max-md:leading-[26px]">
-          {block.text}
-        </h2>
-      </div>
-    )
-  }
-
-  if (block.kind === 'list') {
-    return (
-      <ol className="flex list-decimal flex-col gap-9 ps-[27px] font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-[#888] max-md:text-[16px]">
-        {block.items.map((item) => (
-          <li key={item.id} id={item.id} className={ANCHOR_OFFSET}>
-            <span className="text-black">{item.lead}</span> {item.body}
-            {item.note ? (
-              <p className="mt-4">
-                <span className="text-black">Note:</span> {item.note}
-              </p>
-            ) : null}
-          </li>
-        ))}
-      </ol>
-    )
-  }
-
-  return (
-    <p
-      id={block.id}
-      className={`font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-[#888] max-md:text-[16px] ${
-        block.id ? ANCHOR_OFFSET : ''
-      }`}
-    >
-      {block.text}
-    </p>
-  )
-}
 
 /**
  * Closes out the article. The Figma design (node 2168:70953) puts a
@@ -138,9 +92,7 @@ function Article({ post }: { post: Post }) {
                 </p>
               </Reveal>
 
-              {(post.blocks ?? []).map((block, index) => (
-                <ArticleBlock key={block.kind === 'list' ? `list-${index}` : block.id ?? index} block={block} />
-              ))}
+              <PostContent data={post.content} />
 
               <BackToBlog />
             </article>
