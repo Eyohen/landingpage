@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { TocEntry } from '@/data/newsroom'
+import type { TocEntry } from '@/data/blog'
 
 /**
  * "In this article" sidebar — Figma node 2168:70800. Bracketed entries that

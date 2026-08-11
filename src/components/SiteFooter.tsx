@@ -19,7 +19,7 @@ interface FooterLink {
 const RESOURCES: FooterLink[] = [
   { label: 'Documentation', href: 'https://docs.stablezact.com' },
   { label: 'SDKs', href: 'https://docs.stablezact.com' },
-  { label: 'Newsroom', href: '/newsroom' },
+  { label: 'Blog', href: '/blog' },
   { label: 'FAQs', href: '/#faq' },
   { label: 'Contact', href: '/contact-us' },
 ]

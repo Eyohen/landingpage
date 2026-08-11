@@ -2,15 +2,15 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { Navbar } from '@/components/Navbar'
 import { ClosingCTA } from '@/sections/ClosingCTA'
 import { Reveal } from '@/components/motion/Reveal'
-import { ArticleToc } from '@/components/newsroom/ArticleToc'
-import { BracketCorners } from '@/components/newsroom/BracketCorners'
-import { getPost, type NewsroomPost as Post, type PostBlock } from '@/data/newsroom'
+import { ArticleToc } from '@/components/blog/ArticleToc'
+import { BracketCorners } from '@/components/blog/BracketCorners'
+import { getPost, type BlogPost as Post, type PostBlock } from '@/data/blog'
 import { usePageMeta } from '@/lib/usePageMeta'
-import clockIcon from '@/assets/figma/newsroom/icon-clock.svg'
-import moveRight from '@/assets/figma/newsroom/icon-move-right.svg'
+import clockIcon from '@/assets/figma/blog/icon-clock.svg'
+import moveRight from '@/assets/figma/blog/icon-move-right.svg'
 
 /**
- * Newsroom article — Figma node 2168:70798. Full-bleed cover image, sticky
+ * Blog article — Figma node 2168:70798. Full-bleed cover image, sticky
  * "In this article" sidebar and the article body, over the shared purple CTA
  * + footer. Anchors carry scroll-mt so the fixed navbar never covers a target.
  */
@@ -67,10 +67,10 @@ function ArticleBlock({ block }: { block: PostBlock }) {
  * previous / next pair here, but with a single published post there is
  * nothing to point at, so that row is left out until there is a second post.
  */
-function BackToNewsroom() {
+function BackToBlog() {
   return (
     <Link
-      to="/newsroom"
+      to="/blog"
       className="group flex w-fit items-center gap-2 font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-black"
     >
       <img
@@ -79,7 +79,7 @@ function BackToNewsroom() {
         aria-hidden="true"
         className="size-[24px] rotate-180 transition-transform group-hover:-translate-x-1"
       />
-      Back to Newsroom
+      Back to Blog
     </Link>
   )
 }
@@ -137,7 +137,7 @@ function Article({ post }: { post: Post }) {
                 <ArticleBlock key={block.kind === 'list' ? `list-${index}` : block.id ?? index} block={block} />
               ))}
 
-              <BackToNewsroom />
+              <BackToBlog />
             </article>
           </div>
         </section>
@@ -147,10 +147,10 @@ function Article({ post }: { post: Post }) {
   )
 }
 
-export default function NewsroomPost() {
+export default function BlogPost() {
   const { slug } = useParams()
   const post = getPost(slug)
 
-  if (!post) return <Navigate to="/newsroom" replace />
+  if (!post) return <Navigate to="/blog" replace />
   return <Article post={post} />
 }

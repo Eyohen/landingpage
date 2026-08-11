@@ -26,8 +26,8 @@ const ContactUs = lazy(() => import('@/pages/ContactUs'))
 const RequestCryptoCheckout = lazy(() => import('@/pages/RequestCryptoCheckout'))
 const NotFound = lazy(() => import('@/pages/NotFound'))
 const About = lazy(() => import('@/pages/About'))
-const Newsroom = lazy(() => import('@/pages/Newsroom'))
-const NewsroomPost = lazy(() => import('@/pages/NewsroomPost'))
+const Blog = lazy(() => import('@/pages/Blog'))
+const BlogPost = lazy(() => import('@/pages/BlogPost'))
 
 function ScrollToTop() {
   const { hash, pathname } = useLocation()
@@ -73,8 +73,8 @@ function App() {
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/request-crypto-checkout" element={<RequestCryptoCheckout />} />
             <Route path="/about" element={<About />} />
-            <Route path="/newsroom" element={<Newsroom />} />
-            <Route path="/newsroom/:slug" element={<NewsroomPost />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
