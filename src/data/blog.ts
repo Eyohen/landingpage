@@ -13,20 +13,6 @@ export interface TocEntry {
   label: string
 }
 
-export interface PostListItem {
-  id: string
-  /** Bold lead-in, rendered before the body text. */
-  lead: string
-  body: string
-  /** Optional trailing "Note:" paragraph inside the same list item. */
-  note?: string
-}
-
-export type PostBlock =
-  | { kind: 'paragraph'; id?: string; text: string }
-  | { kind: 'heading'; id: string; text: string }
-  | { kind: 'list'; items: PostListItem[] }
-
 export interface BlogPost {
   slug: string
   title: string
@@ -43,8 +29,6 @@ export interface BlogPost {
   imageAlt: string
   toc: TocEntry[]
   content: SerializedEditorState
-  /** Legacy hand-authored body. Removed once the CMS renderer lands. */
-  blocks?: PostBlock[]
 }
 
 export const POSTS: BlogPost[] = manifest as unknown as BlogPost[]
