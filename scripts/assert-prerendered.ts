@@ -64,15 +64,30 @@ for (const check of checks) {
   }
 }
 
-// The prerender server's origin must never survive into shipped HTML. Vite
+// The prerender server's own origin must never survive into shipped HTML. Vite
 // injects modulepreload hints at runtime with absolute URLs, and browsers in
 // production would follow them straight to localhost.
+//
+// Checked against that exact origin rather than "localhost" generally: in local
+// development the CMS also runs on localhost, and its cover image URLs are
+// legitimately present in the output.
+const PRERENDER_ORIGIN = 'http://localhost:4173'
+
 for (const entry of readdirSync('dist', { recursive: true, withFileTypes: true })) {
   if (!entry.isFile() || !entry.name.endsWith('.html')) continue
   const file = path.join(entry.parentPath ?? 'dist', entry.name)
-  if (readFileSync(file, 'utf8').includes('localhost')) {
-    failures.push(`${file} contains a localhost URL from the prerender server`)
+  if (readFileSync(file, 'utf8').includes(PRERENDER_ORIGIN)) {
+    failures.push(`${file} contains a ${PRERENDER_ORIGIN} URL from the prerender server`)
   }
+}
+
+// A build pointed at a local CMS produces output nobody can deploy: the image
+// URLs only resolve on this machine. Loud, but not a failure — it is the
+// normal state during local development.
+if ((process.env.CMS_URL ?? '').includes('localhost')) {
+  console.warn(
+    'WARNING: built against a local CMS, so media URLs point at localhost. Not deployable.',
+  )
 }
 
 if (failures.length > 0) {

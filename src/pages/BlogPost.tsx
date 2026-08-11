@@ -85,10 +85,10 @@ function BackToBlog() {
 }
 
 function Article({ post }: { post: Post }) {
-  // `post.image` is a Vite-resolved asset path (`/assets/…`); social crawlers
-  // require an absolute URL, so it is prefixed with the production origin.
+  // `post.image` is already an absolute CMS URL, which is what social crawlers
+  // require — no origin prefix.
   usePageMeta(`${post.title} | Stablezact`, post.metaDescription, {
-    image: `https://stablezact.com${post.image}`,
+    image: post.image,
     type: 'article',
   })
 
@@ -138,7 +138,7 @@ function Article({ post }: { post: Post }) {
                 </p>
               </Reveal>
 
-              {post.blocks.map((block, index) => (
+              {(post.blocks ?? []).map((block, index) => (
                 <ArticleBlock key={block.kind === 'list' ? `list-${index}` : block.id ?? index} block={block} />
               ))}
 
