@@ -85,7 +85,12 @@ function BackToBlog() {
 }
 
 function Article({ post }: { post: Post }) {
-  usePageMeta(`${post.title} | Stablezact`, post.metaDescription)
+  // `post.image` is a Vite-resolved asset path (`/assets/…`); social crawlers
+  // require an absolute URL, so it is prefixed with the production origin.
+  usePageMeta(`${post.title} | Stablezact`, post.metaDescription, {
+    image: `https://stablezact.com${post.image}`,
+    type: 'article',
+  })
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] text-black">
