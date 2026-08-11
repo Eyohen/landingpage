@@ -15,46 +15,81 @@ function upsertMeta(selector: string, create: () => HTMLElement, content: string
   return el
 }
 
+export interface PageMetaOptions {
+  /** Absolute URL of this page's social share image. */
+  image?: string
+  /** Open Graph type — 'article' for blog posts, 'website' elsewhere. */
+  type?: string
+}
+
 /**
- * Sets the document title, meta description, canonical URL and Open Graph
- * tags for a page. The landing page's defaults (from index.html) are
- * restored on unmount, so navigating back to `/` keeps the original tags.
+ * Applies `value` to an existing head tag and returns a function restoring
+ * whatever was there before. A missing tag or absent value is a no-op, so
+ * pages only override the defaults in index.html that they actually set.
  */
-export function usePageMeta(title: string, description?: string) {
+function setMeta(selector: string, value: string | undefined): () => void {
+  if (!value) return () => {}
+  const el = document.head.querySelector<HTMLMetaElement | HTMLLinkElement>(selector)
+  if (!el) return () => {}
+
+  if (el instanceof HTMLLinkElement) {
+    const previous = el.href
+    el.href = value
+    return () => {
+      el.href = previous
+    }
+  }
+
+  const previous = el.content
+  el.content = value
+  return () => {
+    el.content = previous
+  }
+}
+
+/**
+ * Sets the document title, meta description, canonical URL, Open Graph and
+ * Twitter card tags for a page. The landing page's defaults (from index.html)
+ * are restored on unmount, so navigating back to `/` keeps the original tags.
+ *
+ * The `twitter:*` tags matter as much as the `og:*` ones: index.html defines
+ * them with site-wide values, and a defined twitter tag takes precedence over
+ * its og equivalent — so leaving them alone would show the generic site title
+ * on every shared inner page.
+ */
+export function usePageMeta(
+  title: string,
+  description?: string,
+  options: PageMetaOptions = {},
+) {
   const { pathname } = useLocation()
+  const { image, type } = options
 
   usePageView(title)
 
   useEffect(() => {
-    const prevTitle = document.title
-    const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
-    const prevDescription = meta?.content
-    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
-    const prevCanonical = canonical?.href
-    const ogTitle = document.querySelector<HTMLMetaElement>('meta[property="og:title"]')
-    const prevOgTitle = ogTitle?.content
-    const ogDesc = document.querySelector<HTMLMetaElement>('meta[property="og:description"]')
-    const prevOgDesc = ogDesc?.content
-    const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]')
-    const prevOgUrl = ogUrl?.content
-
     const url = ORIGIN + (pathname === '/' ? '/' : pathname)
+    const previousTitle = document.title
     document.title = title
-    if (description && meta) meta.content = description
-    if (canonical) canonical.href = url
-    if (ogTitle) ogTitle.content = title
-    if (description && ogDesc) ogDesc.content = description
-    if (ogUrl) ogUrl.content = url
+
+    const restores = [
+      setMeta('meta[name="description"]', description),
+      setMeta('link[rel="canonical"]', url),
+      setMeta('meta[property="og:title"]', title),
+      setMeta('meta[property="og:description"]', description),
+      setMeta('meta[property="og:url"]', url),
+      setMeta('meta[property="og:image"]', image),
+      setMeta('meta[property="og:type"]', type),
+      setMeta('meta[name="twitter:title"]', title),
+      setMeta('meta[name="twitter:description"]', description),
+      setMeta('meta[name="twitter:image"]', image),
+    ]
 
     return () => {
-      document.title = prevTitle
-      if (meta && prevDescription !== undefined) meta.content = prevDescription
-      if (canonical && prevCanonical !== undefined) canonical.href = prevCanonical
-      if (ogTitle && prevOgTitle !== undefined) ogTitle.content = prevOgTitle
-      if (ogDesc && prevOgDesc !== undefined) ogDesc.content = prevOgDesc
-      if (ogUrl && prevOgUrl !== undefined) ogUrl.content = prevOgUrl
+      document.title = previousTitle
+      for (const restore of restores) restore()
     }
-  }, [title, description, pathname])
+  }, [title, description, pathname, image, type])
 }
 
 /** Marks the current page noindex while mounted (e.g. the 404 page). */
