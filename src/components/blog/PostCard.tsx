@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom'
-import { postedAgo, type NewsroomPost } from '@/data/newsroom'
-import { BracketCorners } from '@/components/newsroom/BracketCorners'
-import clockIcon from '@/assets/figma/newsroom/icon-clock.svg'
+import { postedAgo, type BlogPost } from '@/data/blog'
+import { BracketCorners } from '@/components/blog/BracketCorners'
+import clockIcon from '@/assets/figma/blog/icon-clock.svg'
 
 /**
- * Newsroom index card — Figma node 2168:70638. Relative "posted" label, 249px
+ * Blog index card — Figma node 2168:70638. Relative "posted" label, 249px
  * cover image, then a bracket-cornered tinted panel with the read time, date,
  * title and a single-line excerpt.
  */
 
-export function PostCard({ post }: { post: NewsroomPost }) {
+export function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link
-      to={`/newsroom/${post.slug}`}
+      to={`/blog/${post.slug}`}
       className="group flex flex-col gap-1"
       aria-label={post.title}
     >

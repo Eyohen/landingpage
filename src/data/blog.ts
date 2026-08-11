@@ -1,7 +1,7 @@
-import cryptoSafety from '@/assets/figma/newsroom/crypto-safety.jpg'
+import cryptoSafety from '@/assets/figma/blog/crypto-safety.jpg'
 
 /**
- * Newsroom content — Figma nodes 2168:70558 (index) and 2168:70798 (post).
+ * Blog content — Figma nodes 2168:70558 (index) and 2168:70798 (post).
  * Posts are static for now: there is no CMS, so a new article is a new entry
  * in POSTS below and nothing else. The index grid and the article renderer
  * both read from this file, so neither needs touching to publish.
@@ -27,7 +27,7 @@ export type PostBlock =
   | { kind: 'heading'; id: string; text: string }
   | { kind: 'list'; items: PostListItem[] }
 
-export interface NewsroomPost {
+export interface BlogPost {
   slug: string
   title: string
   /** Card excerpt on the index — truncated to one line by the card itself. */
@@ -45,7 +45,7 @@ export interface NewsroomPost {
   blocks: PostBlock[]
 }
 
-export const POSTS: NewsroomPost[] = [
+export const POSTS: BlogPost[] = [
   {
     slug: 'how-to-stay-safe-with-crypto',
     title: 'How to Stay Safe with Crypto: A Simple Guide for Merchants',
@@ -155,7 +155,7 @@ export const POSTS: NewsroomPost[] = [
   },
 ]
 
-export function getPost(slug: string | undefined): NewsroomPost | undefined {
+export function getPost(slug: string | undefined): BlogPost | undefined {
   return POSTS.find((post) => post.slug === slug)
 }
 
