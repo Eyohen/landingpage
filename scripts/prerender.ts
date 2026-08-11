@@ -17,6 +17,16 @@ import { POSTS } from '../src/data/blog'
  * and first paint; there is no hydration mismatch to reconcile.
  */
 
+// Vercel's build image has no browser and no way to install its system
+// dependencies without root, so prerendering cannot run there. Those projects
+// serve the staging review URL, where the SPA fallback renders every page
+// client-side; production runs on Azure, which does prerender. Skipping is
+// announced loudly rather than silently degrading.
+if (process.env.VERCEL) {
+  console.log('VERCEL detected — skipping prerender. Pages will render client-side only.')
+  process.exit(0)
+}
+
 const ROUTES = [
   '/',
   '/about',

@@ -11,6 +11,12 @@ import { POSTS } from '../src/data/blog'
  * notice, and by then the post is already published and not ranking.
  */
 
+// Nothing to assert where prerendering was skipped — see scripts/prerender.ts.
+if (process.env.VERCEL) {
+  console.log('VERCEL detected — skipping prerender assertions.')
+  process.exit(0)
+}
+
 interface Check {
   file: string
   mustContain: string[]
