@@ -89,7 +89,12 @@ for (const route of [...ROUTES, NOT_FOUND_PROBE]) {
   )
   await page.waitForTimeout(500)
 
-  captured.set(route, await page.content())
+  // Vite injects <link rel="modulepreload"> hints for lazy chunks at runtime,
+  // and they serialise with this server's absolute origin. Left in place they
+  // point browsers at localhost in production, so make them root-relative.
+  const html = (await page.content()).replaceAll(origin, '')
+
+  captured.set(route, html)
   await page.close()
   console.log(`  prerendered ${route}`)
 }

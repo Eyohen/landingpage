@@ -1,4 +1,5 @@
-import { readFileSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
+import path from 'node:path'
 import { POSTS } from '../src/data/blog'
 
 /**
@@ -60,6 +61,17 @@ for (const check of checks) {
 
   if (html.includes('opacity:0')) {
     failures.push(`${check.file} captured content still animating in (opacity:0)`)
+  }
+}
+
+// The prerender server's origin must never survive into shipped HTML. Vite
+// injects modulepreload hints at runtime with absolute URLs, and browsers in
+// production would follow them straight to localhost.
+for (const entry of readdirSync('dist', { recursive: true, withFileTypes: true })) {
+  if (!entry.isFile() || !entry.name.endsWith('.html')) continue
+  const file = path.join(entry.parentPath ?? 'dist', entry.name)
+  if (readFileSync(file, 'utf8').includes('localhost')) {
+    failures.push(`${file} contains a localhost URL from the prerender server`)
   }
 }
 
