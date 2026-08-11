@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { trackPageView } from '@/lib/analytics'
+import { usePageView } from '@/lib/usePageView'
 
 const ORIGIN = 'https://stablezact.com'
 
@@ -23,6 +23,8 @@ function upsertMeta(selector: string, create: () => HTMLElement, content: string
 export function usePageMeta(title: string, description?: string) {
   const { pathname } = useLocation()
 
+  usePageView(title)
+
   useEffect(() => {
     const prevTitle = document.title
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
@@ -43,10 +45,6 @@ export function usePageMeta(title: string, description?: string) {
     if (ogTitle) ogTitle.content = title
     if (description && ogDesc) ogDesc.content = description
     if (ogUrl) ogUrl.content = url
-
-    // Reported after the tags above are in place, so the hit carries this
-    // page's title rather than the one we navigated away from.
-    trackPageView(pathname, title)
 
     return () => {
       document.title = prevTitle
