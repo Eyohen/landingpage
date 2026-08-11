@@ -33,6 +33,12 @@ const checks: Check[] = [
     file: 'dist/index.html',
     mustContain: ['og:image" content="https://stablezact.com/og-image.png"'],
   },
+  // Serves genuine 404s. Without it, Azure has no fallback document and every
+  // unknown URL would return a bare server error page.
+  {
+    file: 'dist/404.html',
+    mustContain: ['name="robots" content="noindex"'],
+  },
 ]
 
 const failures: string[] = []

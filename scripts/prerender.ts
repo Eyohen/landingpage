@@ -57,7 +57,12 @@ await context.route('**', (route) =>
 
 const captured = new Map<string, string>()
 
-for (const route of ROUTES) {
+// Any unmatched path renders the NotFound page; captured separately so Azure
+// can serve a real 404 instead of falling back to the prerendered landing
+// page, which would let crawlers index every bad URL as a homepage duplicate.
+const NOT_FOUND_PROBE = '/__prerender_not_found__'
+
+for (const route of [...ROUTES, NOT_FOUND_PROBE]) {
   const page = await context.newPage()
   await page.goto(`${origin}${route}`, { waitUntil: 'load' })
   await page.waitForSelector('#root > *', { timeout: 15_000 })
@@ -95,9 +100,13 @@ await server.close()
 // Written only after every page is captured — the pages are served from the
 // same dist/ directory being written into.
 for (const [route, html] of captured) {
+  if (route === NOT_FOUND_PROBE) {
+    writeFileSync(path.join('dist', '404.html'), html)
+    continue
+  }
   const dir = route === '/' ? 'dist' : path.join('dist', route)
   mkdirSync(dir, { recursive: true })
   writeFileSync(path.join(dir, 'index.html'), html)
 }
 
-console.log(`Wrote ${captured.size} prerendered pages.`)
+console.log(`Wrote ${captured.size - 1} prerendered pages plus 404.html.`)
