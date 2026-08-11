@@ -4,9 +4,9 @@
 
 **Goal:** Serve every page — especially each blog post — as static HTML carrying its own title, description and Open Graph tags, so search engines index them and social crawlers render correct link previews.
 
-**Architecture:** Replace the client-only Vite SPA entry with `vite-react-ssg`, which renders each route to its own HTML file at build time and hydrates it in the browser. `src/App.tsx` changes from a `<BrowserRouter>` tree into an exported route array with a `Layout` route element; `src/main.tsx` exports a `ViteReactSSG` root. Blog pages emit metadata through `<Head>` so tags land in the built HTML instead of being applied by an effect. Page-view tracking is extracted from `usePageMeta` first, so pages moving to `<Head>` keep reporting to GA.
+**Architecture:** Keep the app exactly as it is and add a post-build step: after `vite build`, serve `dist/` and visit every route in headless Chromium, saving the rendered DOM as that route's `index.html`. Crawlers then receive real content and real meta tags. Page-view tracking is extracted from `usePageMeta` first so metadata work cannot silently break GA reporting.
 
-**Tech Stack:** Vite 8, React 19, react-router-dom 7, TypeScript 6, Tailwind 4, `vite-react-ssg`, Vitest + Testing Library (new), Azure Static Web Apps.
+**Tech Stack:** Vite 8, React 19, react-router-dom 7, TypeScript 6, Tailwind 4, Playwright (prerender), vite-node, Vitest + Testing Library (new), Azure Static Web Apps.
 
 ## Global Constraints
 
@@ -28,17 +28,14 @@
 - `src/lib/analytics.test.ts` — covers the page-view dedupe guard
 - `src/data/blog.test.ts` — covers `postedAgo`
 - `src/lib/usePageView.ts` — the extracted page-view hook
-- `src/routes.tsx` — the exported route array and `Layout` (moved out of `App.tsx`)
 - `scripts/generate-sitemap.ts` — writes `dist/sitemap.xml` from a static page list plus `POSTS`
+- `scripts/prerender.ts` — snapshots every route to static HTML with headless Chromium
 - `scripts/assert-prerendered.ts` — post-build check that HTML contains real metadata
 
 **Modified:**
-- `vite.config.ts` — switch to `defineConfig` from `vitest/config`
-- `package.json` — test scripts; build/dev switch to `vite-react-ssg`
-- `src/main.tsx` — export a `ViteReactSSG` root
-- `src/App.tsx` — reduced to re-exporting routes, or deleted if nothing imports it
+- `package.json` — test scripts; `postbuild` chain
 - `src/lib/usePageMeta.ts` — delegates page-view tracking to `usePageView`
-- `src/pages/Blog.tsx`, `src/pages/BlogPost.tsx` — metadata via `<Head>` + `usePageView`
+- `src/lib/usePageMeta.ts`, `src/pages/BlogPost.tsx` — per-post Open Graph image
 - `public/staticwebapp.config.json` — verified against prerendered output
 
 **Deleted:**
@@ -159,7 +156,7 @@ git commit -m "Add Vitest test infrastructure with postedAgo coverage"
 
 ### Task 2: Extract page-view tracking into its own hook
 
-`trackPageView` is currently called inside `usePageMeta`. Task 4 moves blog pages to `<Head>`, and if tracking stays welded to `usePageMeta` those pages will silently stop reporting page views to GA. Extract it first so the migration cannot cause that.
+`trackPageView` is currently called inside `usePageMeta`, so any page that stops using that hook silently stops reporting page views to GA. Extracting it into its own hook removes that trap before the metadata work starts.
 
 **Files:**
 - Create: `src/lib/analytics.test.ts`
@@ -168,7 +165,7 @@ git commit -m "Add Vitest test infrastructure with postedAgo coverage"
 
 **Interfaces:**
 - Consumes: `trackPageView(path: string, title: string): void` from `src/lib/analytics.ts` (already implemented, dedupes by path, seeded from the entry URL).
-- Produces: `usePageView(title: string): void` from `src/lib/usePageView.ts` — fires a GA page_view for the current pathname whenever the pathname or title changes. `usePageMeta` calls it internally; Task 4 calls it directly from pages that use `<Head>`.
+- Produces: `usePageView(title: string): void` from `src/lib/usePageView.ts` — fires a GA page_view for the current pathname whenever the pathname or title changes. `usePageMeta` calls it internally, so existing pages are unaffected; any page that sets metadata another way calls it directly.
 
 - [ ] **Step 1: Write the failing test for the dedupe guard**
 
@@ -283,311 +280,281 @@ git commit -m "Extract page-view tracking into usePageView hook"
 
 ---
 
-### Task 3: Migrate to vite-react-ssg
+### Task 3: Prerender routes with headless Chromium
 
-The riskiest task. `vite-react-ssg` must work with React 19, Vite 8 and react-router-dom 7 as pinned. Verify before restructuring anything.
+**Revised 2026-08-11.** The original plan used `vite-react-ssg`. Its latest release (0.9.2)
+declares `react-router-dom ^6.14.1`, and this repo pins 7.18.1, so it cannot be installed
+without forcing peer resolution. React 19 and Vite 8 were both fine — the router was the
+blocker. Rather than adopt a far younger library or downgrade the router, we snapshot the
+built SPA with headless Chromium after the normal Vite build.
+
+This keeps `src/App.tsx`, `src/main.tsx` and `usePageMeta` exactly as they are. Because the
+app mounts with `createRoot` (not `hydrateRoot`), React replaces the snapshot on load rather
+than hydrating it, so there are no hydration-mismatch concerns: the snapshot exists for
+crawlers and first paint.
 
 **Files:**
-- Create: `src/routes.tsx`
-- Modify: `src/main.tsx`
-- Modify: `src/App.tsx` (delete once nothing imports it)
+- Create: `scripts/prerender.ts`
 - Modify: `package.json`
+- Modify: `.github/workflows/azure-static-web-apps-gray-coast-06a0fab10.yml`
 
 **Interfaces:**
-- Produces: `export const routes: RouteRecord[]` from `src/routes.tsx`, consumed by `src/main.tsx`. Tasks 5 and 6 read `POSTS` from `src/data/blog.ts` directly, not this array.
+- Consumes: `POSTS` from `src/data/blog.ts`.
+- Produces: `dist/<route>/index.html` for every route listed in `ROUTES`.
 
-- [ ] **Step 1: Install and verify compatibility**
+- [ ] **Step 1: Install Playwright**
 
 ```bash
-npm i -D vite-react-ssg
-npx vite-react-ssg --help
+npm i -D playwright
+npx playwright install chromium
 ```
 
-Expected: the CLI runs. **If installation fails on a peer-dependency conflict with React 19 or Vite 8, STOP and report it rather than forcing the install or changing pinned versions.** The fallback is `vite-plugin-react-ssg`; escalate the choice rather than deciding alone.
+- [ ] **Step 2: Write the prerender script**
 
-- [ ] **Step 2: Create the routes module**
+Create `scripts/prerender.ts`. Three details matter and must not be dropped:
 
-Create `src/routes.tsx`, moving the tree out of `App.tsx`. `ScrollToTop` moves across unchanged.
+- **Block every non-local request.** Otherwise the build waits on Google Fonts and, worse,
+  fires real GA and Clarity hits from CI into your production analytics property.
+- **Scroll the full page before capturing.** Content is wrapped in `Reveal`, which animates
+  from `opacity: 0` when scrolled into view. Capturing without scrolling bakes
+  `opacity: 0` into the HTML for most of the page.
+- **Capture every route before writing any file**, since the pages are being served from the
+  same `dist/` directory we are writing into.
 
-```tsx
-import { Suspense, lazy, useEffect } from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
-import type { RouteRecord } from 'vite-react-ssg'
-import { CookieConsent } from '@/components/CookieConsent'
-import { applyAnalyticsConsent } from '@/lib/analytics'
-import { getConsent } from '@/lib/consent'
-import { Landing } from '@/pages/Landing'
-import { BookDemo } from '@/pages/BookDemo'
-import { Contact } from '@/pages/Contact'
-import { CookiePolicy } from '@/pages/CookiePolicy'
-import { PrivacyPolicy } from '@/pages/PrivacyPolicy'
-import { TermsOfUse } from '@/pages/TermsOfUse'
-import { POSTS } from '@/data/blog'
+```ts
+import { mkdirSync, writeFileSync } from 'node:fs'
+import path from 'node:path'
+import { preview } from 'vite'
+import { chromium } from 'playwright'
+import { POSTS } from '../src/data/blog'
 
-function ScrollToTop() {
-  const { hash, pathname } = useLocation()
-
-  useEffect(() => {
-    if (hash) {
-      requestAnimationFrame(() => {
-        document.querySelector(hash)?.scrollIntoView({ block: 'start' })
-      })
-      return
-    }
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-  }, [hash, pathname])
-
-  return null
-}
-
-function Layout() {
-  useEffect(() => {
-    applyAnalyticsConsent(getConsent().analytics)
-  }, [])
-
-  return (
-    <div className="min-h-screen w-full overflow-x-hidden">
-      <ScrollToTop />
-      <Suspense fallback={<div className="min-h-screen bg-[#f5f5f5]" />}>
-        <Outlet />
-      </Suspense>
-      <CookieConsent />
-    </div>
-  )
-}
-
-const solutions = () => import('@/pages/solutions')
-
-export const routes: RouteRecord[] = [
-  {
-    path: '/',
-    element: <Layout />,
-    entry: 'src/routes.tsx',
-    children: [
-      { index: true, element: <Landing />, entry: 'src/pages/Landing.tsx' },
-      { path: 'book-a-demo', element: <BookDemo /> },
-      { path: 'contact', element: <Contact /> },
-      { path: 'privacy', element: <PrivacyPolicy /> },
-      { path: 'cookies', element: <CookiePolicy /> },
-      { path: 'terms', element: <TermsOfUse /> },
-      {
-        path: 'solutions/payment-providers',
-        lazy: async () => ({ Component: (await solutions()).PaymentProvidersPage }),
-      },
-      {
-        path: 'solutions/enterprise-merchants',
-        lazy: async () => ({ Component: (await solutions()).EnterpriseMerchantsPage }),
-      },
-      {
-        path: 'solutions/e-commerce',
-        lazy: async () => ({ Component: (await solutions()).ECommercePage }),
-      },
-      {
-        path: 'solutions/travel',
-        lazy: async () => ({ Component: (await solutions()).TravelPage }),
-      },
-      {
-        path: 'solutions/retail-pos',
-        lazy: async () => ({ Component: (await solutions()).RetailPosPage }),
-      },
-      {
-        path: 'talk-to-sales',
-        lazy: async () => ({ Component: (await import('@/pages/TalkToSales')).default }),
-      },
-      {
-        path: 'contact-us',
-        lazy: async () => ({ Component: (await import('@/pages/ContactUs')).default }),
-      },
-      {
-        path: 'request-crypto-checkout',
-        lazy: async () => ({
-          Component: (await import('@/pages/RequestCryptoCheckout')).default,
-        }),
-      },
-      {
-        path: 'about',
-        lazy: async () => ({ Component: (await import('@/pages/About')).default }),
-      },
-      {
-        path: 'blog',
-        lazy: async () => ({ Component: (await import('@/pages/Blog')).default }),
-      },
-      {
-        path: 'blog/:slug',
-        lazy: async () => ({ Component: (await import('@/pages/BlogPost')).default }),
-        getStaticPaths: () => POSTS.map((post) => `blog/${post.slug}`),
-      },
-      {
-        path: '*',
-        lazy: async () => ({ Component: (await import('@/pages/NotFound')).default }),
-      },
-    ],
-  },
+const ROUTES = [
+  '/',
+  '/about',
+  '/blog',
+  ...POSTS.map((post) => `/blog/${post.slug}`),
+  '/solutions/payment-providers',
+  '/solutions/enterprise-merchants',
+  '/solutions/e-commerce',
+  '/solutions/travel',
+  '/solutions/retail-pos',
+  '/book-a-demo',
+  '/talk-to-sales',
+  '/contact-us',
+  '/request-crypto-checkout',
+  '/contact',
+  '/privacy',
+  '/terms',
+  '/cookies',
 ]
+
+const PORT = 4173
+
+const server = await preview({
+  preview: { port: PORT, strictPort: true },
+  logLevel: 'error',
+})
+const origin = `http://localhost:${PORT}`
+const browser = await chromium.launch()
+const context = await browser.newContext({ viewport: { width: 1440, height: 900 } })
+
+// Never let the build touch the network: no font fetches, no analytics hits from CI.
+await context.route('**', (route) => {
+  if (route.request().url().startsWith(origin)) return route.continue()
+  return route.abort()
+})
+
+const captured = new Map<string, string>()
+
+for (const route of ROUTES) {
+  const page = await context.newPage()
+  await page.goto(`${origin}${route}`, { waitUntil: 'load' })
+  await page.waitForSelector('#root > *', { timeout: 15_000 })
+
+  // Trigger every whileInView reveal so nothing is captured at opacity: 0.
+  await page.evaluate(async () => {
+    await new Promise<void>((resolve) => {
+      let y = 0
+      const step = () => {
+        y += window.innerHeight
+        window.scrollTo(0, y)
+        if (y < document.body.scrollHeight) {
+          requestAnimationFrame(step)
+        } else {
+          window.scrollTo(0, 0)
+          resolve()
+        }
+      }
+      step()
+    })
+  })
+  await page.waitForTimeout(500)
+
+  captured.set(route, await page.content())
+  await page.close()
+  console.log(`prerendered ${route}`)
+}
+
+await browser.close()
+await server.close()
+
+for (const [route, html] of captured) {
+  const dir = route === '/' ? 'dist' : path.join('dist', route)
+  mkdirSync(dir, { recursive: true })
+  writeFileSync(path.join(dir, 'index.html'), html)
+}
+
+console.log(`Wrote ${captured.size} prerendered pages.`)
 ```
 
-- [ ] **Step 3: Rewrite the entry point**
+- [ ] **Step 3: Wire it into the build**
 
-Replace the contents of `src/main.tsx`:
-
-```tsx
-import { ViteReactSSG } from 'vite-react-ssg'
-import 'lenis/dist/lenis.css'
-import './index.css'
-import { routes } from './routes'
-
-export const createRoot = ViteReactSSG({ routes })
-```
-
-Note the `StrictMode` wrapper and `createRoot` call from the old entry are gone — `ViteReactSSG` owns mounting.
-
-- [ ] **Step 4: Delete the old App module**
+Install the Vite-aware runner (`src/data/blog.ts` imports a `.jpg` and uses the `@` alias, so
+plain `node` and `tsx` both fail on it):
 
 ```bash
-git rm src/App.tsx
+npm i -D vite-node
 ```
 
-Then run `grep -rn "from '@/App'\|from './App'" src` and fix any remaining import. Expected: no matches.
-
-- [ ] **Step 5: Switch the build and dev scripts**
-
-In `package.json`:
+In `package.json` scripts:
 
 ```json
-"dev": "vite-react-ssg dev",
-"build": "tsc -b && vite-react-ssg build",
+"postbuild": "vite-node scripts/prerender.ts"
 ```
 
-- [ ] **Step 6: Build and inspect the output**
+- [ ] **Step 4: Build and confirm the files exist**
 
 Run: `npm run build`
 Then: `find dist -name "index.html" | sort`
 
-Expected: an `index.html` for every static route, including `dist/about/index.html`, `dist/blog/index.html`, `dist/blog/how-to-stay-safe-with-crypto/index.html`, and `dist/solutions/travel/index.html`.
+Expected: 18 files, including `dist/index.html`, `dist/about/index.html`,
+`dist/blog/index.html` and `dist/blog/how-to-stay-safe-with-crypto/index.html`.
 
-- [ ] **Step 7: Confirm real content is in the HTML**
-
-Run:
+- [ ] **Step 5: Confirm real content, not an empty shell**
 
 ```bash
 grep -c "How to Stay Safe with Crypto" dist/blog/how-to-stay-safe-with-crypto/index.html
+grep -c "Common scam methods" dist/blog/how-to-stay-safe-with-crypto/index.html
 ```
 
-Expected: a count of 1 or more. If it is 0, prerendering produced an empty shell — stop and diagnose before continuing.
+Expected: both non-zero.
 
-- [ ] **Step 8: Check the app still runs**
-
-Run `npm run dev` and click through `/`, `/about`, `/blog`, the post, and a solutions page. Expected: no console errors, no hydration warnings, and the landing page's Lenis smooth scroll still works.
-
-- [ ] **Step 9: Commit**
+- [ ] **Step 6: Confirm nothing was captured invisible**
 
 ```bash
-git add -A
-git commit -m "Prerender routes at build time with vite-react-ssg"
+grep -c 'opacity:0' dist/blog/how-to-stay-safe-with-crypto/index.html || true
+```
+
+Expected: 0. A non-zero count means the scroll pass did not finish before capture — raise the
+wait in Step 2 rather than accepting it, because content baked at `opacity: 0` is content a
+crawler may discount.
+
+- [ ] **Step 7: Confirm the metadata came through**
+
+```bash
+grep -o "<title>[^<]*</title>" dist/blog/how-to-stay-safe-with-crypto/index.html
+```
+
+Expected: the post's own title, not the landing page default. This works because a real
+browser ran `usePageMeta` before the snapshot was taken.
+
+- [ ] **Step 8: Install Chromium in CI**
+
+In `.github/workflows/azure-static-web-apps-gray-coast-06a0fab10.yml`, the Azure action runs
+the build itself, so Chromium must be present before it does. Add this step to
+`build_and_deploy_job`, immediately after `actions/checkout` and before `Build And Deploy`:
+
+```yaml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies and Chromium
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+```
+
+- [ ] **Step 9: Verify the app still runs**
+
+Run `npm run dev`, click through `/`, `/about`, `/blog`, the post and a solutions page.
+Expected: no console errors, and the landing page's smooth scroll still works. This task
+changes only what happens after a build, so nothing here should differ.
+
+- [ ] **Step 10: Commit**
+
+```bash
+git add scripts/prerender.ts package.json package-lock.json .github/workflows/azure-static-web-apps-gray-coast-06a0fab10.yml
+git commit -m "Prerender routes to static HTML with headless Chromium"
 ```
 
 ---
 
-### Task 4: Emit blog metadata into the prerendered HTML
+### Task 4: Add per-post social images
 
-Prerendering alone does not fix metadata: `usePageMeta` sets tags in an effect, which never runs during a build. Blog pages must declare their tags during render.
+`usePageMeta` sets title, description, canonical, `og:title`, `og:description` and `og:url`,
+but never `og:image`. Every blog post therefore shares the site-wide OG image, so a post
+shared on X or LinkedIn shows a generic graphic instead of its cover photo.
 
 **Files:**
-- Modify: `src/pages/Blog.tsx`
+- Modify: `src/lib/usePageMeta.ts`
 - Modify: `src/pages/BlogPost.tsx`
 
 **Interfaces:**
-- Consumes: `usePageView(title: string): void` from Task 2; `Head` from `vite-react-ssg`.
+- Produces: `usePageMeta(title: string, description?: string, options?: { image?: string; type?: string })`.
+  Existing two-argument callers are unaffected.
 
-- [ ] **Step 1: Update the blog index**
+- [ ] **Step 1: Extend the hook**
 
-In `src/pages/Blog.tsx`, remove the `usePageMeta` import and call. Add:
+In `src/lib/usePageMeta.ts`, change the signature to accept an options object and, inside the
+effect, set `og:image`, `twitter:image` and `og:type` when `options.image` / `options.type`
+are provided — restoring the previous values on unmount exactly as the existing tags do.
+Use the existing `upsertMeta` helper for tags that may not exist in `index.html`.
 
-```tsx
-import { Head } from 'vite-react-ssg'
-import { usePageView } from '@/lib/usePageView'
-```
+- [ ] **Step 2: Pass the post's cover image**
 
-Inside the component, replace the `usePageMeta(...)` call with:
-
-```tsx
-const title = 'Blog | Stablezact'
-const description =
-  'News, milestones, product updates, and stories shaping the future of crypto payments at Stablezact.'
-usePageView(title)
-```
-
-and render this as the first child of the returned tree:
+In `src/pages/BlogPost.tsx`, inside `Article`, change the call to:
 
 ```tsx
-<Head>
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <link rel="canonical" href="https://stablezact.com/blog" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content="https://stablezact.com/blog" />
-</Head>
+usePageMeta(`${post.title} | Stablezact`, post.metaDescription, {
+  image: `https://stablezact.com${post.image}`,
+  type: 'article',
+})
 ```
 
-- [ ] **Step 2: Update the post page**
+`post.image` is a Vite-resolved asset path beginning with `/assets/…` in a build, so
+prefixing the origin yields the absolute URL social crawlers require.
 
-In `src/pages/BlogPost.tsx`, inside `Article`, remove the `usePageMeta` import and call and add the same imports. Then:
-
-```tsx
-const title = `${post.title} | Stablezact`
-const url = `https://stablezact.com/blog/${post.slug}`
-usePageView(title)
-```
-
-and render as the first child of the returned tree:
-
-```tsx
-<Head>
-  <title>{title}</title>
-  <meta name="description" content={post.metaDescription} />
-  <link rel="canonical" href={url} />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={post.metaDescription} />
-  <meta property="og:url" content={url} />
-  <meta property="og:image" content={`https://stablezact.com${post.image}`} />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={post.metaDescription} />
-  <meta name="twitter:image" content={`https://stablezact.com${post.image}`} />
-</Head>
-```
-
-`post.image` is a Vite-resolved asset URL beginning with `/assets/...` in a build, so prefixing the origin yields an absolute URL — which social crawlers require.
-
-- [ ] **Step 3: Build and verify the tags are in the HTML**
+- [ ] **Step 3: Verify in the built HTML**
 
 Run: `npm run build`
 Then:
 
 ```bash
-grep -o "<title>[^<]*</title>" dist/blog/how-to-stay-safe-with-crypto/index.html
-grep -o 'og:title" content="[^"]*"' dist/blog/how-to-stay-safe-with-crypto/index.html
+grep -o 'og:image" content="[^"]*"' dist/blog/how-to-stay-safe-with-crypto/index.html
+grep -o 'og:type" content="[^"]*"' dist/blog/how-to-stay-safe-with-crypto/index.html
 ```
 
-Expected: the post's own title in both, **not** "Stablecoin Payment Infrastructure for Merchants".
+Expected: an absolute `https://stablezact.com/assets/crypto-safety-*.jpg` URL, and `article`.
 
-- [ ] **Step 4: Verify client navigation still updates the title**
-
-Run `npm run dev`, navigate from `/` to `/blog` to the post, and confirm the browser tab title changes at each step. Then confirm page views still fire:
-
-```js
-window.dataLayer.filter(e => e[0] === 'event' && e[1] === 'page_view').map(e => e[2].page_path)
-```
-
-Expected: `['/blog', '/blog/how-to-stay-safe-with-crypto']`.
-
-- [ ] **Step 5: Commit**
+- [ ] **Step 4: Verify the landing page is unaffected**
 
 ```bash
-git add src/pages/Blog.tsx src/pages/BlogPost.tsx
-git commit -m "Emit blog metadata into prerendered HTML via Head"
+grep -o 'og:image" content="[^"]*"' dist/index.html
+```
+
+Expected: the original `https://stablezact.com/og-image.png`. Restoring on unmount must not
+leak the post image onto other pages.
+
+- [ ] **Step 5: Run the full check**
+
+Run: `npm test && npx tsc --noEmit && npm run lint`
+Expected: all pass.
+
+- [ ] **Step 6: Commit**
+
+```bash
+git add src/lib/usePageMeta.ts src/pages/BlogPost.tsx
+git commit -m "Set per-post Open Graph image and article type"
 ```
 
 ---
