@@ -14,6 +14,27 @@ import { CodeSnippet } from '@/components/blog/CodeSnippet'
  * so the two must stay in step.
  */
 
+/** Shape of a custom block node as the Lexical converters receive it. */
+interface BlockNode<Fields> {
+  node: { fields: Fields }
+}
+
+interface ImageBlockFields {
+  image?: { url?: string; alt?: string }
+  caption?: string
+}
+
+interface EmbedBlockFields {
+  provider: 'youtube' | 'x'
+  url: string
+  title?: string
+}
+
+interface CodeBlockFields {
+  code: string
+  language?: string
+}
+
 /**
  * Media inside the body arrives as a CMS-relative path (`/api/media/file/…`),
  * unlike the cover image which the fetch step already absolutises. Resolving
@@ -85,11 +106,8 @@ export function PostContent({ data }: { data: SerializedEditorState }) {
         ),
 
         blocks: {
-          imageBlock: ({ node }) => {
-            const { image, caption } = node.fields as {
-              image?: { url?: string; alt?: string }
-              caption?: string
-            }
+          imageBlock: ({ node }: BlockNode<ImageBlockFields>) => {
+            const { image, caption } = node.fields
             if (!image?.url) return null
             return (
               <figure className="flex flex-col gap-3">
@@ -108,17 +126,13 @@ export function PostContent({ data }: { data: SerializedEditorState }) {
             )
           },
 
-          embedBlock: ({ node }) => {
-            const { provider, url, title } = node.fields as {
-              provider: 'youtube' | 'x'
-              url: string
-              title?: string
-            }
+          embedBlock: ({ node }: BlockNode<EmbedBlockFields>) => {
+            const { provider, url, title } = node.fields
             return <ConsentGatedEmbed provider={provider} url={url} title={title} />
           },
 
-          codeBlock: ({ node }) => {
-            const { code, language } = node.fields as { code: string; language?: string }
+          codeBlock: ({ node }: BlockNode<CodeBlockFields>) => {
+            const { code, language } = node.fields
             return <CodeSnippet code={code} language={language} />
           },
         },
