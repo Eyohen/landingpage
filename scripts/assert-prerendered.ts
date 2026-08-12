@@ -90,7 +90,7 @@ for (const entry of readdirSync('dist', { recursive: true, withFileTypes: true }
 // A build pointed at a local CMS produces output nobody can deploy: the image
 // URLs only resolve on this machine. Loud, but not a failure — it is the
 // normal state during local development.
-if ((process.env.CMS_URL ?? '').includes('localhost')) {
+if ((process.env.VITE_CMS_URL ?? '').includes('localhost')) {
   console.warn(
     'WARNING: built against a local CMS, so media URLs point at localhost. Not deployable.',
   )

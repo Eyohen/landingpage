@@ -61,7 +61,7 @@ const context = await browser.newContext({ viewport: { width: 1440, height: 900 
 // Never let the build touch the network. Beyond keeping builds fast and
 // offline-safe, this stops CI from firing real Google Analytics and Clarity
 // hits into the production property every time the site is deployed.
-const cmsOrigin = process.env.CMS_URL ?? ''
+const cmsOrigin = process.env.VITE_CMS_URL ?? ''
 await context.route('**', (route) => {
   const url = route.request().url()
   // Cover images come from the CMS, so that origin has to be reachable.
