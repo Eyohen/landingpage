@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "vite-node scripts/prerender.ts && vite-node scripts/generate-sitemap.ts && vite-node scripts/assert-prerendered.ts",
+    "postbuild": "vite-node scripts/prerender.ts && vite-node scripts/generate-sitemap.ts && vite-node scripts/generate-rss.ts && vite-node scripts/assert-prerendered.ts",
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
