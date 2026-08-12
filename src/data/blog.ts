@@ -7,6 +7,11 @@ import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical
  * before every build, so publishing is a CMS action, not a code change.
  */
 
+export interface PostCategory {
+  name: string
+  slug: string
+}
+
 export interface TocEntry {
   /** Anchor id of the element this entry scrolls to. */
   id: string
@@ -27,6 +32,7 @@ export interface BlogPost {
   readTime: string
   image: string
   imageAlt: string
+  categories: PostCategory[]
   toc: TocEntry[]
   content: SerializedEditorState
 }

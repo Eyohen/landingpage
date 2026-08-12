@@ -97,6 +97,14 @@ const posts = docs.map((doc) => {
     // Absolute so the prerenderer and social crawlers can both resolve it.
     image: new URL(doc.coverImage.url, CMS_URL).href,
     imageAlt: doc.coverImage.alt ?? '',
+    categories: Array.isArray(doc.categories)
+      ? doc.categories
+          .map((category: { name?: string; slug?: string }) => ({
+            name: category?.name ?? '',
+            slug: category?.slug ?? '',
+          }))
+          .filter((category: { slug: string }) => category.slug !== '')
+      : [],
     toc: headingsOf(root),
     content: doc.content,
   }
