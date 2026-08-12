@@ -28,6 +28,7 @@ const NotFound = lazy(() => import('@/pages/NotFound'))
 const About = lazy(() => import('@/pages/About'))
 const Blog = lazy(() => import('@/pages/Blog'))
 const BlogPost = lazy(() => import('@/pages/BlogPost'))
+const BlogPreview = lazy(() => import('@/pages/BlogPreview'))
 
 function ScrollToTop() {
   const { hash, pathname } = useLocation()
@@ -74,6 +75,7 @@ function App() {
             <Route path="/request-crypto-checkout" element={<RequestCryptoCheckout />} />
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/preview/:slug" element={<BlogPreview />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

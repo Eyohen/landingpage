@@ -8,9 +8,9 @@ import { writeFileSync } from 'node:fs'
  * because nothing would alert anyone until someone noticed the blog was bare.
  */
 
-const CMS_URL = process.env.CMS_URL
+const CMS_URL = process.env.VITE_CMS_URL
 if (!CMS_URL) {
-  throw new Error('CMS_URL is not set — refusing to build without content')
+  throw new Error('VITE_CMS_URL is not set — refusing to build without content')
 }
 
 /** Words per minute used to estimate read time. */
