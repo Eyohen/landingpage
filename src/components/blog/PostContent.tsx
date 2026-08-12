@@ -1,5 +1,7 @@
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
+import { ConsentGatedEmbed } from '@/components/blog/ConsentGatedEmbed'
+import { CodeSnippet } from '@/components/blog/CodeSnippet'
 
 /**
  * Renders a post body authored in the CMS.
@@ -11,6 +13,17 @@ import type { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical
  * links to; those ids are derived the same way in `scripts/fetch-content.ts`,
  * so the two must stay in step.
  */
+
+/**
+ * Media inside the body arrives as a CMS-relative path (`/api/media/file/…`),
+ * unlike the cover image which the fetch step already absolutises. Resolving
+ * here covers both the build and the live preview with one rule.
+ */
+function mediaUrl(url: string): string {
+  if (/^https?:\/\//.test(url)) return url
+  const base = import.meta.env.VITE_CMS_URL
+  return base ? new URL(url, base).href : url
+}
 
 /** Must match `slugify` in scripts/fetch-content.ts. */
 function slugify(value: string): string {
@@ -70,6 +83,45 @@ export function PostContent({ data }: { data: SerializedEditorState }) {
         listitem: ({ node, nodesToJSX }) => (
           <li className="scroll-mt-[120px]">{nodesToJSX({ nodes: node.children })}</li>
         ),
+
+        blocks: {
+          imageBlock: ({ node }) => {
+            const { image, caption } = node.fields as {
+              image?: { url?: string; alt?: string }
+              caption?: string
+            }
+            if (!image?.url) return null
+            return (
+              <figure className="flex flex-col gap-3">
+                <img
+                  src={mediaUrl(image.url)}
+                  alt={image.alt ?? ''}
+                  loading="lazy"
+                  className="w-full object-cover"
+                />
+                {caption ? (
+                  <figcaption className="font-geist text-[14px] leading-[1.5] text-[#888]">
+                    {caption}
+                  </figcaption>
+                ) : null}
+              </figure>
+            )
+          },
+
+          embedBlock: ({ node }) => {
+            const { provider, url, title } = node.fields as {
+              provider: 'youtube' | 'x'
+              url: string
+              title?: string
+            }
+            return <ConsentGatedEmbed provider={provider} url={url} title={title} />
+          },
+
+          codeBlock: ({ node }) => {
+            const { code, language } = node.fields as { code: string; language?: string }
+            return <CodeSnippet code={code} language={language} />
+          },
+        },
       })}
     />
   )
