@@ -74,7 +74,9 @@ function formatDate(date: Date): string {
 /** The "In this article" sidebar is derived from the headings in the body,
  *  so it can never drift from the article the way a hand-authored list can. */
 function headingsOf(node: LexicalNode, found: Array<{ id: string; label: string }> = []) {
-  if (node.type === 'heading' && (node.tag === 'h2' || node.tag === 'h3')) {
+  // Top-level sections only. Long-form pieces carry many h3 subsections, and
+  // including them turns the sidebar into a second table of contents.
+  if (node.type === 'heading' && node.tag === 'h2') {
     const label = textOf(node).trim()
     if (label) found.push({ id: slugify(label), label })
   }
