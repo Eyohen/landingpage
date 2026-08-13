@@ -21,6 +21,7 @@ const staticPages: Array<{ path: string; priority: string }> = [
   { path: '/solutions/retail-pos', priority: '0.9' },
   { path: '/about', priority: '0.8' },
   { path: '/blog', priority: '0.8' },
+  { path: '/newsroom', priority: '0.8' },
   { path: '/book-a-demo', priority: '0.8' },
   { path: '/talk-to-sales', priority: '0.8' },
   { path: '/contact-us', priority: '0.8' },

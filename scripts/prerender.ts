@@ -31,6 +31,7 @@ const ROUTES = [
   '/',
   '/about',
   '/blog',
+  '/newsroom',
   ...POSTS.map((post) => `/blog/${post.slug}`),
   '/solutions/payment-providers',
   '/solutions/enterprise-merchants',
