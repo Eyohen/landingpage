@@ -21,7 +21,6 @@ const items = POSTS.map((post) => {
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
       <description>${escapeXml(post.excerpt)}</description>
-      <author>${escapeXml(post.author)}</author>
       <pubDate>${new Date(`${post.isoDate}T09:00:00Z`).toUTCString()}</pubDate>
     </item>`
 }).join('\n')
