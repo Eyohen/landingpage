@@ -24,7 +24,8 @@ export interface BlogPost {
   /** Card excerpt on the index — truncated to one line by the card itself. */
   excerpt: string
   metaDescription: string
-  author: string
+  /** Kept for internal record. Never displayed — posts carry no byline. */
+  author?: string
   /** Display date, e.g. "August 1st, 2026". */
   date: string
   /** Machine date used for <time> and relative "posted x ago" labels. */

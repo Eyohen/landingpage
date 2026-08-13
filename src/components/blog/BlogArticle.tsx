@@ -79,9 +79,6 @@ export function BlogArticle({ post }: { post: BlogPost }) {
                 <h1 className="text-[40px] font-medium leading-[normal] tracking-[-2px] text-[#090909] max-lg:text-[34px] max-lg:tracking-[-1.4px] max-md:text-[28px] max-md:tracking-[-1px]">
                   {post.title}
                 </h1>
-                <p className="font-geist text-[12px] font-medium tracking-[-0.2px] text-black">
-                  By {post.author}
-                </p>
               </Reveal>
 
               <PostContent data={post.content} />
