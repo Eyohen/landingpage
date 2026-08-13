@@ -9,10 +9,10 @@ import { usePageMeta } from '@/lib/usePageMeta'
  */
 
 function Article({ post }: { post: Post }) {
-  // `post.image` is already an absolute CMS URL, which is what social crawlers
-  // require — no origin prefix.
+  // Cover images are copied into the site, so post.image is site-relative.
+  // Social crawlers need an absolute URL, so prefix the production origin.
   usePageMeta(`${post.title} | Stablezact`, post.metaDescription, {
-    image: post.image,
+    image: post.image.startsWith('http') ? post.image : `https://stablezact.com${post.image}`,
     type: 'article',
   })
 

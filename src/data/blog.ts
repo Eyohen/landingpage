@@ -37,7 +37,29 @@ export interface BlogPost {
   content: SerializedEditorState
 }
 
-export const POSTS: BlogPost[] = manifest as unknown as BlogPost[]
+export interface PressArticle {
+  title: string
+  /** The publisher's URL. Newsroom cards link out; we never host these. */
+  url: string
+  publication: string
+  kind: 'contributed' | 'featured' | 'mention'
+  excerpt: string
+  readTime: string
+  image: string
+  imageAlt: string
+  date: string
+  isoDate: string
+}
+
+interface Manifest {
+  posts: BlogPost[]
+  press: PressArticle[]
+}
+
+const content = manifest as unknown as Manifest
+
+export const POSTS: BlogPost[] = content.posts ?? []
+export const PRESS: PressArticle[] = content.press ?? []
 
 export function getPost(slug: string | undefined): BlogPost | undefined {
   return POSTS.find((post) => post.slug === slug)

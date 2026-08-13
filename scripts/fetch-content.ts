@@ -1,4 +1,5 @@
-import { writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import path from 'node:path'
 
 /**
  * Pulls published posts from the CMS into a manifest the build reads.
@@ -8,9 +9,28 @@ import { writeFileSync } from 'node:fs'
  * because nothing would alert anyone until someone noticed the blog was bare.
  */
 
+const MANIFEST = 'src/data/blog-manifest.json'
 const CMS_URL = process.env.VITE_CMS_URL
+
+/**
+ * With no CMS configured, build from the committed manifest — the last content
+ * fetched from a real CMS, kept in git. That keeps CI and preview builds
+ * working without a reachable CMS, while still refusing to build from nothing.
+ */
 if (!CMS_URL) {
-  throw new Error('VITE_CMS_URL is not set — refusing to build without content')
+  if (!existsSync(MANIFEST)) {
+    throw new Error(
+      `VITE_CMS_URL is not set and ${MANIFEST} is missing — refusing to build without content`,
+    )
+  }
+  const committed = JSON.parse(readFileSync(MANIFEST, 'utf8')) as { posts?: unknown[] }
+  if (!Array.isArray(committed.posts) || committed.posts.length === 0) {
+    throw new Error(`${MANIFEST} contains no posts — refusing to build an empty blog`)
+  }
+  console.log(
+    `No VITE_CMS_URL set — building from the committed manifest (${committed.posts.length} post(s)).`,
+  )
+  process.exit(0)
 }
 
 /** Words per minute used to estimate read time. */
@@ -62,6 +82,42 @@ function headingsOf(node: LexicalNode, found: Array<{ id: string; label: string 
   return found
 }
 
+/**
+ * Media is copied into the site rather than hot-linked from the CMS.
+ *
+ * Three reasons: the committed manifest stays self-contained so a build needs
+ * no CMS at all; images are served same-origin instead of from a second host;
+ * and a CMS outage cannot break images on a site that is already deployed.
+ */
+const MEDIA_DIR = 'public/blog-media'
+
+async function localiseMedia(url: string | undefined): Promise<string> {
+  if (!url) return ''
+  const absolute = new URL(url, CMS_URL).href
+  const name = path.basename(new URL(absolute).pathname)
+  const target = path.join(MEDIA_DIR, name)
+
+  if (!existsSync(target)) {
+    const response = await fetch(absolute)
+    if (!response.ok) {
+      throw new Error(`Could not download ${absolute}: ${response.status}`)
+    }
+    mkdirSync(MEDIA_DIR, { recursive: true })
+    writeFileSync(target, Buffer.from(await response.arrayBuffer()))
+    console.log(`  downloaded ${name}`)
+  }
+
+  return `/blog-media/${name}`
+}
+
+/** Rewrites image URLs inside body blocks to their local copies. */
+async function localiseBlocks(node: Record<string, any>): Promise<void> {
+  if (node?.type === 'block' && node.fields?.blockType === 'imageBlock' && node.fields.image?.url) {
+    node.fields.image.url = await localiseMedia(node.fields.image.url)
+  }
+  for (const child of node?.children ?? []) await localiseBlocks(child)
+}
+
 const query = new URLSearchParams({
   'where[_status][equals]': 'published',
   depth: '2',
@@ -80,7 +136,9 @@ if (!Array.isArray(docs) || docs.length === 0) {
   throw new Error('CMS returned zero published posts — refusing to build an empty blog')
 }
 
-const posts = docs.map((doc) => {
+for (const doc of docs) await localiseBlocks(doc.content?.root ?? {})
+
+const posts = await Promise.all(docs.map(async (doc) => {
   const root: LexicalNode = doc.content?.root ?? {}
   const words = textOf(root).split(/\s+/).filter(Boolean).length
   const published = new Date(doc.publishedAt)
@@ -94,8 +152,7 @@ const posts = docs.map((doc) => {
     date: formatDate(published),
     isoDate: published.toISOString().slice(0, 10),
     readTime: `${Math.max(1, Math.round(words / WORDS_PER_MINUTE))} mins read`,
-    // Absolute so the prerenderer and social crawlers can both resolve it.
-    image: new URL(doc.coverImage.url, CMS_URL).href,
+    image: await localiseMedia(doc.coverImage?.url),
     imageAlt: doc.coverImage.alt ?? '',
     categories: Array.isArray(doc.categories)
       ? doc.categories
@@ -108,7 +165,39 @@ const posts = docs.map((doc) => {
     toc: headingsOf(root),
     content: doc.content,
   }
-})
+}))
 
-writeFileSync('src/data/blog-manifest.json', `${JSON.stringify(posts, null, 2)}\n`)
-console.log(`Fetched ${posts.length} published post(s) from the CMS.`)
+const pressResponse = await fetch(
+  `${CMS_URL}/api/press-articles?${new URLSearchParams({
+    'where[_status][equals]': 'published',
+    depth: '1',
+    limit: '200',
+    sort: '-publishedAt',
+  })}`,
+)
+if (!pressResponse.ok) {
+  throw new Error(`CMS returned ${pressResponse.status} for press articles`)
+}
+
+const { docs: pressDocs } = (await pressResponse.json()) as { docs: Record<string, any>[] }
+
+const press = await Promise.all((pressDocs ?? []).map(async (doc) => {
+  const published = new Date(doc.publishedAt)
+  return {
+    title: doc.title,
+    url: doc.url,
+    publication: doc.publication,
+    kind: doc.kind,
+    excerpt: doc.excerpt,
+    readTime: doc.readTime ?? '',
+    image: await localiseMedia(doc.image?.url),
+    imageAlt: doc.image?.alt ?? '',
+    date: formatDate(published),
+    isoDate: published.toISOString().slice(0, 10),
+  }
+}))
+
+writeFileSync(MANIFEST, `${JSON.stringify({ posts, press }, null, 2)}\n`)
+console.log(
+  `Fetched ${posts.length} published post(s) and ${press.length} press article(s) from the CMS.`,
+)

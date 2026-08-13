@@ -41,7 +41,8 @@ interface CodeBlockFields {
  * here covers both the build and the live preview with one rule.
  */
 function mediaUrl(url: string): string {
-  if (/^https?:\/\//.test(url)) return url
+  // Already absolute, or already copied into the site by the fetch step.
+  if (/^https?:\/\//.test(url) || url.startsWith('/')) return url
   const base = import.meta.env.VITE_CMS_URL
   return base ? new URL(url, base).href : url
 }
