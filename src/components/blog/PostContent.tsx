@@ -70,20 +70,35 @@ export function PostContent({ data }: { data: SerializedEditorState }) {
       converters={({ defaultConverters }) => ({
         ...defaultConverters,
 
-        heading: ({ node, nodesToJSX }) => (
-          <div
-            id={slugify(textOf(node))}
-            className="flex scroll-mt-[120px] items-start gap-3"
-          >
-            <span
-              aria-hidden="true"
-              className="mt-[3px] h-[32px] w-[4px] shrink-0 rounded-full bg-[#c73154]"
-            />
-            <h2 className="text-[23px] font-semibold leading-[29.9px] tracking-[-0.92px] text-[#0a0a0a] max-md:text-[20px] max-md:leading-[26px]">
-              {nodesToJSX({ nodes: node.children })}
-            </h2>
-          </div>
-        ),
+        heading: ({ node, nodesToJSX }) => {
+          // Subsections render smaller and without the section marker, so a
+          // long article reads as a hierarchy rather than a flat list of
+          // equally weighted sections.
+          if (node.tag === 'h3') {
+            return (
+              <h3
+                id={slugify(textOf(node))}
+                className="scroll-mt-[120px] text-[19px] font-semibold leading-[26px] tracking-[-0.6px] text-[#0a0a0a] max-md:text-[17px]"
+              >
+                {nodesToJSX({ nodes: node.children })}
+              </h3>
+            )
+          }
+          return (
+            <div
+              id={slugify(textOf(node))}
+              className="flex scroll-mt-[120px] items-start gap-3"
+            >
+              <span
+                aria-hidden="true"
+                className="mt-[3px] h-[32px] w-[4px] shrink-0 rounded-full bg-[#c73154]"
+              />
+              <h2 className="text-[23px] font-semibold leading-[29.9px] tracking-[-0.92px] text-[#0a0a0a] max-md:text-[20px] max-md:leading-[26px]">
+                {nodesToJSX({ nodes: node.children })}
+              </h2>
+            </div>
+          )
+        },
 
         paragraph: ({ node, nodesToJSX }) => (
           <p className="font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-[#888] max-md:text-[16px]">
