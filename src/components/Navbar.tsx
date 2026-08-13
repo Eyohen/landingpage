@@ -46,6 +46,7 @@ const NAV_ITEMS: NavItem[] = [
     children: [
       { label: 'About Us', href: '/about' },
       { label: 'Blog', href: '/blog' },
+      { label: 'Newsroom', href: '/newsroom' },
       { label: 'Contact Us', href: '/contact-us' },
       { label: 'Talk to Sales', href: '/talk-to-sales' },
       { label: 'Request Crypto Checkout', href: '/request-crypto-checkout' },

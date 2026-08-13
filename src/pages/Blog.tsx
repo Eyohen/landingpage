@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar'
 import { ClosingCTA } from '@/sections/ClosingCTA'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { PostCard } from '@/components/blog/PostCard'
+import { ContentToggle } from '@/components/blog/ContentToggle'
 import { POSTS, type PostCategory } from '@/data/blog'
 import { usePageMeta } from '@/lib/usePageMeta'
 import moveRight from '@/assets/figma/blog/icon-move-right.svg'
@@ -103,18 +104,15 @@ export default function Blog() {
       <Navbar />
       <main>
         <section className="pb-[90px] pt-[150px] max-md:pb-[56px] max-md:pt-[118px]">
-          <div className="container-1200 flex flex-col gap-[50px] max-md:gap-8">
-            <Reveal className="flex flex-col gap-3">
-              <h1 className="font-geist text-[60px] font-medium leading-[66px] tracking-[-3.6px] text-black max-lg:text-[48px] max-lg:leading-[54px] max-lg:tracking-[-2.4px] max-md:text-[38px] max-md:leading-[42px] max-md:tracking-[-1.6px]">
-                Blog
-              </h1>
-              <p className="max-w-[1200px] text-[18px] font-medium leading-[26px] tracking-[-0.5px] text-[#888] max-md:text-[16px]">
-                Explore the latest news, milestones, product updates, and stories shaping the
-                future of crypto payments at Stablezact.
-              </p>
+          <div className="container-1200 flex flex-col gap-[40px] max-md:gap-8">
+            <Reveal className="flex flex-col items-center gap-6">
+              <ContentToggle active="Blogs" />
 
               {categories.length > 0 ? (
-                <nav aria-label="Filter by category" className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                <nav
+                  aria-label="Filter by category"
+                  className="flex flex-wrap justify-center gap-x-4 gap-y-2"
+                >
                   <FilterChip
                     label="All"
                     active={activeCategory === ''}

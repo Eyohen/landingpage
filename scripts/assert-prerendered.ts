@@ -1,6 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import path from 'node:path'
-import { POSTS } from '../src/data/blog'
+import { POSTS, PRESS } from '../src/data/blog'
 
 /**
  * Fails the build when a prerendered page has lost its real content or
@@ -34,7 +34,17 @@ const checks: Check[] = [
   })),
   {
     file: 'dist/blog/index.html',
-    mustContain: ['<title>Blog | Stablezact</title>', 'Explore the latest news'],
+    mustContain: ['<title>Blog | Stablezact</title>', 'Blogs &amp; Articles', 'Newsroom'],
+  },
+  // The newsroom links out to publishers, so the destination URLs must survive
+  // into the served HTML — a card with no href is a dead end.
+  {
+    file: 'dist/newsroom/index.html',
+    mustContain: [
+      '<title>Newsroom | Stablezact</title>',
+      'Blogs &amp; Articles',
+      ...PRESS.map((article) => article.url),
+    ],
   },
   {
     file: 'dist/index.html',

@@ -993,7 +993,7 @@
                 },
                 "caption": "A cover image reused here as an inline example.",
                 "blockType": "imageBlock",
-                "id": "6a7df5a3b49e5600e77b0ab4"
+                "id": "6a7df70cb49e5600e77b0abd"
               },
               "format": "",
               "version": 2
@@ -1043,7 +1043,7 @@
                 "title": "Example embedded video",
                 "provider": "youtube",
                 "blockType": "embedBlock",
-                "id": "6a7df5a3b49e5600e77b0ab5"
+                "id": "6a7df70cb49e5600e77b0abe"
               },
               "format": "",
               "version": 2
@@ -1092,7 +1092,7 @@
                 "code": "const response = await fetch('https://api.stablezact.com/payments', {\n  method: 'POST',\n  headers: { 'X-Public-Key': publicKey },\n  body: JSON.stringify({ amount: 25_00, currency: 'USDC' }),\n})\n\nconst payment = await response.json()",
                 "language": "javascript",
                 "blockType": "codeBlock",
-                "id": "6a7df5a3b49e5600e77b0ab6"
+                "id": "6a7df70cb49e5600e77b0abf"
               },
               "format": "",
               "version": 2
