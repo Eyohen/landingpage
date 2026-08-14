@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Reveal } from '@/components/motion/Reveal'
-import logo from '@/assets/figma/stablezact-logo.svg'
+import logo from '@/assets/figma/stablezact-logo-color.svg'
 import bgCloud from '@/assets/figma/footer-bg-cloud.svg'
 import gridBg from '@/assets/figma/inner/cta-grid.svg'
 import agreementIcon from '@/assets/figma/inner/icon-agreement.svg'
@@ -96,82 +96,83 @@ function Divider() {
 
 export function BlogFooter() {
   return (
-    <>
-      <section className="relative isolate overflow-hidden bg-[#7042d2] py-[120px] text-white max-md:py-[72px]">
+    <footer className="relative isolate overflow-hidden bg-[var(--color-bg-dark)] pt-[124px] max-lg:pt-[72px]">
+      <div className="pointer-events-none absolute inset-0 -scale-x-100 overflow-hidden mix-blend-screen">
         <img
-          src={gridBg}
+          src={bgCloud}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[768px] w-[1738px] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-70"
+          className="absolute left-[-66%] top-1/2 h-[175%] w-[185%] max-w-none -translate-y-1/2 rotate-[90deg] object-cover"
         />
+      </div>
 
-        {/* Token coins framing the message, per the design. Hidden on small
-            screens where they would crowd the text. */}
-        <img
-          src={coinSolana}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute left-[6%] top-[8%] w-[175px] max-xl:w-[130px] max-lg:hidden"
-        />
-        <img
-          src={coinUsdc}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute right-[10%] top-[12%] w-[112px] max-xl:w-[86px] max-lg:hidden"
-        />
-        <img
-          src={coinUsdt}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-[6%] left-[22%] w-[145px] max-xl:w-[110px] max-lg:hidden"
-        />
-        <img
-          src={coinPolygon}
-          alt=""
-          aria-hidden="true"
-          className="pointer-events-none absolute bottom-[8%] right-[6%] w-[157px] max-xl:w-[118px] max-lg:hidden"
-        />
-
-        <Reveal className="container-1200 relative flex flex-col items-center gap-3 text-center">
-          <div className="flex items-center gap-1.5 rounded-[8px] border-[0.3px] border-white bg-white/10 px-2.5 py-2">
-            <img src={agreementIcon} alt="" aria-hidden="true" className="size-[18px]" />
-            <span className="text-[14px] font-medium text-white">Partnership</span>
-          </div>
-          <h2 className="max-w-[595px] text-[30px] font-medium leading-[36px] tracking-[-1.2px] max-md:text-[24px] max-md:leading-[30px]">
-            This future of payments won&rsquo;t replace cards. It will add crypto as an
-            another option
-          </h2>
-          <p className="max-w-[700px] font-geist text-[18px] leading-[1.5] text-white/80 max-md:text-[16px]">
-            Stablezact makes crypto wallets usable at checkout
-          </p>
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
-            <Link
-              to="/book-a-demo"
-              className="inline-flex items-center justify-center rounded-[9px] border-[0.1px] border-black bg-white px-3 py-3 font-geist text-[13px] font-medium tracking-[-0.46px] text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f0eafd]"
-            >
-              Book a demo
-            </Link>
-            <Link
-              to="/contact-us"
-              className="inline-flex items-center justify-center rounded-[9px] border-[0.5px] border-white bg-white/5 px-3 py-3 font-geist text-[13px] font-medium tracking-[-0.46px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
-            >
-              Contact sales
-            </Link>
-          </div>
-        </Reveal>
-      </section>
-
-      <footer className="relative isolate overflow-hidden bg-[var(--color-bg-dark)] pb-0 pt-[100px] max-lg:pt-[64px]">
-        <div className="pointer-events-none absolute inset-0 -scale-x-100 overflow-hidden mix-blend-screen">
+      <div className="container-1200 relative flex flex-col gap-[95px] max-lg:gap-12">
+        {/* The CTA sits inside the footer as an inset card, so the dark
+            background shows above it and down both sides. */}
+        <Reveal className="relative isolate flex aspect-[1200/400] items-center justify-center overflow-hidden rounded-[16px] bg-[#7042d2] text-white max-lg:aspect-auto max-lg:py-16">
           <img
-            src={bgCloud}
+            src={gridBg}
             alt=""
             aria-hidden="true"
-            className="absolute left-[-66%] top-1/2 h-[175%] w-[185%] max-w-none -translate-y-1/2 rotate-[90deg] object-cover"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[768px] w-[1738px] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-70"
           />
-        </div>
 
-        <div className="container-1200 relative flex flex-col gap-[95px] max-lg:gap-12">
+          {/* Token coins, positioned as in the design. Hidden on small screens
+              where they would crowd the message. */}
+          <img
+            src={coinSolana}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[5.75%] top-[-2.5%] w-[17.5%] max-lg:hidden"
+          />
+          <img
+            src={coinUsdc}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[66.75%] top-[4.5%] w-[11.2%] max-lg:hidden"
+          />
+          <img
+            src={coinUsdt}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[23.25%] top-[59.5%] w-[14.5%] max-lg:hidden"
+          />
+          <img
+            src={coinPolygon}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[74.8%] top-[58.75%] w-[15.7%] max-lg:hidden"
+          />
+
+          <div className="relative flex flex-col items-center gap-3 px-6 text-center">
+            <div className="flex items-center gap-1.5 rounded-[8px] border-[0.3px] border-white bg-white/10 px-2.5 py-2">
+              <img src={agreementIcon} alt="" aria-hidden="true" className="size-[18px]" />
+              <span className="text-[14px] font-medium text-white">Partnership</span>
+            </div>
+            <h2 className="max-w-[595px] text-[30px] font-medium leading-[36px] tracking-[-1.2px] max-md:text-[22px] max-md:leading-[28px]">
+              This future of payments won&rsquo;t replace cards. It will add crypto as an
+              another option
+            </h2>
+            <p className="max-w-[700px] font-geist text-[18px] leading-[1.5] text-white/80 max-md:text-[15px]">
+              Stablezact makes crypto wallets usable at checkout
+            </p>
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+              <Link
+                to="/book-a-demo"
+                className="inline-flex items-center justify-center rounded-[9px] border-[0.1px] border-black bg-white px-3 py-3 font-geist text-[13px] font-medium tracking-[-0.46px] text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#f0eafd]"
+              >
+                Book a demo
+              </Link>
+              <Link
+                to="/contact-us"
+                className="inline-flex items-center justify-center rounded-[9px] border-[0.5px] border-white bg-white/5 px-3 py-3 font-geist text-[13px] font-medium tracking-[-0.46px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+              >
+                Contact sales
+              </Link>
+            </div>
+          </div>
+        </Reveal>
+
           <div className="flex justify-between gap-[100px] max-lg:flex-col max-lg:gap-12">
             <div className="flex max-w-[292px] flex-col gap-4">
               <div className="flex items-center gap-[4.3px]">
@@ -243,8 +244,7 @@ export function BlogFooter() {
               Stablezact
             </span>
           </div>
-        </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   )
 }
