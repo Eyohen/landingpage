@@ -108,7 +108,10 @@ export default function Blog() {
             <Reveal className="flex flex-col items-center gap-6">
               <ContentToggle active="Blogs" />
 
-              {categories.length > 0 ? (
+              {/* A filter offering a single option is noise, not navigation —
+                  it only earns its place once posts are split across
+                  categories. */}
+              {categories.length > 1 ? (
                 <nav
                   aria-label="Filter by category"
                   className="flex flex-wrap justify-center gap-x-4 gap-y-2"
