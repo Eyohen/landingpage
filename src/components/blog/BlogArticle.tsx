@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Navbar } from '@/components/Navbar'
-import { ClosingCTA } from '@/sections/ClosingCTA'
+import { BlogFooter } from '@/components/blog/BlogFooter'
 import { Reveal } from '@/components/motion/Reveal'
 import { ArticleToc } from '@/components/blog/ArticleToc'
 import { BracketCorners } from '@/components/blog/BracketCorners'
@@ -88,7 +88,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           </div>
         </section>
       </main>
-      <ClosingCTA />
+      <BlogFooter />
     </div>
   )
 }
