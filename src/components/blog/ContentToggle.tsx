@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom'
 
 /**
  * Header shared by the two content tabs — Figma nodes 2194:72601 (Blogs) and
- * 2193:71464 (Newsroom): a centred "Blogs & Articles" title with a pill
- * toggle beneath it.
+ * 2193:71464 (Newsroom): a centred title with a pill toggle beneath it.
  *
  * The two tabs are separate routes rather than local state, so each is
  * linkable, prerendered, and independently indexable.
@@ -18,7 +17,7 @@ export function ContentToggle({ active }: { active: 'Blogs' | 'Newsroom' }) {
   return (
     <div className="flex flex-col items-center gap-4">
       <h1 className="text-[40px] font-medium leading-none tracking-[-2px] text-[#090909] max-md:text-[30px] max-md:tracking-[-1.2px]">
-        Blogs &amp; Articles
+        Blog &amp; Newsroom
       </h1>
 
       <nav

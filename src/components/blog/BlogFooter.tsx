@@ -4,7 +4,9 @@ import logo from '@/assets/figma/stablezact-logo-color.svg'
 import bgCloud from '@/assets/figma/footer-bg-cloud.svg'
 import gridBg from '@/assets/figma/inner/cta-grid.svg'
 import agreementIcon from '@/assets/figma/inner/icon-agreement.svg'
-import arrowUpRight from '@/assets/figma/blog/icon-move-up-right.svg'
+import arrowTwitter from '@/assets/figma/blog/arrow-twitter.svg'
+import arrowLinkedin from '@/assets/figma/blog/arrow-linkedin.svg'
+import arrowFacebook from '@/assets/figma/blog/arrow-facebook.svg'
 import coinSolana from '@/assets/figma/blog/cta/coin-solana.png'
 import coinUsdc from '@/assets/figma/blog/cta/coin-usdc.png'
 import coinUsdt from '@/assets/figma/blog/cta/coin-usdt.png'
@@ -49,10 +51,15 @@ const COMPANY: FooterLink[] = [
   { label: 'Blog', href: '/blog' },
 ]
 
-const SOCIALS: FooterLink[] = [
-  { label: 'Twitter', href: 'https://x.com/stablezact' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/stablezact' },
-  { label: 'Facebook', href: 'https://www.facebook.com/stablezact' },
+interface Social extends FooterLink {
+  /** Each platform has its own arrow colour in the design. */
+  arrow: string
+}
+
+const SOCIALS: Social[] = [
+  { label: 'Twitter', href: 'https://x.com/stablezact', arrow: arrowTwitter },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/stablezact', arrow: arrowLinkedin },
+  { label: 'Facebook', href: 'https://www.facebook.com/stablezact', arrow: arrowFacebook },
 ]
 
 function FooterLinkItem({ item }: { item: FooterLink }) {
@@ -207,7 +214,7 @@ export function BlogFooter() {
                   >
                     {social.label}
                     <img
-                      src={arrowUpRight}
+                      src={social.arrow}
                       alt=""
                       aria-hidden="true"
                       className="size-[16px] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
