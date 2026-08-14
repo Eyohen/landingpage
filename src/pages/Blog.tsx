@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Navbar } from '@/components/Navbar'
-import { ClosingCTA } from '@/sections/ClosingCTA'
+import { BlogFooter } from '@/components/blog/BlogFooter'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { PostCard } from '@/components/blog/PostCard'
 import { ContentToggle } from '@/components/blog/ContentToggle'
@@ -188,7 +188,7 @@ export default function Blog() {
           </div>
         </section>
       </main>
-      <ClosingCTA />
+      <BlogFooter />
     </div>
   )
 }

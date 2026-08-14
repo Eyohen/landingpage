@@ -1,7 +1,8 @@
 import { Navbar } from '@/components/Navbar'
-import { ClosingCTA } from '@/sections/ClosingCTA'
+import { BlogFooter } from '@/components/blog/BlogFooter'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { ContentToggle } from '@/components/blog/ContentToggle'
+import { BracketCorners } from '@/components/blog/BracketCorners'
 import { PRESS, type PressArticle } from '@/data/blog'
 import { usePageMeta } from '@/lib/usePageMeta'
 import clockIcon from '@/assets/figma/blog/icon-clock.svg'
@@ -25,54 +26,53 @@ function PressCard({ article }: { article: PressArticle }) {
       href={article.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group grid grid-cols-[517fr_663fr] items-stretch overflow-hidden rounded-[12px] bg-white transition-shadow hover:shadow-[0_20px_50px_rgba(20,10,40,0.08)] max-lg:grid-cols-1"
+      className="group flex flex-col gap-1"
     >
-      <div className="m-[10px] overflow-hidden rounded-[8px] max-lg:h-[260px]">
+      <div className="h-[249px] w-full overflow-hidden">
         <img
           src={article.image}
           alt={article.imageAlt}
           loading="lazy"
-          className="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+          className="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
         />
       </div>
 
-      <div className="relative flex flex-col justify-center gap-[60px] px-[60px] py-10 max-lg:gap-8 max-md:px-6 max-md:py-8">
+      <div className="relative flex flex-1 flex-col gap-3 bg-[rgba(112,66,210,0.03)] p-[30px] transition-colors group-hover:bg-[rgba(112,66,210,0.06)] max-md:p-5">
+        <BracketCorners />
+
         <img
           src={arrowUpRight}
           alt=""
           aria-hidden="true"
-          className="absolute right-5 top-5 size-[24px] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          className="absolute right-4 top-4 size-[18px] opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
         />
 
-        <div className="flex flex-col gap-3">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-[100px] bg-[#ebebeb] px-2 py-1 text-[16px] font-medium tracking-[-0.88px] text-black max-md:text-[14px]">
-              {KIND_LABELS[article.kind]}
-            </span>
-            {article.readTime ? (
-              <span className="flex items-center gap-1">
-                <img src={clockIcon} alt="" aria-hidden="true" className="size-[16px]" />
-                <span className="font-geist text-[12px] font-medium tracking-[-0.2px] text-[#888]">
-                  {article.readTime}
-                </span>
+        <div className="flex items-center gap-2 pr-6">
+          <span className="rounded-[100px] bg-[#ebebeb] px-2 py-0.5 font-geist text-[12px] font-medium tracking-[-0.2px] text-black">
+            {KIND_LABELS[article.kind]}
+          </span>
+          {article.readTime ? (
+            <span className="flex items-center gap-1">
+              <img src={clockIcon} alt="" aria-hidden="true" className="size-[16px]" />
+              <span className="font-geist text-[12px] font-medium tracking-[-0.2px] text-[#888]">
+                {article.readTime}
               </span>
-            ) : null}
-          </div>
-
-          <h2 className="font-geist text-[48px] font-medium leading-[48px] tracking-[-3px] text-[#090909] max-lg:text-[36px] max-lg:leading-[38px] max-lg:tracking-[-2px] max-md:text-[28px] max-md:leading-[32px] max-md:tracking-[-1.2px]">
-            {article.title}
-          </h2>
+            </span>
+          ) : null}
         </div>
 
-        <div className="flex flex-col gap-3">
-          <p className="text-[22px] font-medium leading-[1.5] tracking-[-0.88px] text-[rgba(10,10,10,0.6)] max-md:text-[17px] max-md:tracking-[-0.5px]">
-            {article.excerpt}
-          </p>
-          {/* Naming the destination matters when the link leaves the site. */}
-          <p className="font-geist text-[14px] font-medium text-[#888]">
-            {article.publication} &middot; {article.date}
-          </p>
-        </div>
+        <h2 className="text-[16px] font-medium leading-[1.4] tracking-[-0.8px] text-[#0a0a0a]">
+          {article.title}
+        </h2>
+
+        <p className="truncate font-geist text-[12px] font-medium tracking-[-0.2px] text-[#888]">
+          {article.excerpt}
+        </p>
+
+        {/* A link that leaves the site should say where it goes. */}
+        <p className="font-geist text-[12px] font-medium tracking-[-0.2px] text-black">
+          {article.publication} &middot; {article.date}
+        </p>
       </div>
     </a>
   )
@@ -99,7 +99,7 @@ export default function Newsroom() {
                 No press coverage yet.
               </p>
             ) : (
-              <RevealGroup className="flex flex-col gap-6">
+              <RevealGroup className="grid grid-cols-3 gap-x-3 gap-y-8 max-lg:grid-cols-2 max-md:grid-cols-1">
                 {PRESS.map((article) => (
                   <RevealItem key={article.url}>
                     <PressCard article={article} />
@@ -110,7 +110,7 @@ export default function Newsroom() {
           </div>
         </section>
       </main>
-      <ClosingCTA />
+      <BlogFooter />
     </div>
   )
 }
