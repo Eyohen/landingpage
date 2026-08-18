@@ -6,7 +6,6 @@ import gridBg from '@/assets/figma/inner/cta-grid.svg'
 import agreementIcon from '@/assets/figma/inner/icon-agreement.svg'
 import arrowTwitter from '@/assets/figma/blog/arrow-twitter.svg'
 import arrowLinkedin from '@/assets/figma/blog/arrow-linkedin.svg'
-import arrowFacebook from '@/assets/figma/blog/arrow-facebook.svg'
 import coinSolana from '@/assets/figma/blog/cta/coin-solana.png'
 import coinUsdc from '@/assets/figma/blog/cta/coin-usdc.png'
 import coinUsdt from '@/assets/figma/blog/cta/coin-usdt.png'
@@ -59,7 +58,6 @@ interface Social extends FooterLink {
 const SOCIALS: Social[] = [
   { label: 'Twitter', href: 'https://x.com/stablezact', arrow: arrowTwitter },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/stablezact', arrow: arrowLinkedin },
-  { label: 'Facebook', href: 'https://www.facebook.com/stablezact', arrow: arrowFacebook },
 ]
 
 function FooterLinkItem({ item }: { item: FooterLink }) {
