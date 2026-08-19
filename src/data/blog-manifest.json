@@ -77,7 +77,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Crypto wallets are central to wallet-based payments.",
+                  "text": "Crypto wallets are central to wallet-based payments. They allow customers to approve transactions and give merchants a way to receive digital assets where direct wallet settlement is required. But a crypto wallet works differently from a bank account or a physical wallet.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -86,44 +86,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "They allow customers to approve transactions and give merchants a way to receive digital assets where direct wallet settlement is required.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "But a crypto wallet works differently from a bank account or a physical wallet.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -143,6 +106,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -172,7 +136,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A crypto wallet is a tool that allows a person or business to control and use digital assets recorded on a blockchain.",
+                  "text": "A crypto wallet is a tool that allows a person or business to control and use digital assets recorded on a blockchain. The wallet does not normally hold the asset itself.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -181,6 +145,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -191,7 +156,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "The wallet does not normally hold the asset itself.",
+                  "text": "Instead, it manages the cryptographic keys used to prove control over blockchain addresses and approve transactions. The asset remains recorded on the blockchain.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -200,44 +165,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Instead, it manages the cryptographic keys used to prove control over blockchain addresses and approve transactions.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The asset remains recorded on the blockchain.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -276,6 +204,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -305,7 +234,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A public address is similar to an account number.",
+                  "text": "A public address is similar to an account number. It can be shared with another person or payment system so that funds can be sent to the correct blockchain address.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -314,25 +243,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "It can be shared with another person or payment system so that funds can be sent to the correct blockchain address.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -352,6 +263,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -381,7 +293,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A private key is the secret information that gives control over assets linked to a blockchain address.",
+                  "text": "A private key is the secret information that gives control over assets linked to a blockchain address. Anyone with access to the private key may be able to move the funds.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -390,25 +302,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Anyone with access to the private key may be able to move the funds.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -428,6 +322,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -447,6 +342,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -476,7 +372,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A recovery phrase, sometimes called a seed phrase, is usually a set of 12 or 24 words used to recreate the keys associated with a wallet.",
+                  "text": "A recovery phrase, sometimes called a seed phrase, is usually a set of 12 or 24 words used to recreate the keys associated with a wallet. It is not the same as a password.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -485,6 +381,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -495,7 +392,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "It is not the same as a password.",
+                  "text": "If someone obtains the recovery phrase, they may be able to recreate the wallet and access its assets. And if the recovery phrase is lost, a self-custody wallet may be impossible to recover.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -504,44 +401,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "If someone obtains the recovery phrase, they may be able to recreate the wallet and access its assets.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "And if the recovery phrase is lost, a self-custody wallet may be impossible to recover.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -580,6 +440,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -609,7 +470,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A custodial wallet is managed by a third party, such as an exchange or financial service provider.",
+                  "text": "A custodial wallet is managed by a third party, such as an exchange or financial service provider. The user normally signs in with an email address, password and additional security checks.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -618,6 +479,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -628,7 +490,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "The user normally signs in with an email address, password and additional security checks.",
+                  "text": "The provider manages the keys and may offer account-recovery support. This can be convenient, but it means the user depends on the provider’s security, availability and rules.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -637,44 +499,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The provider manages the keys and may offer account-recovery support.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "This can be convenient, but it means the user depends on the provider’s security, availability and rules.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -704,7 +529,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A non-custodial wallet gives the user direct control over the private keys or recovery phrase.",
+                  "text": "A non-custodial wallet gives the user direct control over the private keys or recovery phrase. The user can approve transactions without asking a custodian to release funds. But direct control also creates direct responsibility.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -713,6 +538,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -723,7 +549,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "The user can approve transactions without asking a custodian to release funds.",
+                  "text": "If the recovery phrase is lost, stolen or exposed, there may be no central institution able to restore access or reverse an unauthorized transaction.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -732,44 +558,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "But direct control also creates direct responsibility.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "If the recovery phrase is lost, stolen or exposed, there may be no central institution able to restore access or reverse an unauthorised transaction.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -808,6 +597,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -837,7 +627,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Hot wallets are connected to the internet.",
+                  "text": "Hot wallets are connected to the internet. They may be browser extensions, mobile applications or desktop applications.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -846,25 +636,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "They may be browser extensions, mobile applications or desktop applications.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -884,6 +656,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -913,7 +686,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Cold wallets keep private keys offline when they are not being used.",
+                  "text": "Cold wallets keep private keys offline when they are not being used. Hardware wallets are a common example.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -922,25 +695,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Hardware wallets are a common example.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -960,6 +715,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -979,6 +735,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1017,6 +774,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1055,6 +813,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1074,6 +833,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1092,23 +852,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "a mobile wallet",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "a mobile wallet",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1121,23 +871,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "a browser wallet",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "a browser wallet",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1150,23 +890,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "an exchange-linked wallet",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "an exchange-linked wallet",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1179,23 +909,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "an institutional wallet",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "an institutional wallet",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1208,23 +928,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "or a hardware wallet",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "or a hardware wallet",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1269,6 +979,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1288,6 +999,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1306,23 +1018,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "customer-payment receipts",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "customer-payment receipts",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1335,23 +1037,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "day-to-day operations",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "day-to-day operations",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1364,23 +1056,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "refunds",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "refunds",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1393,23 +1075,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "treasury holdings",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "treasury holdings",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1422,23 +1094,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and long-term reserves",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and long-term reserves",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1474,7 +1136,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Some payment arrangements may involve wallets operated by regulated or specialist settlement partners.",
+                  "text": "Some payment arrangements may involve wallets operated by regulated or specialist settlement partners. The exact structure depends on the market, the settlement method and the parties involved.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -1483,25 +1145,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The exact structure depends on the market, the settlement method and the parties involved.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1540,6 +1184,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1550,7 +1195,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "But a merchant may not need to hold digital assets where it chooses settlement in a supported local currency through an available settlement arrangement.",
+                  "text": "But a merchant may not need to hold digital assets where it chooses settlement in a supported local currency through an available settlement arrangement. This distinction is important.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -1559,25 +1204,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "This distinction is important.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1597,6 +1224,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1615,23 +1243,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "hold the customer’s payment asset",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "hold the customer’s payment asset",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1644,23 +1262,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "manage several tokens",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "manage several tokens",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1673,23 +1281,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "monitor crypto prices",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "monitor crypto prices",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1702,23 +1300,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "or operate a long-term digital-asset treasury",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "or operate a long-term digital-asset treasury",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1744,6 +1332,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1782,6 +1371,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1792,7 +1382,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A digital asset such as USDC may be available on several networks, including Ethereum, Base, Polygon, Solana and others.",
+                  "text": "A digital asset such as USDC may be available on several networks, including Ethereum, Base, Polygon, Solana and others. The sender and recipient must use a supported version of the same asset on a compatible network.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -1801,25 +1391,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The sender and recipient must use a supported version of the same asset on a compatible network.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1839,6 +1411,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1858,6 +1431,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -1876,23 +1450,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the asset",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the asset",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1905,23 +1469,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the network",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the network",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1934,23 +1488,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the destination address",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the destination address",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -1963,23 +1507,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and the amount",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and the amount",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2005,6 +1539,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2043,6 +1578,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2053,7 +1589,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "This can improve convenience, but it does not mean every asset or network is automatically supported by every merchant or payment provider.",
+                  "text": "This can improve convenience, but it does not mean every asset or network is automatically supported by every merchant or payment provider. ",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2062,6 +1598,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2072,7 +1609,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A wallet may display an asset that the checkout cannot accept.",
+                  "text": "A wallet may display an asset that the checkout cannot accept. The checkout should therefore validate the wallet, asset and network before the payment is approved.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2081,25 +1618,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The checkout should therefore validate the wallet, asset and network before the payment is approved.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2138,6 +1657,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2157,6 +1677,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2175,23 +1696,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "custody model",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "custody model",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2204,23 +1715,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "supported networks",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "supported networks",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2233,23 +1734,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "supported assets",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "supported assets",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2262,23 +1753,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "security features",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "security features",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2291,23 +1772,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "transaction-approval controls",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "transaction-approval controls",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2320,23 +1791,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "hardware-wallet compatibility",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "hardware-wallet compatibility",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2349,23 +1810,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "multisignature support",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "multisignature support",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2378,23 +1829,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "account-recovery process",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "account-recovery process",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2407,23 +1848,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "reporting",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "reporting",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2436,23 +1867,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and access management",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and access management",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2478,6 +1899,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2516,6 +1938,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2534,23 +1957,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "never sharing private keys or recovery phrases",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "never sharing private keys or recovery phrases",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2563,23 +1976,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "storing recovery phrases offline",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "storing recovery phrases offline",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2592,23 +1995,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "limiting who can approve transactions",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "limiting who can approve transactions",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2621,23 +2014,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "using hardware wallets where appropriate",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "using hardware wallets where appropriate",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2650,23 +2033,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "separating operational and treasury wallets",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "separating operational and treasury wallets",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2679,23 +2052,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "using multisignature approval for material transfers",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "using multisignature approval for material transfers",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2708,23 +2071,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "applying transaction limits",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "applying transaction limits",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2737,23 +2090,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "verifying addresses through a second channel",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "verifying addresses through a second channel",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2766,23 +2109,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and testing recovery procedures before an emergency occurs",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and testing recovery procedures before an emergency occurs",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2808,6 +2141,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2827,6 +2161,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2865,6 +2200,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2884,6 +2220,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2903,6 +2240,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2913,7 +2251,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Stablezact itself does not take custody of customer funds.",
+                  "text": "Stablezact itself does not take custody of customer funds. The purpose of the infrastructure is to help payment providers and merchants support wallet checkout without requiring them to build and maintain every wallet, network, confirmation and settlement component internally.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2922,25 +2260,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The purpose of the infrastructure is to help payment providers and merchants support wallet checkout without requiring them to build and maintain every wallet, network, confirmation and settlement component internally.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2970,7 +2290,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A crypto wallet is not simply a place where digital money is stored.",
+                  "text": "A crypto wallet is not simply a place where digital money is stored. It is an access and transaction tool that controls how assets recorded on a blockchain can be used.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2979,25 +2299,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "It is an access and transaction tool that controls how assets recorded on a blockchain can be used.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3017,6 +2319,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3036,6 +2339,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             }
           ],
