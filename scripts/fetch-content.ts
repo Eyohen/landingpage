@@ -14,10 +14,22 @@ const CMS_URL = process.env.VITE_CMS_URL
 
 /**
  * With no CMS configured, build from the committed manifest — the last content
- * fetched from a real CMS, kept in git. That keeps CI and preview builds
+ * fetched from a real CMS, kept in git. That keeps local and offline builds
  * working without a reachable CMS, while still refusing to build from nothing.
+ *
+ * Never in CI. A deployed build that quietly used the committed manifest is how
+ * the site silently drifts from the CMS: editors publish, the deploy goes
+ * green, and the change never appears. On a build that ships, an unset
+ * VITE_CMS_URL is a misconfiguration, not a fallback.
  */
 if (!CMS_URL) {
+  if (process.env.CI) {
+    throw new Error(
+      'VITE_CMS_URL is not set in CI — refusing to deploy from the committed manifest, ' +
+        'which would ship whatever content the last local fetch happened to capture. ' +
+        'Set VITE_CMS_URL in the build environment.',
+    )
+  }
   if (!existsSync(MANIFEST)) {
     throw new Error(
       `VITE_CMS_URL is not set and ${MANIFEST} is missing — refusing to build without content`,
@@ -93,23 +105,55 @@ function headingsOf(node: LexicalNode, found: Array<{ id: string; label: string 
  */
 const MEDIA_DIR = 'public/blog-media'
 
+/**
+ * One fetch per distinct URL per build. Skipping the download because a file of
+ * that name already exists would be wrong: the local copy is committed to git,
+ * so replacing an image in the CMS under the same filename would never reach
+ * the site — the stale copy would win on every future build, forever.
+ */
+const fetched = new Map<string, Promise<string>>()
+
+/** Local filename → the CMS URL that claimed it, so a clash is loud, not silent. */
+const claimed = new Map<string, string>()
+
 async function localiseMedia(url: string | undefined): Promise<string> {
   if (!url) return ''
   const absolute = new URL(url, CMS_URL).href
-  const name = path.basename(new URL(absolute).pathname)
-  const target = path.join(MEDIA_DIR, name)
 
-  if (!existsSync(target)) {
+  const inFlight = fetched.get(absolute)
+  if (inFlight) return inFlight
+
+  const download = (async () => {
+    const name = path.basename(new URL(absolute).pathname)
+    const target = path.join(MEDIA_DIR, name)
+
+    const owner = claimed.get(name)
+    if (owner && owner !== absolute) {
+      throw new Error(
+        `Two different CMS files are both named ${name} (${owner} and ${absolute}) — ` +
+          'one would overwrite the other. Rename one of them in the CMS.',
+      )
+    }
+    claimed.set(name, absolute)
+
     const response = await fetch(absolute)
     if (!response.ok) {
       throw new Error(`Could not download ${absolute}: ${response.status}`)
     }
-    mkdirSync(MEDIA_DIR, { recursive: true })
-    writeFileSync(target, Buffer.from(await response.arrayBuffer()))
-    console.log(`  downloaded ${name}`)
-  }
+    const body = Buffer.from(await response.arrayBuffer())
 
-  return `/blog-media/${name}`
+    const changed = !existsSync(target) || !readFileSync(target).equals(body)
+    if (changed) {
+      mkdirSync(MEDIA_DIR, { recursive: true })
+      writeFileSync(target, body)
+      console.log(`  downloaded ${name}`)
+    }
+
+    return `/blog-media/${name}`
+  })()
+
+  fetched.set(absolute, download)
+  return download
 }
 
 /** Rewrites image URLs inside body blocks to their local copies. */
