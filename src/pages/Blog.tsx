@@ -140,7 +140,7 @@ export default function Blog() {
             ) : (
               <RevealGroup className="grid grid-cols-3 gap-x-3 gap-y-8 max-lg:grid-cols-2 max-md:grid-cols-1">
                 {visible.map((post) => (
-                  <RevealItem key={post.slug}>
+                  <RevealItem key={post.slug} className="h-full">
                     <PostCard post={post} />
                   </RevealItem>
                 ))}
