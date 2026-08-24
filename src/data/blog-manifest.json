@@ -9,8 +9,8 @@
       "date": "August 13th, 2026",
       "isoDate": "2026-08-13",
       "readTime": "6 mins read",
-      "image": "/blog-media/crypto-safety.jpg",
-      "imageAlt": "Hands typing on a laptop at a sunlit desk",
+      "image": "/blog-media/hero-crypto-wallets.jpg",
+      "imageAlt": "Two hands joining puzzle pieces, representing crypto wallets connecting to merchant checkout",
       "categories": [],
       "toc": [
         {
@@ -313,27 +313,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A private key should never be shared through email, messaging applications, support chats or online forms.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textStyle": "",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Stablezact, a wallet provider or a legitimate customer-support agent should never ask a merchant to disclose a private key.",
+                  "text": "A private key should never be shared through email, messaging applications, support chats or online forms. Stablezact, a wallet provider or a legitimate customer-support agent should never ask a merchant to disclose a private key.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2191,27 +2171,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Stablezact is designed to connect supported crypto wallets to merchant checkout.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textStyle": "",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Customers initiate payments from wallets they already use. The payment is then monitored and confirmed through Stablezact’s infrastructure.",
+                  "text": "Stablezact is designed to connect supported crypto wallets to merchant checkout. Customers initiate payments from wallets they already use. The payment is then monitored and confirmed through Stablezact’s infrastructure.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2356,8 +2316,8 @@
       "date": "August 13th, 2026",
       "isoDate": "2026-08-13",
       "readTime": "6 mins read",
-      "image": "/blog-media/crypto-safety.jpg",
-      "imageAlt": "Hands typing on a laptop at a sunlit desk",
+      "image": "/blog-media/hero-wallet-checkout.png",
+      "imageAlt": "Illustration of a person holding a key beside a secured vault of crypto coins",
       "categories": [],
       "toc": [
         {
@@ -2408,7 +2368,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Paying from a crypto wallet can look simple from the customer’s side. They choose an asset, approve a payment and wait for confirmation.",
+                  "text": "Paying from a crypto wallet can look simple from the customer’s side. They choose an asset, approve a payment and wait for confirmation. But for the merchant or payment company, much more needs to happen behind the checkout page.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2417,25 +2377,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "But for the merchant or payment company, much more needs to happen behind the checkout page.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2455,6 +2397,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2465,7 +2408,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "It must also determine how the merchant will receive settlement.",
+                  "text": "It must also determine how the merchant will receive settlement. This is why adding wallet-based payments involves more than displaying a wallet address or QR code. It requires payment infrastructure that connects digital assets to the checkout and operational systems businesses already use.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2474,25 +2417,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "This is why adding wallet-based payments involves more than displaying a wallet address or QR code. It requires payment infrastructure that connects digital assets to the checkout and operational systems businesses already use.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2522,7 +2447,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A wallet-based payment is a transaction initiated directly from a customer’s crypto wallet.",
+                  "text": "A wallet-based payment is a transaction initiated directly from a customer’s crypto wallet. Instead of entering card details or signing in to a bank account, the customer connects a supported wallet, scans a QR code or follows a payment link. They then approve the transaction from their wallet.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2531,6 +2456,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2541,7 +2467,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Instead of entering card details or signing in to a bank account, the customer connects a supported wallet, scans a QR code or follows a payment link. They then approve the transaction from their wallet.",
+                  "text": "The customer remains in control of the payment until they approve it. Once submitted, the transaction is sent to the relevant blockchain network for processing and confirmation.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2550,44 +2476,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The customer remains in control of the payment until they approve it.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Once submitted, the transaction is sent to the relevant blockchain network for processing and confirmation.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2626,6 +2515,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2655,7 +2545,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "The customer chooses a wallet or crypto payment option alongside the other methods available at checkout.",
+                  "text": "The customer chooses a wallet or crypto payment option alongside the other methods available at checkout. The payment option may appear on:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2664,25 +2554,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The payment option may appear on:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2701,23 +2573,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "an e-commerce website",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "an e-commerce website",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2730,23 +2592,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "a mobile application",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "a mobile application",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2759,23 +2611,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "an in-store point-of-sale device",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "an in-store point-of-sale device",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2788,23 +2630,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "a QR-code checkout",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "a QR-code checkout",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2817,23 +2649,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "or a payment link",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "or a payment link",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2859,6 +2681,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2888,7 +2711,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "The payment system generates the information required to complete the transaction.",
+                  "text": "The payment system generates the information required to complete the transaction. This may include:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -2897,25 +2720,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "This may include:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -2934,23 +2739,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the amount due",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the amount due",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2963,23 +2758,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the supported digital asset",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the supported digital asset",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -2992,23 +2777,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the blockchain network",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the blockchain network",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3021,23 +2796,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the destination",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the destination",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3050,23 +2815,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the payment reference",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the payment reference",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3079,23 +2834,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and the time available to complete the payment",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and the time available to complete the payment",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3121,6 +2866,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3159,6 +2905,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3169,7 +2916,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "The system must support the wallet connection method and the blockchain network selected for the transaction.",
+                  "text": "The system must support the wallet connection method and the blockchain network selected for the transaction. Wallet compatibility matters because different customers use different wallets, devices and networks.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -3178,25 +2925,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Wallet compatibility matters because different customers use different wallets, devices and networks.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3226,7 +2955,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "The wallet shows the transaction details before approval.",
+                  "text": "The wallet shows the transaction details before approval. The customer should check:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -3235,25 +2964,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The customer should check:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3272,23 +2983,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the amount",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the amount",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3301,23 +3002,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the asset",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the asset",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3330,23 +3021,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the blockchain network",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the blockchain network",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3359,23 +3040,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the destination",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the destination",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3388,23 +3059,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and any network fee shown by the wallet",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and any network fee shown by the wallet",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3430,6 +3091,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3459,7 +3121,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "After approval, the transaction is broadcast to the relevant blockchain network.",
+                  "text": "After approval, the transaction is broadcast to the relevant blockchain network. The time required to confirm the payment depends on several factors, including:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -3468,25 +3130,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The time required to confirm the payment depends on several factors, including:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3505,23 +3149,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the network being used",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the network being used",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3534,23 +3168,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "network congestion",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "network congestion",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3563,23 +3187,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the fee attached to the transaction",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the fee attached to the transaction",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3592,23 +3206,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the asset",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the asset",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3621,23 +3225,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and the confirmation rules applied by the payment provider",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and the confirmation rules applied by the payment provider",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3663,6 +3257,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3692,7 +3287,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A merchant should not rely on a customer screenshot or a transaction reference alone.",
+                  "text": "A merchant should not rely on a customer screenshot or a transaction reference alone. The payment system should monitor the blockchain and determine when the transaction has reached the required status. The merchant can then receive confirmation through:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -3701,44 +3296,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The payment system should monitor the blockchain and determine when the transaction has reached the required status.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The merchant can then receive confirmation through:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3757,23 +3315,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "a payment dashboard",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "a payment dashboard",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3786,23 +3334,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "an application programming interface",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "an application programming interface",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3815,23 +3353,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "a signed webhook",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "a signed webhook",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3844,23 +3372,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "or an integrated order-management system",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "or an integrated order-management system",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -3886,6 +3404,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3924,6 +3443,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3934,7 +3454,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A customer may pay using a supported digital asset, while the merchant receives settlement in a supported stablecoin or local currency, depending on market availability and the settlement arrangement.",
+                  "text": "A customer may pay using a supported digital asset, while the merchant receives settlement in a supported stablecoin or local currency, depending on market availability and the settlement arrangement. This separation is important.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -3943,25 +3463,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "This separation is important.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -3981,6 +3483,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4010,7 +3513,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Not necessarily.",
+                  "text": "Not necessarily. A business may choose to receive supported digital assets directly into a wallet it controls. But where local-currency settlement is available, the merchant may instead receive the proceeds through a supported settlement arrangement.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -4019,6 +3522,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4029,7 +3533,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "A business may choose to receive supported digital assets directly into a wallet it controls. But where local-currency settlement is available, the merchant may instead receive the proceeds through a supported settlement arrangement.",
+                  "text": "This means a merchant can make wallet payments available without necessarily operating as a crypto treasury business. The available options will depend on:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -4038,44 +3542,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "This means a merchant can make wallet payments available without necessarily operating as a crypto treasury business.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The available options will depend on:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4094,23 +3561,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the country",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the country",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4123,23 +3580,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the payment asset",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the payment asset",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4152,23 +3599,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the settlement currency",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the settlement currency",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4181,23 +3618,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the settlement provider",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the settlement provider",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4210,23 +3637,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "regulatory requirements",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "regulatory requirements",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4239,23 +3656,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and corridor availability",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and corridor availability",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4300,6 +3707,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4310,7 +3718,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "But this does not mean merchants no longer need refund or dispute processes.",
+                  "text": "But this does not mean merchants no longer need refund or dispute processes. Businesses should still have clear rules for:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -4319,25 +3727,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Businesses should still have clear rules for:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4356,23 +3746,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "cancelled orders",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "cancelled orders",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4385,23 +3765,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "duplicate payments",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "duplicate payments",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4414,23 +3784,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "incorrect amounts",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "incorrect amounts",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4443,23 +3803,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "customer complaints",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "customer complaints",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4472,23 +3822,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "failed fulfilment",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "failed fulfilment",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4501,23 +3841,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and refunds",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and refunds",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4534,7 +3864,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Where a refund is approved, the merchant or payment provider may need to initiate a separate outgoing transaction.",
+                  "text": "Where a refund is approved, the merchant or payment provider may need to initiate a separate outgoing transaction. The refund amount may also need to account for exchange-rate movements and blockchain network fees.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -4543,25 +3873,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The refund amount may also need to account for exchange-rate movements and blockchain network fees.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4591,7 +3903,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Not always.",
+                  "text": "Not always. The cost of a wallet payment depends on several factors, including:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -4600,25 +3912,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "The cost of a wallet payment depends on several factors, including:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4637,23 +3931,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the blockchain network",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the blockchain network",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4666,23 +3950,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "network congestion",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "network congestion",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4695,23 +3969,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "the payment asset",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "the payment asset",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4724,23 +3988,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "processing charges",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "processing charges",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4753,23 +4007,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "conversion costs",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "conversion costs",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4782,23 +4026,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and settlement fees",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and settlement fees",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4824,6 +4058,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4853,7 +4088,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Stablezact provides payment infrastructure for payment service providers, payment facilitators, travel companies, e-commerce platforms, marketplaces, enterprise merchants and other commerce businesses.",
+                  "text": "Stablezact provides payment infrastructure for payment service providers, payment facilitators, travel companies, e-commerce platforms, marketplaces, enterprise merchants and other commerce businesses. Its infrastructure is designed to coordinate the components required for wallet checkout, including:",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -4862,25 +4097,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Its infrastructure is designed to coordinate the components required for wallet checkout, including:",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -4899,23 +4116,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "wallet connectivity",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "wallet connectivity",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4928,23 +4135,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "supported digital assets",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "supported digital assets",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4957,23 +4154,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "blockchain networks",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "blockchain networks",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -4986,23 +4173,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "payment requests",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "payment requests",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5015,23 +4192,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "transaction monitoring",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "transaction monitoring",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5044,23 +4211,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "checkout interfaces",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "checkout interfaces",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5073,23 +4230,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "payment confirmation",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "payment confirmation",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5102,23 +4249,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "dashboards",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "dashboards",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5131,23 +4268,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "webhooks",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "webhooks",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5160,23 +4287,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "reconciliation",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "reconciliation",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5189,23 +4306,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "and settlement through supported arrangements",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "and settlement through supported arrangements",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5231,6 +4338,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -5269,6 +4377,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -5287,23 +4396,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "Which customer wallets need to be supported?",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "Which customer wallets need to be supported?",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5316,23 +4415,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "Which digital assets and blockchain networks will be accepted?",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "Which digital assets and blockchain networks will be accepted?",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5345,23 +4434,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "How will the business receive settlement?",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "How will the business receive settlement?",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5374,23 +4453,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "How will payment confirmations reach the order system?",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "How will payment confirmations reach the order system?",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5403,23 +4472,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "How will finance teams reconcile transactions?",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "How will finance teams reconcile transactions?",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5432,23 +4491,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "What refund process will apply?",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "What refund process will apply?",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5461,23 +4510,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "Which compliance obligations apply in each market?",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "Which compliance obligations apply in each market?",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5490,23 +4529,13 @@
                   "version": 1,
                   "children": [
                     {
-                      "type": "paragraph",
-                      "format": "",
-                      "indent": 0,
-                      "version": 1,
-                      "children": [
-                        {
-                          "mode": "normal",
-                          "text": "How will wallet, dashboard and API access be secured?",
-                          "type": "text",
-                          "style": "",
-                          "detail": 0,
-                          "format": 0,
-                          "version": 1
-                        }
-                      ],
-                      "direction": "ltr",
-                      "textFormat": 0
+                      "mode": "normal",
+                      "text": "How will wallet, dashboard and API access be secured?",
+                      "type": "text",
+                      "style": "",
+                      "detail": 0,
+                      "format": 0,
+                      "version": 1
                     }
                   ],
                   "direction": "ltr"
@@ -5532,6 +4561,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -5561,7 +4591,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "Customers may already hold digital assets, but turning those assets into a reliable merchant payment requires more than a blockchain transaction.",
+                  "text": "Customers may already hold digital assets, but turning those assets into a reliable merchant payment requires more than a blockchain transaction. The checkout must connect the customer’s wallet to the merchant’s payment, fulfilment, settlement and reporting processes.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -5570,6 +4600,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -5580,7 +4611,7 @@
               "children": [
                 {
                   "mode": "normal",
-                  "text": "The checkout must connect the customer’s wallet to the merchant’s payment, fulfilment, settlement and reporting processes.",
+                  "text": "That is the layer Stablezact is building. Customers can pay from supported crypto wallets, while merchants and payment companies retain control over how they receive settlement, subject to the supported market and settlement arrangement.",
                   "type": "text",
                   "style": "",
                   "detail": 0,
@@ -5589,44 +4620,7 @@
                 }
               ],
               "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "That is the layer Stablezact is building.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
-              "textFormat": 0
-            },
-            {
-              "type": "paragraph",
-              "format": "",
-              "indent": 0,
-              "version": 1,
-              "children": [
-                {
-                  "mode": "normal",
-                  "text": "Customers can pay from supported crypto wallets, while merchants and payment companies retain control over how they receive settlement, subject to the supported market and settlement arrangement.",
-                  "type": "text",
-                  "style": "",
-                  "detail": 0,
-                  "format": 0,
-                  "version": 1
-                }
-              ],
-              "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             },
             {
@@ -5646,6 +4640,7 @@
                 }
               ],
               "direction": "ltr",
+              "textStyle": "",
               "textFormat": 0
             }
           ],
@@ -5662,8 +4657,8 @@
       "kind": "contributed",
       "excerpt": "Stablecoins and crypto wallets have progressed to the point of practical use, yet merchant checkout acceptance continues to lag behind, a problem Stablezact aims to solve.",
       "readTime": "4 mins read",
-      "image": "/blog-media/crypto-safety.jpg",
-      "imageAlt": "Hands typing on a laptop at a sunlit desk",
+      "image": "/blog-media/news-missing-layer.png",
+      "imageAlt": "Checkout interface showing a crypto payment being confirmed",
       "date": "August 13th, 2026",
       "isoDate": "2026-08-13"
     },
@@ -5674,8 +4669,8 @@
       "kind": "contributed",
       "excerpt": "Stablezact is building payment infrastructure that enables PSPs, PayFacs, and merchants to add crypto-wallet checkout without developing the entire stack internally. Stablezact, a UK-based fintech payment infrastructure company founded by Abisoye Falabi, is built around a problem that sounds strange at first.",
       "readTime": "4 mins read",
-      "image": "/blog-media/crypto-safety.jpg",
-      "imageAlt": "Hands typing on a laptop at a sunlit desk",
+      "image": "/blog-media/news-stablecoin-growth.png",
+      "imageAlt": "Map showing stablecoin settlement routes across blockchain networks",
       "date": "August 13th, 2026",
       "isoDate": "2026-08-13"
     },
@@ -5686,8 +4681,8 @@
       "kind": "contributed",
       "excerpt": "Holding crypto is easy; spending it at checkout is not. Stablezact, founded by fintech veteran Abisoye Falabi, builds non-custodial payment infrastructure that lets payment providers and merchants add wallet-based checkout alongside existing payment methods.",
       "readTime": "4 mins read",
-      "image": "/blog-media/crypto-safety.jpg",
-      "imageAlt": "Hands typing on a laptop at a sunlit desk",
+      "image": "/blog-media/news-checkout-layer.png",
+      "imageAlt": "Isometric illustration of building blocks forming a payments layer",
       "date": "August 7th, 2026",
       "isoDate": "2026-08-07"
     }
