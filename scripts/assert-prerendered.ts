@@ -34,7 +34,7 @@ const checks: Check[] = [
   })),
   {
     file: 'dist/blog/index.html',
-    mustContain: ['<title>Blog | Stablezact</title>', 'Blog &amp; Newsroom', 'Newsroom'],
+    mustContain: ['<title>Blog | Stablezact</title>', 'Blogs &amp; Articles', 'Newsroom'],
   },
   // The newsroom links out to publishers, so the destination URLs must survive
   // into the served HTML — a card with no href is a dead end.
@@ -42,7 +42,7 @@ const checks: Check[] = [
     file: 'dist/newsroom/index.html',
     mustContain: [
       '<title>Newsroom | Stablezact</title>',
-      'Blog &amp; Newsroom',
+      'Blogs &amp; Articles',
       ...PRESS.map((article) => article.url),
     ],
   },

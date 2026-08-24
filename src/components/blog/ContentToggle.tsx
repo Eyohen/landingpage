@@ -17,7 +17,7 @@ export function ContentToggle({ active }: { active: 'Blogs' | 'Newsroom' }) {
   return (
     <div className="flex flex-col items-center gap-4">
       <h1 className="text-[40px] font-medium leading-none tracking-[-2px] text-[#090909] max-md:text-[30px] max-md:tracking-[-1.2px]">
-        Blog &amp; Newsroom
+        Blogs &amp; Articles
       </h1>
 
       <nav

@@ -2,14 +2,13 @@ import { Navbar } from '@/components/Navbar'
 import { BlogFooter } from '@/components/blog/BlogFooter'
 import { Reveal, RevealGroup, RevealItem } from '@/components/motion/Reveal'
 import { ContentToggle } from '@/components/blog/ContentToggle'
-import { BracketCorners } from '@/components/blog/BracketCorners'
 import { PRESS, type PressArticle } from '@/data/blog'
 import { usePageMeta } from '@/lib/usePageMeta'
 import clockIcon from '@/assets/figma/blog/icon-clock.svg'
 import arrowUpRight from '@/assets/figma/blog/icon-arrow-up-right.svg'
 
 /**
- * Newsroom — Figma node 2193:71464. Coverage of Stablezact published
+ * Newsroom — Figma node 2396:111611. Coverage of Stablezact published
  * elsewhere. Every card leaves the site, so each is an external anchor rather
  * than a router link, and each says where it is going.
  */
@@ -26,9 +25,9 @@ function PressCard({ article }: { article: PressArticle }) {
       href={article.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col gap-1"
+      className="group flex h-full flex-col rounded-[12px] bg-white p-1 transition-shadow duration-300 hover:shadow-[0px_4px_16px_0px_rgba(10,13,18,0.08)]"
     >
-      <div className="h-[249px] w-full overflow-hidden">
+      <div className="aspect-[384/300] w-full overflow-hidden rounded-[8px]">
         <img
           src={article.image}
           alt={article.imageAlt}
@@ -37,17 +36,15 @@ function PressCard({ article }: { article: PressArticle }) {
         />
       </div>
 
-      <div className="relative flex flex-1 flex-col gap-3 bg-[rgba(112,66,210,0.03)] p-[30px] transition-colors group-hover:bg-[rgba(112,66,210,0.06)] max-md:p-5">
-        <BracketCorners />
-
+      <div className="relative flex flex-1 flex-col gap-3 px-6 pb-6 pt-5 max-md:px-5">
         <img
           src={arrowUpRight}
           alt=""
           aria-hidden="true"
-          className="absolute right-4 top-4 size-[18px] opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          className="absolute right-6 top-5 size-[18px] opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 max-md:right-5"
         />
 
-        <div className="flex items-center gap-2 pr-6">
+        <div className="flex items-center gap-2 pr-8">
           <span className="rounded-[100px] bg-[#ebebeb] px-2 py-0.5 font-geist text-[12px] font-medium tracking-[-0.2px] text-black">
             {KIND_LABELS[article.kind]}
           </span>
@@ -61,16 +58,18 @@ function PressCard({ article }: { article: PressArticle }) {
           ) : null}
         </div>
 
-        <h2 className="text-[16px] font-medium leading-[1.4] tracking-[-0.8px] text-[#0a0a0a]">
+        <h2 className="line-clamp-2 text-[16px] font-medium leading-[1.4] tracking-[-0.8px] text-[#0a0a0a]">
           {article.title}
         </h2>
 
-        <p className="truncate font-geist text-[12px] font-medium tracking-[-0.2px] text-[#888]">
+        <p className="line-clamp-2 font-geist text-[12px] font-medium leading-[1.35] tracking-[-0.2px] text-[#a3a3a3]">
           {article.excerpt}
         </p>
 
-        {/* A link that leaves the site should say where it goes. */}
-        <p className="font-geist text-[12px] font-medium tracking-[-0.2px] text-black">
+        {/* A link that leaves the site should say where it goes. The Figma card
+            stops at the excerpt, but dropping this would leave an outbound link
+            with nothing naming its destination. */}
+        <p className="mt-auto pt-1 font-geist text-[12px] font-medium tracking-[-0.2px] text-black">
           {article.publication} &middot; {article.date}
         </p>
       </div>
@@ -101,7 +100,7 @@ export default function Newsroom() {
             ) : (
               <RevealGroup className="grid grid-cols-3 gap-x-3 gap-y-8 max-lg:grid-cols-2 max-md:grid-cols-1">
                 {PRESS.map((article) => (
-                  <RevealItem key={article.url}>
+                  <RevealItem key={article.url} className="h-full">
                     <PressCard article={article} />
                   </RevealItem>
                 ))}
