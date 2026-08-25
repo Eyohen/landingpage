@@ -385,6 +385,31 @@
               "textFormat": 0
             },
             {
+              "type": "block",
+              "fields": {
+                "id": "e8ce67d47f1f4210968bddda",
+                "image": {
+                  "id": 10,
+                  "alt": "Illustration of a key, representing a wallet private key",
+                  "updatedAt": "2026-08-25T08:53:24.789Z",
+                  "createdAt": "2026-08-25T08:53:24.789Z",
+                  "url": "/blog-media/body-private-key.png",
+                  "thumbnailURL": null,
+                  "filename": "body-private-key.png",
+                  "mimeType": "image/png",
+                  "filesize": 14753,
+                  "width": 1800,
+                  "height": 714,
+                  "focalX": 50,
+                  "focalY": 50
+                },
+                "blockName": "",
+                "blockType": "imageBlock"
+              },
+              "format": "",
+              "version": 2
+            },
+            {
               "tag": "h2",
               "type": "heading",
               "format": "",
@@ -2478,6 +2503,31 @@
               "direction": "ltr",
               "textStyle": "",
               "textFormat": 0
+            },
+            {
+              "type": "block",
+              "fields": {
+                "id": "e1cbe3a8845141338152097c",
+                "image": {
+                  "id": 9,
+                  "alt": "Illustration of a customer approving a payment from a crypto wallet on their phone",
+                  "updatedAt": "2026-08-25T08:53:20.032Z",
+                  "createdAt": "2026-08-25T08:53:20.032Z",
+                  "url": "/blog-media/body-wallet-payment.png",
+                  "thumbnailURL": null,
+                  "filename": "body-wallet-payment.png",
+                  "mimeType": "image/png",
+                  "filesize": 78230,
+                  "width": 1800,
+                  "height": 1025,
+                  "focalX": 50,
+                  "focalY": 50
+                },
+                "blockName": "",
+                "blockType": "imageBlock"
+              },
+              "format": "",
+              "version": 2
             },
             {
               "tag": "h2",
