@@ -148,3 +148,43 @@ body {
 .legal-prose .muted {
   color: var(--color-muted);
 }
+
+/**
+ * Article body rhythm — Figma 2396:111306 / 2439:123908.
+ *
+ * The design sets a section's prose as one continuous text block, so its
+ * spacing comes from blank lines rather than a uniform gap: 28.8px (18px x 1.6,
+ * exactly one empty line) between blocks, and none at all where prose runs on
+ * through a list. A flex `gap` cannot express that — it spaces every child
+ * identically, which detached each subsection label from the paragraph it
+ * introduces.
+ *
+ * Specificity, not source order, decides these: `h3 + p` (0,1,2) outranks
+ * `* + *` (0,1,0), and the `.post-section` rules (0,2,0) outrank both.
+ */
+.post-body > * + * {
+  margin-top: 28.8px;
+}
+
+/* Sections and illustrations get the full 36px the boards put around them. */
+.post-body > * + .post-section,
+.post-body > .post-section + * {
+  margin-top: 36px;
+}
+.post-body > * + figure,
+.post-body > figure + * {
+  margin-top: 36px;
+}
+
+/* A subsection label belongs to the paragraph beneath it. */
+.post-body > h3 + p {
+  margin-top: 12px;
+}
+
+/* Prose running into or out of a list is continuous, not two blocks. */
+.post-body > p + ul,
+.post-body > p + ol,
+.post-body > ul + p,
+.post-body > ol + p {
+  margin-top: 0;
+}

@@ -6,12 +6,15 @@ import { CodeSnippet } from '@/components/blog/CodeSnippet'
 /**
  * Renders a post body authored in the CMS.
  *
- * The converters below reproduce the typography of the original hand-built
- * article (Figma node 2168:70798) — the crimson bar beside each heading, Geist
- * 18px body copy — so a CMS-authored post is visually identical to the one it
- * replaced. Headings also carry the anchor ids the "In this article" sidebar
- * links to; those ids are derived the same way in `scripts/fetch-content.ts`,
- * so the two must stay in step.
+ * The converters below reproduce the typography of Figma 2396:111306 and
+ * 2439:123908 — the crimson bar beside each section heading, Geist 18px body
+ * copy. Spacing between blocks lives in `.post-body` in index.css, because the
+ * design's rhythm varies by which two elements meet and a flex `gap` can only
+ * apply one value to every pair.
+ *
+ * Headings still carry anchor ids, derived the same way as in
+ * `scripts/fetch-content.ts`. Nothing links to them since the table of
+ * contents was removed, but they keep deep links into a section working.
  */
 
 /** Shape of a custom block node as the Lexical converters receive it. */
@@ -66,19 +69,19 @@ export function PostContent({ data }: { data: SerializedEditorState }) {
   return (
     <RichText
       data={data}
-      className="flex flex-col gap-9"
+      className="post-body flex flex-col"
       converters={({ defaultConverters }) => ({
         ...defaultConverters,
 
         heading: ({ node, nodesToJSX }) => {
-          // Subsections render smaller and without the section marker, so a
-          // long article reads as a hierarchy rather than a flat list of
-          // equally weighted sections.
+          // A subsection label is body copy turned black, not a smaller
+          // heading — that is how both boards set them, and it keeps the
+          // crimson marker meaning "new section" and nothing else.
           if (node.tag === 'h3') {
             return (
               <h3
                 id={slugify(textOf(node))}
-                className="scroll-mt-[120px] text-[19px] font-semibold leading-[26px] tracking-[-0.6px] text-[#0a0a0a] max-md:text-[17px]"
+                className="scroll-mt-[120px] font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-black max-md:text-[16px]"
               >
                 {nodesToJSX({ nodes: node.children })}
               </h3>
@@ -87,7 +90,7 @@ export function PostContent({ data }: { data: SerializedEditorState }) {
           return (
             <div
               id={slugify(textOf(node))}
-              className="flex scroll-mt-[120px] items-start gap-3"
+              className="post-section flex scroll-mt-[120px] items-start gap-3"
             >
               <span
                 aria-hidden="true"
@@ -108,11 +111,11 @@ export function PostContent({ data }: { data: SerializedEditorState }) {
 
         list: ({ node, nodesToJSX }) =>
           node.listType === 'number' ? (
-            <ol className="flex list-decimal flex-col gap-9 ps-[27px] font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-[#888] max-md:text-[16px]">
+            <ol className="flex list-decimal flex-col ps-[27px] font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-[#888] max-md:text-[16px]">
               {nodesToJSX({ nodes: node.children })}
             </ol>
           ) : (
-            <ul className="flex list-disc flex-col gap-4 ps-[27px] font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-[#888] max-md:text-[16px]">
+            <ul className="flex list-disc flex-col ps-[27px] font-geist text-[18px] font-medium leading-[1.6] tracking-[-0.5px] text-[#888] max-md:text-[16px]">
               {nodesToJSX({ nodes: node.children })}
             </ul>
           ),
