@@ -34,7 +34,14 @@ const checks: Check[] = [
   })),
   {
     file: 'dist/blog/index.html',
-    mustContain: ['<title>Blog | Stablezact</title>', 'Blogs &amp; Articles', 'Newsroom'],
+    mustContain: [
+      '<title>Blog | Stablezact</title>',
+      'Blogs &amp; Articles',
+      'Newsroom',
+      // Feed autodiscovery. Losing this breaks nothing a human would notice —
+      // the feed still resolves — but readers and crawlers stop finding it.
+      'application/rss+xml',
+    ],
   },
   // The newsroom links out to publishers, so the destination URLs must survive
   // into the served HTML — a card with no href is a dead end.

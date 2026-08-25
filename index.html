@@ -34,6 +34,19 @@
       content="Stablezact enables crypto wallet payments across web, mobile and in-store checkout, with merchant settlement in stablecoins or supported local currencies."
     />
     <link rel="canonical" href="https://stablezact.com/" />
+    <!--
+      Feed autodiscovery. This lives in the static shell rather than in
+      usePageMeta because prerendering is skipped on Vercel, so a tag injected
+      after React mounts would be absent from the HTML a crawler is served.
+      Site-wide is deliberate: a reader landing on any page can still find the
+      feed, and there is only one.
+    -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Stablezact Blog"
+      href="https://stablezact.com/blog/rss.xml"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Stablezact" />
     <meta property="og:title" content="Stablecoin Payment Infrastructure for Merchants | Stablezact" />
