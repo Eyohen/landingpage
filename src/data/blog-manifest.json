@@ -1548,6 +1548,31 @@
               "textFormat": 0
             },
             {
+              "type": "block",
+              "fields": {
+                "id": "0124db9f77ea491fb216bfb1",
+                "image": {
+                  "id": 11,
+                  "alt": "Isometric diagram of a digital asset moving across several blockchain networks",
+                  "updatedAt": "2026-08-25T09:22:44.531Z",
+                  "createdAt": "2026-08-25T09:22:44.531Z",
+                  "url": "/blog-media/body-networks.png",
+                  "thumbnailURL": null,
+                  "filename": "body-networks.png",
+                  "mimeType": "image/png",
+                  "filesize": 106464,
+                  "width": 1800,
+                  "height": 860,
+                  "focalX": 50,
+                  "focalY": 50
+                },
+                "blockName": "",
+                "blockType": "imageBlock"
+              },
+              "format": "",
+              "version": 2
+            },
+            {
               "tag": "h2",
               "type": "heading",
               "format": "",
@@ -3720,6 +3745,31 @@
               ],
               "listType": "bullet",
               "direction": "ltr"
+            },
+            {
+              "type": "block",
+              "fields": {
+                "id": "bb535a7459924c78926b4c9c",
+                "image": {
+                  "id": 12,
+                  "alt": "Customer paying by scanning a QR code at a retail checkout counter",
+                  "updatedAt": "2026-08-25T09:22:49.603Z",
+                  "createdAt": "2026-08-25T09:22:49.603Z",
+                  "url": "/blog-media/body-qr-checkout.png",
+                  "thumbnailURL": null,
+                  "filename": "body-qr-checkout.png",
+                  "mimeType": "image/png",
+                  "filesize": 121539,
+                  "width": 1800,
+                  "height": 1024,
+                  "focalX": 50,
+                  "focalY": 50
+                },
+                "blockName": "",
+                "blockType": "imageBlock"
+              },
+              "format": "",
+              "version": 2
             },
             {
               "tag": "h2",
