@@ -39,13 +39,20 @@ interface CodeBlockFields {
 }
 
 /**
- * Media inside the body arrives as a CMS-relative path (`/api/media/file/…`),
- * unlike the cover image which the fetch step already absolutises. Resolving
- * here covers both the build and the live preview with one rule.
+ * Resolves an image inside the post body, which reaches this component two
+ * different ways.
+ *
+ * On a built page the fetch step has already downloaded it and rewritten the
+ * path to `/blog-media/…`, which is served by this site. In the draft preview
+ * nothing has been built: the body comes straight from the CMS, so its images
+ * are CMS-relative (`/api/media/file/…`) and have to be resolved against the
+ * CMS origin. Treating every leading slash as site-relative sent the preview's
+ * images to stablezact.com, where they 404.
  */
 function mediaUrl(url: string): string {
-  // Already absolute, or already copied into the site by the fetch step.
-  if (/^https?:\/\//.test(url) || url.startsWith('/')) return url
+  if (/^https?:\/\//.test(url)) return url
+  // Downloaded into this site at build time by scripts/fetch-content.ts.
+  if (url.startsWith('/blog-media/')) return url
   const base = import.meta.env.VITE_CMS_URL
   return base ? new URL(url, base).href : url
 }
