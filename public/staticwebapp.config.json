@@ -1,4 +1,11 @@
 {
+  "routes": [
+    {
+      "comment": "Every other route is prerendered to a real file, so this is the one page Azure has nothing to serve. It renders drafts fetched at request time and is reachable only with the secret the CMS puts in the Preview link. Without this rule the editor's Preview button lands on a 404.",
+      "route": "/blog/preview/*",
+      "rewrite": "/index.html"
+    }
+  ],
   "responseOverrides": {
     "404": {
       "rewrite": "/404.html",
