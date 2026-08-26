@@ -8,10 +8,15 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+  # Publishing in the CMS rebuilds staging but not production, which only
+  # rebuilds when main moves. This gives an editor a "Run workflow" button to
+  # promote published content without needing a commit: the build re-runs
+  # prebuild, which fetches whatever is published at that moment.
+  workflow_dispatch:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
