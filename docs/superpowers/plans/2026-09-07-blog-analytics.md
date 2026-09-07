@@ -665,7 +665,7 @@ npm run migrate
 Expected: the migration runs without error. Then confirm the tables exist:
 
 ```bash
-docker compose exec -T postgres psql -U postgres -d blog -c "\dt readership_*"
+docker compose exec -T db psql -U blog -d blog_cms -c "\dt readership_*"
 ```
 
 Expected: three tables listed. (If the compose service or database name differs, read `docker-compose.yml` and adjust.)
@@ -1134,7 +1134,7 @@ curl -i -X POST http://localhost:3000/api/readership/ping \
 Confirm the row:
 
 ```bash
-docker compose exec -T postgres psql -U postgres -d blog \
+docker compose exec -T db psql -U blog -d blog_cms \
   -c "SELECT view_id, max_scroll, engaged_ms, referrer_type, day FROM readership_views WHERE view_id = 'manual-test-1';"
 ```
 
@@ -2197,7 +2197,7 @@ npm run dev
 Open a blog post, scroll to the bottom, wait 35 seconds, then switch to another tab. In the CMS database:
 
 ```bash
-docker compose exec -T postgres psql -U postgres -d blog \
+docker compose exec -T db psql -U blog -d blog_cms \
   -c "SELECT view_id, max_scroll, engaged_ms FROM readership_views ORDER BY created_at DESC LIMIT 1;"
 ```
 
