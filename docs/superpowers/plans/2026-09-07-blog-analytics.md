@@ -640,7 +640,7 @@ This writes a new file under `src/migrations/`. Open it and confirm it creates `
 
 - [ ] **Step 6: Register the migration**
 
-Add the generated migration to `src/migrations/index.ts`, following the existing shape exactly:
+`payload migrate:create` updates `src/migrations/index.ts` itself — confirm it did rather than editing by hand. The entry must look like:
 
 ```ts
 import * as migration_<generated_name> from './<generated_name>';
@@ -655,14 +655,21 @@ import * as migration_<generated_name> from './<generated_name>';
 
 This step is not optional. `payload.config.ts` runs `prodMigrations`, so a migration missing from this array simply never runs in production.
 
-- [ ] **Step 7: Verify the migration applies**
+- [ ] **Step 7: Verify the schema applies**
+
+**Do not run `npm run migrate` locally.** The local database is built by Payload's dev
+schema-push (`payload_migrations` holds a single `dev` row), so `payload migrate` stops on an
+interactive prompt warning that *data loss will occur* — answering yes would destroy local
+content. The migration file exists for production, where `prodMigrations` applies it to a
+database that was itself built by migrations. Locally, the dev server pushes the schema:
 
 ```bash
 docker compose up -d
-npm run migrate
+npm run dev
+curl -s -o /dev/null -w "%{http_code}\n" "http://localhost:3000/api/posts?limit=1"
 ```
 
-Expected: the migration runs without error. Then confirm the tables exist:
+Payload initialises lazily, so the request is what triggers the push. Then confirm the tables exist:
 
 ```bash
 docker compose exec -T db psql -U blog -d blog_cms -c "\dt readership_*"
