@@ -39,10 +39,28 @@ export function PrivacyPolicy() {
         cookies in our <Link to="/cookies">Cookie Policy</Link>.
       </p>
 
+      <h3>Article readership (no cookies, no opt in)</h3>
+      <p>
+        On blog articles we count how many times an article was opened, how far down it was read,
+        how long it was open and visible, and which website linked to it. This runs on our own
+        servers rather than anyone else's, and it sets no cookies and stores nothing at all in your
+        browser, which is why it isn't part of the choices in the cookie banner.
+      </p>
+      <p>
+        To tell one reader from another for a single day, we store a one way fingerprint of your IP
+        address and browser, scrambled with a secret that changes every day and is then deleted.
+        Once that day's secret is gone, the fingerprints can't be traced back to anyone, including
+        by us. We don't record your name, your email, where you are, or anything that follows you
+        from one day to the next or from one website to another. The detailed records are deleted
+        after 90 days; all we keep after that is a daily count per article.
+      </p>
+
       <h2>The basis for all this</h2>
       <p>
-        We use analytics only with your consent, and you can withdraw it whenever you like. The basic
-        security logs rely on our legitimate interest in running a safe website, nothing more.
+        We use Google Analytics and Microsoft Clarity only with your consent, and you can withdraw
+        it whenever you like. The basic security logs, and the article readership counts described
+        above, rely on our legitimate interest in running a safe website and understanding which of
+        our articles people find useful, nothing more.
       </p>
 
       <h2>Who sees it</h2>
@@ -57,6 +75,7 @@ export function PrivacyPolicy() {
         <li>Security logs: a short period, for security and troubleshooting.</li>
         <li>Google Analytics: up to 14 months.</li>
         <li>Microsoft Clarity: up to one year.</li>
+        <li>Article readership: detailed records for 90 days, daily counts per article after that.</li>
       </ul>
 
       <h2>You're in control</h2>

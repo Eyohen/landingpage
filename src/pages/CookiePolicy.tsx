@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { LegalLayout } from '@/components/LegalLayout'
 import { openCookieSettings } from '@/lib/consent'
 
@@ -90,6 +91,15 @@ export function CookiePolicy() {
       <p className="muted">
         The exact names and timings are set by Google and Microsoft and can change, so this shows how
         they work today.
+      </p>
+
+      <h2>Counting article readers, without cookies</h2>
+      <p>
+        On blog articles we also count how many times an article was opened and how far down it was
+        read. That one runs on our own servers and uses no cookies and no browser storage of any
+        kind — so there is nothing here for you to accept or reject, and nothing left on your
+        device. It is listed in no table above because it sets nothing. What it records, and how
+        long we keep it, is set out in our <Link to="/privacy">Privacy Policy</Link>.
       </p>
 
       <h2>Changing your mind</h2>
