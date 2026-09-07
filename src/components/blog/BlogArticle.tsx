@@ -1,3 +1,4 @@
+import type { Ref } from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar } from '@/components/Navbar'
 import { BlogFooter } from '@/components/blog/BlogFooter'
@@ -95,7 +96,16 @@ function PostNav({ post }: { post: BlogPost }) {
   )
 }
 
-export function BlogArticle({ post }: { post: BlogPost }) {
+export function BlogArticle({
+  post,
+  // The published post page passes this so readership can be measured against
+  // the article's own box. The draft preview deliberately passes nothing —
+  // that is what keeps editors reviewing drafts out of the numbers.
+  bodyRef,
+}: {
+  post: BlogPost
+  bodyRef?: Ref<HTMLElement>
+}) {
   return (
     <div className="min-h-screen bg-[#f5f5f5] text-black">
       <Navbar />
@@ -133,7 +143,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
               />
             </div>
 
-            <article className="flex min-w-0 flex-col gap-9">
+            <article ref={bodyRef} className="flex min-w-0 flex-col gap-9">
               <PostContent data={post.content} />
 
               <PostNav post={post} />

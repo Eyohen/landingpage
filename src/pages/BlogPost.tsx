@@ -1,7 +1,9 @@
+import { useRef } from 'react'
 import { Navigate, useParams } from 'react-router-dom'
 import { BlogArticle } from '@/components/blog/BlogArticle'
 import { getPost, type BlogPost as Post } from '@/data/blog'
 import { usePageMeta } from '@/lib/usePageMeta'
+import { useReadership } from '@/lib/useReadership'
 
 /**
  * Published blog post — Figma node 2168:70798. Content comes from the build
@@ -16,7 +18,12 @@ function Article({ post }: { post: Post }) {
     type: 'article',
   })
 
-  return <BlogArticle post={post} />
+  // Owned here rather than inside BlogArticle because BlogArticle is shared
+  // with the draft preview route, which must never be counted.
+  const bodyRef = useRef<HTMLElement | null>(null)
+  useReadership(post.slug, bodyRef)
+
+  return <BlogArticle post={post} bodyRef={bodyRef} />
 }
 
 export default function BlogPost() {
